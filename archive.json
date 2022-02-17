@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-02-06T01:12:03.829879+00:00",
+  "timestamp": "2022-02-17T01:01:08.261754+00:00",
   "repo": "httpwg/http2-spec",
   "labels": [
     {
@@ -43678,6 +43678,42 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 1022,
+      "id": "PR_kwDOAHsHi84y9StO",
+      "title": "Pad hexadecimal literals to even digits",
+      "url": "https://github.com/httpwg/http2-spec/pull/1022",
+      "state": "OPEN",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [
+        "editorial"
+      ],
+      "body": "We decided to do this for QUIC and it does improve readability and\r\nconsistency.\r\n\r\nI did this manually, rather than trying to be clever with regexs.  I'd\r\nappreciate a second pair of eyes.\r\n\r\nI searched for `0x[0-9a-f](?:[0-9a-f]{2})*[^0-9a-f]` and found nothing;\r\nsame for `0x[0-9a-f]*[A-F][0-9a-f]*` (in case we had stray uppercase\r\nstrings).",
+      "createdAt": "2022-02-16T23:42:12Z",
+      "updatedAt": "2022-02-17T00:06:42Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "bb0e5efbfa43955e038d62cf1041107e6b0951f6",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "0x0-pad",
+      "headRefOid": "1a4b7281a0f8942cac7df8136c3cd9fe419d8570",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "MikeBishop",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "I remember where I tripped up with the regex when we did it for QUIC, so I could reconstruct it pretty quickly. I think it was something along the lines of `0x[0-9a-fA-F]([0-9a-fA-F]{2})*[^0-9a-fA-F]`.\r\n\r\nIf that doesn't work, I'll try to reconstruct in the morning.",
+          "createdAt": "2022-02-17T00:06:01Z",
+          "updatedAt": "2022-02-17T00:06:42Z"
+        }
+      ],
+      "reviews": []
     }
   ]
 }
