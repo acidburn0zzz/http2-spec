@@ -14,10 +14,3 @@ View [saved issues](issues.html), or the latest GitHub [issues](https://github.c
 | [HTTP/2](draft-ietf-httpbis-http2bis-07/draft-ietf-httpbis-http2bis.html) | [plain text](draft-ietf-httpbis-http2bis-07/draft-ietf-httpbis-http2bis.txt) | [diff with main](https://www.ietf.org/rfcdiff?url1=https://httpwg.github.io/http2-spec/draft-ietf-httpbis-http2bis.txt&amp;url2=https://httpwg.github.io/http2-spec/draft-ietf-httpbis-http2bis-07/draft-ietf-httpbis-http2bis.txt) |
 | [HPACK](draft-ietf-httpbis-http2bis-07/draft-ietf-httpbis-header-compression.html) | [plain text](draft-ietf-httpbis-http2bis-07/draft-ietf-httpbis-header-compression.txt) | [diff with main](https://www.ietf.org/rfcdiff?url1=https://httpwg.github.io/http2-spec/draft-ietf-httpbis-header-compression.txt&amp;url2=https://httpwg.github.io/http2-spec/draft-ietf-httpbis-http2bis-07/draft-ietf-httpbis-header-compression.txt) |
 
-## Preview for branch [initial-table-size](initial-table-size)
-
-| Draft |     |     |     |
-| ----- | --- | --- | --- |
-| [HTTP/2](initial-table-size/draft-ietf-httpbis-http2bis.html) | [plain text](initial-table-size/draft-ietf-httpbis-http2bis.txt) | [diff with main](https://www.ietf.org/rfcdiff?url1=https://httpwg.github.io/http2-spec/draft-ietf-httpbis-http2bis.txt&amp;url2=https://httpwg.github.io/http2-spec/initial-table-size/draft-ietf-httpbis-http2bis.txt) |
-| [HPACK](initial-table-size/draft-ietf-httpbis-header-compression.html) | [plain text](initial-table-size/draft-ietf-httpbis-header-compression.txt) | [diff with main](https://www.ietf.org/rfcdiff?url1=https://httpwg.github.io/http2-spec/draft-ietf-httpbis-header-compression.txt&amp;url2=https://httpwg.github.io/http2-spec/initial-table-size/draft-ietf-httpbis-header-compression.txt) |
-
