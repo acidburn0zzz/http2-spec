@@ -1504,7 +1504,7 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 <p id="section-1-2">
         Making multiple concurrent requests can reduce latency and improve
         application performance. HTTP/1.0 allowed only one request to be
-        outstanding at a time on a given TCP <span>[<a href="#TCP" class="xref">TCP</a>]</span> connection. HTTP/1.1 (<span>[<a href="#HTTP11" class="xref">HTTP11</a>]</span>)
+        outstanding at a time on a given TCP <span>[<a href="#TCP" class="xref">TCP</a>]</span> connection. HTTP/1.1 (<span>[<a href="#HTTP11" class="xref">HTTP/1.1</a>]</span>)
         added request pipelining, but this only partially addressed request
         concurrency and still suffers from application-layer head-of-line
         blocking. Therefore, HTTP/1.0 and HTTP/1.1 clients use multiple connections
@@ -1702,7 +1702,7 @@ svg [stroke="fill"], svg [fill^="#fff"] {
         Implementations that generate HTTP requests need to discover whether a server supports
         HTTP/2.<a href="#section-3-1" class="pilcrow">¶</a></p>
 <p id="section-3-2">
-        HTTP/2 uses the "http" and "https" URI schemes defined in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-4.2" class="relref">Section 4.2</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>, with the same default port numbers as HTTP/1.1 (<span>[<a href="#HTTP11" class="xref">HTTP11</a>]</span>). These URIs do not include any indication about what HTTP versions an
+        HTTP/2 uses the "http" and "https" URI schemes defined in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-4.2" class="relref">Section 4.2</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>, with the same default port numbers as HTTP/1.1 (<span>[<a href="#HTTP11" class="xref">HTTP/1.1</a>]</span>). These URIs do not include any indication about what HTTP versions an
         upstream server (the immediate peer to which the client wishes to establish a connection)
         supports.<a href="#section-3-2" class="pilcrow">¶</a></p>
 <p id="section-3-3">
@@ -4266,7 +4266,7 @@ CONTINUATION Frame {
           and any <a href="#CONTINUATION" class="xref">CONTINUATION</a> frames that might follow.<a href="#section-8.1-6" class="pilcrow">¶</a></p>
 <p id="section-8.1-7">
           HTTP/2 uses DATA frames to carry message content.  The <code>chunked</code> transfer encoding
-          defined in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-messaging-18#section-7.1" class="relref">Section 7.1</a> of [<a href="#HTTP11" class="xref">HTTP11</a>]</span> cannot be used in HTTP/2; see <a href="#ConnectionSpecific" class="xref">Section 8.2.2</a>.<a href="#section-8.1-7" class="pilcrow">¶</a></p>
+          defined in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-messaging-18#section-7.1" class="relref">Section 7.1</a> of [<a href="#HTTP11" class="xref">HTTP/1.1</a>]</span> cannot be used in HTTP/2; see <a href="#ConnectionSpecific" class="xref">Section 8.2.2</a>.<a href="#section-8.1-7" class="pilcrow">¶</a></p>
 <p id="section-8.1-8">
           Trailer fields are carried in a field block that also terminates the stream. That is,
           trailer fields comprise a sequence starting with a <a href="#HEADERS" class="xref">HEADERS</a> frame, followed by zero or more <a href="#CONTINUATION" class="xref">CONTINUATION</a> frames, where the <a href="#HEADERS" class="xref">HEADERS</a> frame bears an END_STREAM flag. Trailers MUST NOT include
@@ -4358,7 +4358,7 @@ CONTINUATION Frame {
 <p id="section-8.2.1-2">
             Failure to validate fields can be exploited for request smuggling attacks.  In
             particular, unvalidated fields might enable attacks when messages are forwarded using
-            <span><a href="#HTTP11" class="xref">HTTP 1.1</a> [<a href="#HTTP11" class="xref">HTTP11</a>]</span>, where characters such as CR, LF, and COLON are
+            <span><a href="#HTTP11" class="xref">HTTP 1.1</a> [<a href="#HTTP11" class="xref">HTTP/1.1</a>]</span>, where characters such as CR, LF, and COLON are
             used as delimiters.  Implementations MUST perform the following minimal validation of
             field names and values:<a href="#section-8.2.1-2" class="pilcrow">¶</a></p>
 <ul class="normal">
@@ -4512,7 +4512,7 @@ cookie: e=f
               <p id="section-8.3.1-2.2.1">
                 The <code>:scheme</code> pseudo-header field includes the scheme portion of the request
                 target. The scheme is taken from the target URI (<span><a href="https://rfc-editor.org/rfc/rfc3986#section-3.1" class="relref">Section 3.1</a> of [<a href="#RFC3986" class="xref">RFC3986</a>]</span>) when generating a request directly, or from the scheme of a
-                translated request (for example, see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-messaging-18#section-3.3" class="relref">Section 3.3</a> of [<a href="#HTTP11" class="xref">HTTP11</a>]</span>). Scheme
+                translated request (for example, see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-messaging-18#section-3.3" class="relref">Section 3.3</a> of [<a href="#HTTP11" class="xref">HTTP/1.1</a>]</span>). Scheme
                 is omitted for <span><a href="#CONNECT" class="xref">CONNECT requests</a> (<a href="#CONNECT" class="xref">Section 8.5</a>)</span>.<a href="#section-8.3.1-2.2.1" class="pilcrow">¶</a></p>
 <p id="section-8.3.1-2.2.2"><code>:scheme</code> is not restricted to <code>http</code> and <code>https</code> schemed
                 URIs.  A proxy or gateway can translate requests for non-HTTP schemes, enabling
@@ -4644,10 +4644,10 @@ cookie: e=f
           in the promised stream being reset if the client does not recognize a newly defined
           method as being safe.<a href="#section-8.4-5" class="pilcrow">¶</a></p>
 <p id="section-8.4-6">
-          Pushed responses that are cacheable (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cache-18#section-3" class="relref">Section 3</a> of [<a href="#CACHE" class="xref">CACHE</a>]</span>) can be
+          Pushed responses that are cacheable (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cache-18#section-3" class="relref">Section 3</a> of [<a href="#CACHE" class="xref">HTTP-CACHING</a>]</span>) can be
           stored by the client, if it implements an HTTP cache. Pushed responses are considered
           successfully validated on the origin server (e.g., if the "no-cache" cache response
-          directive is present; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cache-18#section-5.2.2.4" class="relref">Section 5.2.2.4</a> of [<a href="#CACHE" class="xref">CACHE</a>]</span>) while the stream
+          directive is present; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cache-18#section-5.2.2.4" class="relref">Section 5.2.2.4</a> of [<a href="#CACHE" class="xref">HTTP-CACHING</a>]</span>) while the stream
           identified by the promised stream ID is still open.<a href="#section-8.4-6" class="pilcrow">¶</a></p>
 <p id="section-8.4-7">
           Pushed responses that are not cacheable MUST NOT be stored by any HTTP cache. They MAY
@@ -4790,7 +4790,7 @@ cookie: e=f
           <li class="normal" id="section-8.5-3.3">
               The <code>:authority</code> pseudo-header field contains the host and port to
               connect to (equivalent to the authority-form of the request-target of CONNECT
-              requests; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-messaging-18#section-3.2.3" class="relref">Section 3.2.3</a> of [<a href="#HTTP11" class="xref">HTTP11</a>]</span>).<a href="#section-8.5-3.3" class="pilcrow">¶</a>
+              requests; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-messaging-18#section-3.2.3" class="relref">Section 3.2.3</a> of [<a href="#HTTP11" class="xref">HTTP/1.1</a>]</span>).<a href="#section-8.5-3.3" class="pilcrow">¶</a>
 </li>
         </ul>
 <p id="section-8.5-4">
@@ -5300,7 +5300,7 @@ cookie: e=f
           pseudo-header fields.  If the values of these fields are used, additional validation is
           necessary. This is particularly important where <code>:scheme</code>, <code>:authority</code>, and
           <code>:path</code> are combined to form a single URI string (<span>[<a href="#RFC3986" class="xref">RFC3986</a>]</span>). Similar problems might occur when that URI or just <code>:path</code> are
-          combined with <code>:method</code> to construct a request line (as in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-messaging-18#section-3" class="relref">Section 3</a> of [<a href="#HTTP11" class="xref">HTTP11</a>]</span>). Simple concatenation is not secure unless the input values are fully
+          combined with <code>:method</code> to construct a request line (as in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-messaging-18#section-3" class="relref">Section 3</a> of [<a href="#HTTP11" class="xref">HTTP/1.1</a>]</span>). Simple concatenation is not secure unless the input values are fully
           validated.<a href="#section-10.3-2" class="pilcrow">¶</a></p>
 <p id="section-10.3-3">
           An intermediary can reject fields that contain invalid field names or values for other
@@ -5653,10 +5653,6 @@ cookie: e=f
 <a href="#section-12.1" class="section-number selfRef">12.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
         </h3>
 <dl class="references">
-<dt id="CACHE">[CACHE]</dt>
-        <dd>
-<span class="refAuthor">Fielding, R., Ed.</span>, <span class="refAuthor">Nottingham, M., Ed.</span>, and <span class="refAuthor">J. Reschke, Ed.</span>, <span class="refTitle">"HTTP Caching"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-httpbis-cache-18</span>, <time datetime="2021-08-18" class="refDate">18 August 2021</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cache-18">https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cache-18</a>&gt;</span>. </dd>
-<dd class="break"></dd>
 <dt id="COMPRESSION">[COMPRESSION]</dt>
         <dd>
 <span class="refAuthor">Peon, R.</span> and <span class="refAuthor">H. Ruellan</span>, <span class="refTitle">"HPACK: Header Compression for HTTP/2"</span>, <span class="seriesInfo">RFC 7541</span>, <span class="seriesInfo">DOI 10.17487/RFC7541</span>, <time datetime="2015-05" class="refDate">May 2015</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7541">https://www.rfc-editor.org/rfc/rfc7541</a>&gt;</span>. </dd>
@@ -5668,6 +5664,10 @@ cookie: e=f
 <dt id="HTTP">[HTTP]</dt>
         <dd>
 <span class="refAuthor">Fielding, R., Ed.</span>, <span class="refAuthor">Nottingham, M., Ed.</span>, and <span class="refAuthor">J. Reschke, Ed.</span>, <span class="refTitle">"HTTP Semantics"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-httpbis-semantics-18</span>, <time datetime="2021-08-18" class="refDate">18 August 2021</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18">https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="CACHE">[HTTP-CACHING]</dt>
+        <dd>
+<span class="refAuthor">Fielding, R., Ed.</span>, <span class="refAuthor">Nottingham, M., Ed.</span>, and <span class="refAuthor">J. Reschke, Ed.</span>, <span class="refTitle">"HTTP Caching"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-httpbis-cache-18</span>, <time datetime="2021-08-18" class="refDate">18 August 2021</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cache-18">https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cache-18</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="QUIC">[QUIC]</dt>
         <dd>
@@ -5740,7 +5740,7 @@ cookie: e=f
         <dd>
 <span class="refAuthor">Hoffman, P.</span>, <span class="refAuthor">Sullivan, A.</span>, and <span class="refAuthor">K. Fujiwara</span>, <span class="refTitle">"DNS Terminology"</span>, <span class="seriesInfo">BCP 219</span>, <span class="seriesInfo">RFC 8499</span>, <span class="seriesInfo">DOI 10.17487/RFC8499</span>, <time datetime="2019-01" class="refDate">January 2019</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8499">https://www.rfc-editor.org/rfc/rfc8499</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="HTTP11">[HTTP11]</dt>
+<dt id="HTTP11">[HTTP/1.1]</dt>
         <dd>
 <span class="refAuthor">Fielding, R., Ed.</span>, <span class="refAuthor">Nottingham, M., Ed.</span>, and <span class="refAuthor">J. Reschke, Ed.</span>, <span class="refTitle">"HTTP/1.1"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-httpbis-messaging-18</span>, <time datetime="2021-08-18" class="refDate">18 August 2021</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-messaging-18">https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-messaging-18</a>&gt;</span>. </dd>
 <dd class="break"></dd>

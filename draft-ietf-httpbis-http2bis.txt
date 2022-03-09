@@ -177,7 +177,7 @@ Table of Contents
    Making multiple concurrent requests can reduce latency and improve
    application performance.  HTTP/1.0 allowed only one request to be
    outstanding at a time on a given TCP [TCP] connection.  HTTP/1.1
-   ([HTTP11]) added request pipelining, but this only partially
+   ([HTTP/1.1]) added request pipelining, but this only partially
    addressed request concurrency and still suffers from application-
    layer head-of-line blocking.  Therefore, HTTP/1.0 and HTTP/1.1
    clients use multiple connections to a server to make concurrent
@@ -338,10 +338,10 @@ Table of Contents
    a server supports HTTP/2.
 
    HTTP/2 uses the "http" and "https" URI schemes defined in Section 4.2
-   of [HTTP], with the same default port numbers as HTTP/1.1 ([HTTP11]).
-   These URIs do not include any indication about what HTTP versions an
-   upstream server (the immediate peer to which the client wishes to
-   establish a connection) supports.
+   of [HTTP], with the same default port numbers as HTTP/1.1
+   ([HTTP/1.1]).  These URIs do not include any indication about what
+   HTTP versions an upstream server (the immediate peer to which the
+   client wishes to establish a connection) supports.
 
    The means by which support for HTTP/2 is determined is different for
    "http" and "https" URIs.  Discovery for "https" URIs is described in
@@ -2413,7 +2413,7 @@ Table of Contents
    frame and any CONTINUATION frames that might follow.
 
    HTTP/2 uses DATA frames to carry message content.  The chunked
-   transfer encoding defined in Section 7.1 of [HTTP11] cannot be used
+   transfer encoding defined in Section 7.1 of [HTTP/1.1] cannot be used
    in HTTP/2; see Section 8.2.2.
 
    Trailer fields are carried in a field block that also terminates the
@@ -2512,9 +2512,10 @@ Table of Contents
 
    Failure to validate fields can be exploited for request smuggling
    attacks.  In particular, unvalidated fields might enable attacks when
-   messages are forwarded using HTTP 1.1 [HTTP11], where characters such
-   as CR, LF, and COLON are used as delimiters.  Implementations MUST
-   perform the following minimal validation of field names and values:
+   messages are forwarded using HTTP 1.1 [HTTP/1.1], where characters
+   such as CR, LF, and COLON are used as delimiters.  Implementations
+   MUST perform the following minimal validation of field names and
+   values:
 
    *  A field name MUST NOT contain characters in the ranges 0x00-0x20,
       0x41-0x5a, or 0x7f-0xff (all ranges inclusive).  This specifically
@@ -2647,8 +2648,8 @@ Table of Contents
       request target.  The scheme is taken from the target URI
       (Section 3.1 of [RFC3986]) when generating a request directly, or
       from the scheme of a translated request (for example, see
-      Section 3.3 of [HTTP11]).  Scheme is omitted for CONNECT requests
-      (Section 8.5).
+      Section 3.3 of [HTTP/1.1]).  Scheme is omitted for CONNECT
+      requests (Section 8.5).
 
       :scheme is not restricted to http and https schemed URIs.  A proxy
       or gateway can translate requests for non-HTTP schemes, enabling
@@ -2772,11 +2773,11 @@ Table of Contents
    reset if the client does not recognize a newly defined method as
    being safe.
 
-   Pushed responses that are cacheable (see Section 3 of [CACHE]) can be
-   stored by the client, if it implements an HTTP cache.  Pushed
+   Pushed responses that are cacheable (see Section 3 of [HTTP-CACHING])
+   can be stored by the client, if it implements an HTTP cache.  Pushed
    responses are considered successfully validated on the origin server
    (e.g., if the "no-cache" cache response directive is present; see
-   Section 5.2.2.4 of [CACHE]) while the stream identified by the
+   Section 5.2.2.4 of [HTTP-CACHING]) while the stream identified by the
    promised stream ID is still open.
 
    Pushed responses that are not cacheable MUST NOT be stored by any
@@ -2918,7 +2919,7 @@ Table of Contents
 
    *  The :authority pseudo-header field contains the host and port to
       connect to (equivalent to the authority-form of the request-target
-      of CONNECT requests; see Section 3.2.3 of [HTTP11]).
+      of CONNECT requests; see Section 3.2.3 of [HTTP/1.1]).
 
    A CONNECT request that does not conform to these restrictions is
    malformed (Section 8.1.1).
@@ -3374,8 +3375,8 @@ Table of Contents
    :scheme, :authority, and :path are combined to form a single URI
    string ([RFC3986]).  Similar problems might occur when that URI or
    just :path are combined with :method to construct a request line (as
-   in Section 3 of [HTTP11]).  Simple concatenation is not secure unless
-   the input values are fully validated.
+   in Section 3 of [HTTP/1.1]).  Simple concatenation is not secure
+   unless the input values are fully validated.
 
    An intermediary can reject fields that contain invalid field names or
    values for other reasons, in particular those that do not conform to
@@ -3677,12 +3678,6 @@ Table of Contents
 
 12.1.  Normative References
 
-   [CACHE]    Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
-              Ed., "HTTP Caching", Work in Progress, Internet-Draft,
-              draft-ietf-httpbis-cache-18, 18 August 2021,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-
-              cache-18>.
-
    [COMPRESSION]
               Peon, R. and H. Ruellan, "HPACK: Header Compression for
               HTTP/2", RFC 7541, DOI 10.17487/RFC7541, May 2015,
@@ -3697,6 +3692,13 @@ Table of Contents
               draft-ietf-httpbis-semantics-18, 18 August 2021,
               <https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-
               semantics-18>.
+
+   [HTTP-CACHING]
+              Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
+              Ed., "HTTP Caching", Work in Progress, Internet-Draft,
+              draft-ietf-httpbis-cache-18, 18 August 2021,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-
+              cache-18>.
 
    [QUIC]     Iyengar, J., Ed. and M. Thomson, Ed., "QUIC: A UDP-Based
               Multiplexed and Secure Transport", RFC 9000,
@@ -3778,7 +3780,7 @@ Table of Contents
               Terminology", BCP 219, RFC 8499, DOI 10.17487/RFC8499,
               January 2019, <https://www.rfc-editor.org/rfc/rfc8499>.
 
-   [HTTP11]   Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
+   [HTTP/1.1] Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
               Ed., "HTTP/1.1", Work in Progress, Internet-Draft, draft-
               ietf-httpbis-messaging-18, 18 August 2021,
               <https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-
