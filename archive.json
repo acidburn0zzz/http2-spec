@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-02-20T01:13:03.737484+00:00",
+  "timestamp": "2022-03-10T01:20:41.971569+00:00",
   "repo": "httpwg/http2-spec",
   "labels": [
     {
@@ -43748,6 +43748,122 @@
           "body": "Double-checked with a regex, and I don't find any missing either.",
           "createdAt": "2022-02-17T15:28:24Z",
           "updatedAt": "2022-02-17T15:28:24Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1024,
+      "id": "PR_kwDOAHsHi840FUcF",
+      "title": "Get rid of XML line noise",
+      "url": "https://github.com/httpwg/http2-spec/pull/1024",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [
+        "editorial"
+      ],
+      "body": "None of this stuff is used, but it causes some XML processors to go looking in places they shouldn't.",
+      "createdAt": "2022-03-08T04:50:23Z",
+      "updatedAt": "2022-03-08T12:09:12Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "84d1e4caf885ddd3f980223e1b7b224ab43884f0",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "xml-noise",
+      "headRefOid": "0b1d485ef624c5cec8f9384bc9567a52b5f412dc",
+      "closedAt": "2022-03-08T12:09:12Z",
+      "mergedAt": "2022-03-08T12:09:12Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "dcf642d78e42a3d0087360bc875052a186c1b2b2"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi8410Zxp",
+          "commit": {
+            "abbreviatedOid": "0b1d485"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-08T12:09:08Z",
+          "updatedAt": "2022-03-08T12:09:08Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1025,
+      "id": "PR_kwDOAHsHi840Gha_",
+      "title": "Clean up minor typo",
+      "url": "https://github.com/httpwg/http2-spec/pull/1025",
+      "state": "MERGED",
+      "author": "Lukasa",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Fix up a typo reported by @Dev1an",
+      "createdAt": "2022-03-08T12:13:24Z",
+      "updatedAt": "2022-03-09T00:34:30Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "dcf642d78e42a3d0087360bc875052a186c1b2b2",
+      "headRepository": "Lukasa/http2-spec",
+      "headRefName": "cb-fixup-typo",
+      "headRefOid": "5d28857de5ceb7a3884c0b7478db1ec296a04f77",
+      "closedAt": "2022-03-09T00:34:30Z",
+      "mergedAt": "2022-03-09T00:34:30Z",
+      "mergedBy": "martinthomson",
+      "mergeCommit": {
+        "oid": "d1089dd3fb6592d6019979cd023384cc695f269f"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 1026,
+      "id": "PR_kwDOAHsHi840JHUj",
+      "title": "Use displayreference for HTTP specs",
+      "url": "https://github.com/httpwg/http2-spec/pull/1026",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [
+        "editorial"
+      ],
+      "body": "",
+      "createdAt": "2022-03-09T00:34:16Z",
+      "updatedAt": "2022-03-09T07:34:29Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "dcf642d78e42a3d0087360bc875052a186c1b2b2",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "display-refs",
+      "headRefOid": "031a76ee00560c83f59eef3973e306645bf0f088",
+      "closedAt": "2022-03-09T07:34:29Z",
+      "mergedAt": "2022-03-09T07:34:29Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "0054de14595adb394574a77684a2cd3db23ecd27"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi8414VWW",
+          "commit": {
+            "abbreviatedOid": "031a76e"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-09T07:34:25Z",
+          "updatedAt": "2022-03-09T07:34:25Z",
           "comments": []
         }
       ]
