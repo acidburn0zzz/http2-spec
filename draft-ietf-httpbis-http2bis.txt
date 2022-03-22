@@ -2584,11 +2584,11 @@ Table of Contents
 
    The Cookie header field [COOKIE] uses a semicolon (";") to delimit
    cookie-pairs (or "crumbs").  This header field contains multiple
-   values, but does not use a COMMA (",") as a separator, which prevents
-   cookie-pairs from being sent on multiple field lines (see Section 5.2
-   of [HTTP]).  This can significantly reduce compression efficiency as
-   updates to individual cookie-pairs would invalidate any field lines
-   that are stored in the HPACK table.
+   values but does not use a COMMA (",") as a separator, thereby
+   preventing cookie-pairs from being sent on multiple field lines (see
+   Section 5.2 of [HTTP]).  This can significantly reduce compression
+   efficiency as updates to individual cookie-pairs would invalidate any
+   field lines that are stored in the HPACK table.
 
    To allow for better compression efficiency, the Cookie header field
    MAY be split into separate header fields, each with one or more

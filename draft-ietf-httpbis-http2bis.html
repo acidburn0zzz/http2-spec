@@ -4433,12 +4433,12 @@ CONTINUATION Frame {
 <a href="#section-8.2.3" class="section-number selfRef">8.2.3. </a><a href="#name-compressing-the-cookie-head" class="section-name selfRef">Compressing the Cookie Header Field</a>
           </h4>
 <p id="section-8.2.3-1">
-            The <span><a href="#COOKIE" class="xref">Cookie header field</a> [<a href="#COOKIE" class="xref">COOKIE</a>]</span> uses a semicolon (";") to
-            delimit cookie-pairs (or "crumbs").  This header field contains multiple values, but
-            does not use a COMMA (",") as a separator, which prevents cookie-pairs from being sent
-            on multiple field lines (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-5.2" class="relref">Section 5.2</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>).  This can
-            significantly reduce compression efficiency as updates to individual cookie-pairs
-            would invalidate any field lines that are stored in the HPACK table.<a href="#section-8.2.3-1" class="pilcrow">¶</a></p>
+            The <span><a href="#COOKIE" class="xref">Cookie header field</a> [<a href="#COOKIE" class="xref">COOKIE</a>]</span> uses a semicolon (";") to delimit
+            cookie-pairs (or "crumbs").  This header field contains multiple values but does not use
+            a COMMA (",") as a separator, thereby preventing cookie-pairs from being sent on
+            multiple field lines (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-5.2" class="relref">Section 5.2</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>).  This can significantly
+            reduce compression efficiency as updates to individual cookie-pairs would invalidate any
+            field lines that are stored in the HPACK table.<a href="#section-8.2.3-1" class="pilcrow">¶</a></p>
 <p id="section-8.2.3-2">
             To allow for better compression efficiency, the Cookie header field MAY be split into
             separate header fields, each with one or more cookie-pairs.  If there are multiple
