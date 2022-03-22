@@ -87,7 +87,7 @@ Table of Contents
      5.2.  Flow Control
        5.2.1.  Flow-Control Principles
        5.2.2.  Appropriate Use of Flow Control
-       5.2.3.  Flow Control Performance
+       5.2.3.  Flow-Control Performance
      5.3.  Prioritization
        5.3.1.  Background on Priority in RFC 7540
        5.3.2.  Priority Signaling in this Document
@@ -1055,9 +1055,9 @@ Table of Contents
    employ flow control to limit the amount of memory a peer can consume.
    Note, however, that this can lead to suboptimal use of available
    network resources if flow control is enabled without knowledge of the
-   bandwidth-delay product (see [RFC7323]).
+   bandwidth * delay product (see [RFC7323]).
 
-   Even with full awareness of the current bandwidth-delay product,
+   Even with full awareness of the current bandwidth * delay product,
    implementation of flow control can be difficult.  Endpoints MUST read
    and process HTTP/2 frames from the TCP receive buffer as soon as data
    is available.  Failure to read promptly could lead to a deadlock when
@@ -1066,12 +1066,13 @@ Table of Contents
    exhaustion attacks as HTTP/2 flow control limits resource
    commitments.
 
-5.2.3.  Flow Control Performance
+5.2.3.  Flow-Control Performance
 
    If an endpoint cannot ensure that its peer always has available flow
-   control window space that is greater than the peer's bandwidth-delay
-   product on this connection, its receive throughput will be limited by
-   HTTP/2 flow control.  This will result in degraded performance.
+   control window space that is greater than the peer's bandwidth *
+   delay product on this connection, its receive throughput will be
+   limited by HTTP/2 flow control.  This will result in degraded
+   performance.
 
    Sending timely WINDOW_UPDATE frames can improve performance.
    Endpoints will want to balance the need to improve receive throughput

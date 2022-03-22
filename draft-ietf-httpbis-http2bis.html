@@ -1212,7 +1212,7 @@ svg [stroke="fill"], svg [fill^="#fff"] {
                     <p id="section-toc.1-1.5.2.2.2.2.1"><a href="#section-5.2.2" class="xref">5.2.2</a>.  <a href="#name-appropriate-use-of-flow-con" class="xref">Appropriate Use of Flow Control</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.2.2.3">
-                    <p id="section-toc.1-1.5.2.2.2.3.1"><a href="#section-5.2.3" class="xref">5.2.3</a>.  <a href="#name-flow-control-performance" class="xref">Flow Control Performance</a></p>
+                    <p id="section-toc.1-1.5.2.2.2.3.1"><a href="#section-5.2.3" class="xref">5.2.3</a>.  <a href="#name-flow-control-performance" class="xref">Flow-Control Performance</a></p>
 </li>
                 </ul>
 </li>
@@ -2625,12 +2625,12 @@ HTTP Frame {
             Deployments with constrained resources (for example, memory) can employ flow control to
             limit the amount of memory a peer can consume.  Note, however, that this can lead to
             suboptimal use of available network resources if flow control is enabled without
-            knowledge of the bandwidth-delay product (see <span>[<a href="#RFC7323" class="xref">RFC7323</a>]</span>).<a href="#section-5.2.2-3" class="pilcrow">¶</a></p>
+            knowledge of the bandwidth * delay product (see <span>[<a href="#RFC7323" class="xref">RFC7323</a>]</span>).<a href="#section-5.2.2-3" class="pilcrow">¶</a></p>
 <p id="section-5.2.2-4">
-            Even with full awareness of the current bandwidth-delay product, implementation of flow
-            control can be difficult.  Endpoints MUST read and process HTTP/2 frames from the TCP
-            receive buffer as soon as data is available.  Failure to read promptly could lead to a
-            deadlock when critical frames, such as <a href="#WINDOW_UPDATE" class="xref">WINDOW_UPDATE</a>, are not read and acted upon. Reading frames promptly
+            Even with full awareness of the current bandwidth * delay product, implementation of
+            flow control can be difficult.  Endpoints MUST read and process HTTP/2 frames from the
+            TCP receive buffer as soon as data is available.  Failure to read promptly could lead to
+            a deadlock when critical frames, such as <a href="#WINDOW_UPDATE" class="xref">WINDOW_UPDATE</a>, are not read and acted upon. Reading frames promptly
             does not expose endpoints to resource exhaustion attacks as HTTP/2 flow control limits
             resource commitments.<a href="#section-5.2.2-4" class="pilcrow">¶</a></p>
 </section>
@@ -2638,16 +2638,18 @@ HTTP Frame {
 <div id="FlowControlPerformance">
 <section id="section-5.2.3">
           <h4 id="name-flow-control-performance">
-<a href="#section-5.2.3" class="section-number selfRef">5.2.3. </a><a href="#name-flow-control-performance" class="section-name selfRef">Flow Control Performance</a>
+<a href="#section-5.2.3" class="section-number selfRef">5.2.3. </a><a href="#name-flow-control-performance" class="section-name selfRef">Flow-Control Performance</a>
           </h4>
 <p id="section-5.2.3-1">
-            If an endpoint cannot ensure that its peer always has available flow control window space that is greater than the peer's
-            bandwidth-delay product on this connection, its receive throughput will be limited by HTTP/2 flow control. This will result
-            in degraded performance.<a href="#section-5.2.3-1" class="pilcrow">¶</a></p>
+            If an endpoint cannot ensure that its peer always has available flow control window
+            space that is greater than the peer's bandwidth * delay product on this connection, its
+            receive throughput will be limited by HTTP/2 flow control. This will result in degraded
+            performance.<a href="#section-5.2.3-1" class="pilcrow">¶</a></p>
 <p id="section-5.2.3-2">
-            Sending timely <a href="#WINDOW_UPDATE" class="xref">WINDOW_UPDATE</a> frames can improve performance. Endpoints will
-            want to balance the need to improve receive throughput with the need to manage resource exhaustion risks, and should take
-            careful note of <a href="#dos" class="xref">Section 10.5</a> in defining their strategy to manage window sizes.<a href="#section-5.2.3-2" class="pilcrow">¶</a></p>
+            Sending timely <a href="#WINDOW_UPDATE" class="xref">WINDOW_UPDATE</a> frames
+            can improve performance. Endpoints will want to balance the need to improve receive
+            throughput with the need to manage resource exhaustion risks, and should take careful
+            note of <a href="#dos" class="xref">Section 10.5</a> in defining their strategy to manage window sizes.<a href="#section-5.2.3-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
