@@ -2440,8 +2440,8 @@ HTTP Frame {
               peer might have sent or enqueued for sending these frames before processing the <a href="#RST_STREAM" class="xref">RST_STREAM</a> frame. An endpoint MUST minimally
               process and then discard any frames it receives in this state.  This means updating
               header compression state for <a href="#HEADERS" class="xref">HEADERS</a> and
-              <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a> frames.  <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a> frames also cause the promised
-              stream to become "reserved", even when the <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a> frame is received on a closed stream. Additionally, the
+              <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a> frames.  Receiving a <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a> frame also causes the promised
+              stream to become "reserved (remote)", even when the <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a> frame is received on a closed stream. Additionally, the
               content of <a href="#DATA" class="xref">DATA</a> frames count toward the
               connection flow-control window.<a href="#section-5.1-7.14.5" class="pilcrow">¶</a></p>
 <p id="section-5.1-7.14.6">
@@ -2492,8 +2492,8 @@ HTTP Frame {
 <p id="section-5.1.1-3">
             A <a href="#HEADERS" class="xref">HEADERS</a> frame will transition the client-initiated stream identified
             by the stream identifier in the frame header from "idle" to "open". A <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a>
-            frame will transition the server-initiated stream identified by the "Promised Stream ID" field in the frame payload from "idle" to "reserved". When
-            a stream transitions out of the "idle" state, all "idle" streams that might have been opened by the peer with a lower-valued
+            frame will transition the server-initiated stream identified by the Promised Stream ID field in the frame payload from "idle" to "reserved (local)" or "reserved (remote)". When
+            a stream transitions out of the "idle" state, all streams in the "idle" state that might have been opened by the peer with a lower-valued
             stream identifier immediately transition to "closed". That is, an endpoint may skip a stream identifier, with the
             effect being that the skipped stream is immediately closed.<a href="#section-5.1.1-3" class="pilcrow">¶</a></p>
 <p id="section-5.1.1-4">
@@ -2587,7 +2587,7 @@ HTTP Frame {
 </li>
             <li id="section-5.2.1-2.6">
               An endpoint can choose to disable its own flow control, but an endpoint cannot ignore
-              flow control signals from its peer.<a href="#section-5.2.1-2.6" class="pilcrow">¶</a>
+              flow-control signals from its peer.<a href="#section-5.2.1-2.6" class="pilcrow">¶</a>
 </li>
             <li id="section-5.2.1-2.7">
                 HTTP/2 defines only the format and semantics of the <a href="#WINDOW_UPDATE" class="xref">WINDOW_UPDATE</a>
@@ -2641,7 +2641,7 @@ HTTP Frame {
 <a href="#section-5.2.3" class="section-number selfRef">5.2.3. </a><a href="#name-flow-control-performance" class="section-name selfRef">Flow-Control Performance</a>
           </h4>
 <p id="section-5.2.3-1">
-            If an endpoint cannot ensure that its peer always has available flow control window
+            If an endpoint cannot ensure that its peer always has available flow-control window
             space that is greater than the peer's bandwidth * delay product on this connection, its
             receive throughput will be limited by HTTP/2 flow control. This will result in degraded
             performance.<a href="#section-5.2.3-1" class="pilcrow">¶</a></p>
@@ -2969,8 +2969,8 @@ DATA Frame {
             flag appears on a HEADERS frame in that case; see <a href="#HttpFraming" class="xref">Section 8.1</a>.<a href="#section-6.1-8.1" class="pilcrow">¶</a></p>
 </aside>
 <p id="section-6.1-9">
-          DATA frames MUST be associated with a stream. If a DATA frame is received whose stream
-          identifier field is 0x00, the recipient MUST respond with a <span><a href="#ConnectionErrorHandler" class="xref">connection error</a> (<a href="#ConnectionErrorHandler" class="xref">Section 5.4.1</a>)</span> of type
+          DATA frames MUST be associated with a stream. If a DATA frame is received whose Stream
+          Identifier field is 0x00, the recipient MUST respond with a <span><a href="#ConnectionErrorHandler" class="xref">connection error</a> (<a href="#ConnectionErrorHandler" class="xref">Section 5.4.1</a>)</span> of type
           <a href="#PROTOCOL_ERROR" class="xref">PROTOCOL_ERROR</a>.<a href="#section-6.1-9" class="pilcrow">¶</a></p>
 <p id="section-6.1-10">
           DATA frames are subject to flow control and can only be sent when a stream is in the
@@ -3121,7 +3121,7 @@ HEADERS Frame {
           a <span><a href="#CONTINUATION" class="xref">CONTINUATION frame</a> (<a href="#CONTINUATION" class="xref">Section 6.10</a>)</span>.<a href="#section-6.2-7" class="pilcrow">¶</a></p>
 <p id="section-6.2-8">
           HEADERS frames MUST be associated with a stream. If a HEADERS frame is received whose
-          stream identifier field is 0x00, the recipient MUST respond with a <span><a href="#ConnectionErrorHandler" class="xref">connection error</a> (<a href="#ConnectionErrorHandler" class="xref">Section 5.4.1</a>)</span> of type
+          Stream Identifier field is 0x00, the recipient MUST respond with a <span><a href="#ConnectionErrorHandler" class="xref">connection error</a> (<a href="#ConnectionErrorHandler" class="xref">Section 5.4.1</a>)</span> of type
           <a href="#PROTOCOL_ERROR" class="xref">PROTOCOL_ERROR</a>.<a href="#section-6.2-8" class="pilcrow">¶</a></p>
 <p id="section-6.2-9">
           The HEADERS frame changes the connection state as described in <a href="#FieldBlock" class="xref">Section 4.3</a>.<a href="#section-6.2-9" class="pilcrow">¶</a></p>
@@ -3299,7 +3299,7 @@ RST_STREAM Frame {
 <p id="section-6.5-7">
           SETTINGS frames always apply to a connection, never a single stream.  The stream
           identifier for a SETTINGS frame MUST be zero (0x00). If an endpoint receives a SETTINGS
-          frame whose stream identifier field is anything other than 0x00, the endpoint MUST respond
+          frame whose Stream Identifier field is anything other than 0x00, the endpoint MUST respond
           with a <span><a href="#ConnectionErrorHandler" class="xref">connection error</a> (<a href="#ConnectionErrorHandler" class="xref">Section 5.4.1</a>)</span> of type
           <a href="#PROTOCOL_ERROR" class="xref">PROTOCOL_ERROR</a>.<a href="#section-6.5-7" class="pilcrow">¶</a></p>
 <p id="section-6.5-8">
@@ -3597,7 +3597,7 @@ PUSH_PROMISE Frame {
 <p id="section-6.6-7">
           PUSH_PROMISE frames MUST only be sent on a peer-initiated stream that is in either the
           "open" or "half-closed (remote)" state. The stream identifier of a PUSH_PROMISE frame
-          indicates the stream it is associated with.  If the stream identifier field specifies the
+          indicates the stream it is associated with.  If the Stream Identifier field specifies the
           value 0x00, a recipient MUST respond with a <span><a href="#ConnectionErrorHandler" class="xref">connection error</a> (<a href="#ConnectionErrorHandler" class="xref">Section 5.4.1</a>)</span> of type
           <a href="#PROTOCOL_ERROR" class="xref">PROTOCOL_ERROR</a>.<a href="#section-6.6-7" class="pilcrow">¶</a></p>
 <p id="section-6.6-8">
@@ -3615,7 +3615,7 @@ PUSH_PROMISE Frame {
 <p id="section-6.6-11">
           A PUSH_PROMISE frame modifies the connection state in two ways.  First, the inclusion of a <span><a href="#FieldBlock" class="xref">field block</a> (<a href="#FieldBlock" class="xref">Section 4.3</a>)</span> potentially modifies the state maintained for
           field section compression.  Second, PUSH_PROMISE also reserves a stream for later use, causing the
-          promised stream to enter the "reserved" state.  A sender MUST NOT send a PUSH_PROMISE on a
+          promised stream to enter the "reserved (local)" or "reserved (remote)" state.  A sender MUST NOT send a PUSH_PROMISE on a
           stream unless that stream is either "open" or "half-closed (remote)"; the sender MUST
           ensure that the promised stream is a valid choice for a <span><a href="#StreamIdentifiers" class="xref">new stream identifier</a> (<a href="#StreamIdentifiers" class="xref">Section 5.1.1</a>)</span> (that is, the promised stream MUST
           be in the "idle" state).<a href="#section-6.6-11" class="pilcrow">¶</a></p>
@@ -3696,7 +3696,7 @@ PING Frame {
 </dl>
 <p id="section-6.7-8">
           PING frames are not associated with any individual stream. If a PING frame is received
-          with a stream identifier field value other than 0x00, the recipient MUST respond with a
+          with a Stream Identifier field value other than 0x00, the recipient MUST respond with a
           <span><a href="#ConnectionErrorHandler" class="xref">connection error</a> (<a href="#ConnectionErrorHandler" class="xref">Section 5.4.1</a>)</span> of type
           <a href="#PROTOCOL_ERROR" class="xref">PROTOCOL_ERROR</a>.<a href="#section-6.7-8" class="pilcrow">¶</a></p>
 <p id="section-6.7-9">
@@ -3902,8 +3902,8 @@ WINDOW_UPDATE Frame {
           treated as a <span><a href="#ConnectionErrorHandler" class="xref">connection error</a> (<a href="#ConnectionErrorHandler" class="xref">Section 5.4.1</a>)</span>.<a href="#section-6.9-9" class="pilcrow">¶</a></p>
 <p id="section-6.9-10">
           WINDOW_UPDATE can be sent by a peer that has sent a frame with the END_STREAM flag set.
-          This means that a receiver could receive a WINDOW_UPDATE frame on a "half-closed (remote)"
-          or "closed" stream.  A receiver MUST NOT treat this as an error (see <a href="#StreamStates" class="xref">Section 5.1</a>).<a href="#section-6.9-10" class="pilcrow">¶</a></p>
+          This means that a receiver could receive a WINDOW_UPDATE frame on a stream in the "half-closed (remote)"
+          or "closed" state.  A receiver MUST NOT treat this as an error (see <a href="#StreamStates" class="xref">Section 5.1</a>).<a href="#section-6.9-10" class="pilcrow">¶</a></p>
 <p id="section-6.9-11">
           A receiver that receives a flow-controlled frame MUST always account for its contribution
           against the connection flow-control window, unless the receiver treats this as a <span><a href="#ConnectionErrorHandler" class="xref">connection error</a> (<a href="#ConnectionErrorHandler" class="xref">Section 5.4.1</a>)</span>.  This is necessary even if the
@@ -4075,7 +4075,7 @@ CONTINUATION Frame {
           The CONTINUATION frame changes the connection state as defined in <a href="#FieldBlock" class="xref">Section 4.3</a>.<a href="#section-6.10-6" class="pilcrow">¶</a></p>
 <p id="section-6.10-7">
           CONTINUATION frames MUST be associated with a stream. If a CONTINUATION frame is received
-          whose stream identifier field is 0x00, the recipient MUST respond with a <span><a href="#ConnectionErrorHandler" class="xref">connection error</a> (<a href="#ConnectionErrorHandler" class="xref">Section 5.4.1</a>)</span> of type PROTOCOL_ERROR.<a href="#section-6.10-7" class="pilcrow">¶</a></p>
+          with a Stream Identifier field of 0x00, the recipient MUST respond with a <span><a href="#ConnectionErrorHandler" class="xref">connection error</a> (<a href="#ConnectionErrorHandler" class="xref">Section 5.4.1</a>)</span> of type PROTOCOL_ERROR.<a href="#section-6.10-7" class="pilcrow">¶</a></p>
 <p id="section-6.10-8">
           A CONTINUATION frame MUST be preceded by a <a href="#HEADERS" class="xref">HEADERS</a>,
           <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a> or CONTINUATION frame without the END_HEADERS flag set.  A
@@ -4352,7 +4352,7 @@ CONTINUATION Frame {
 <p id="section-8.2.1-2">
             Failure to validate fields can be exploited for request smuggling attacks.  In
             particular, unvalidated fields might enable attacks when messages are forwarded using
-            <span><a href="#HTTP11" class="xref">HTTP 1.1</a> [<a href="#HTTP11" class="xref">HTTP/1.1</a>]</span>, where characters such as CR, LF, and COLON are
+            <span><a href="#HTTP11" class="xref">HTTP/1.1</a> [<a href="#HTTP11" class="xref">HTTP/1.1</a>]</span>, where characters such as CR, LF, and COLON are
             used as delimiters.  Implementations MUST perform the following minimal validation of
             field names and values:<a href="#section-8.2.1-2" class="pilcrow">¶</a></p>
 <ul class="normal">
@@ -4738,7 +4738,7 @@ cookie: e=f
             A client can use the <a href="#SETTINGS_MAX_CONCURRENT_STREAMS" class="xref">SETTINGS_MAX_CONCURRENT_STREAMS</a> setting to limit the number of
             responses that can be concurrently pushed by a server. Advertising a <a href="#SETTINGS_MAX_CONCURRENT_STREAMS" class="xref">SETTINGS_MAX_CONCURRENT_STREAMS</a> value of zero prevents the server
             from opening the streams necessary to push responses. However, this does not prevent the
-            server from reserving streams using <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a> frames, because "reserved" streams do not count toward
+            server from reserving streams using <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a> frames, because reserved streams do not count toward
             the concurrent stream limit. Clients that do not wish to receive pushed resources need
             to reset any unwanted reserved streams or set <a href="#SETTINGS_ENABLE_PUSH" class="xref">SETTINGS_ENABLE_PUSH</a> to 0.<a href="#section-8.4.2-4" class="pilcrow">¶</a></p>
 <p id="section-8.4.2-5">
@@ -5374,7 +5374,7 @@ cookie: e=f
             </ul>
 </li>
           <li class="normal" id="section-10.5-4.2">
-            An attacker can provide large amounts of flow control credit at the HTTP/2 layer, but
+            An attacker can provide large amounts of flow-control credit at the HTTP/2 layer, but
             withhold credit at the TCP layer, preventing frames from being sent.  An endpoint that
             constructs and remembers frames for sending without considering TCP limits might be
             subject to resource exhaustion.<a href="#section-10.5-4.2" class="pilcrow">¶</a>
@@ -5562,7 +5562,7 @@ cookie: e=f
       </h2>
 <p id="section-11-1">
         This revision of the document marks the <code>HTTP2-Settings</code> header field and the
-        <code>h2c</code> Upgrade token, both defined in <span>[<a href="#RFC7540" class="xref">RFC7540</a>]</span>, as obsolete.<a href="#section-11-1" class="pilcrow">¶</a></p>
+        <code>h2c</code> upgrade token, both defined in <span>[<a href="#RFC7540" class="xref">RFC7540</a>]</span>, as obsolete.<a href="#section-11-1" class="pilcrow">¶</a></p>
 <p id="section-11-2">
         <span><a href="https://rfc-editor.org/rfc/rfc7540#section-11" class="relref">Section 11</a> of [<a href="#RFC7540" class="xref">RFC7540</a>]</span> registered the <code>h2</code> and <code>h2c</code> ALPN
         identifiers along with the <code>PRI</code> HTTP method.  RFC 7540 also established a registry

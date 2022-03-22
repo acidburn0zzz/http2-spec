@@ -878,10 +878,11 @@ Table of Contents
       frames before processing the RST_STREAM frame.  An endpoint MUST
       minimally process and then discard any frames it receives in this
       state.  This means updating header compression state for HEADERS
-      and PUSH_PROMISE frames.  PUSH_PROMISE frames also cause the
-      promised stream to become "reserved", even when the PUSH_PROMISE
-      frame is received on a closed stream.  Additionally, the content
-      of DATA frames count toward the connection flow-control window.
+      and PUSH_PROMISE frames.  Receiving a PUSH_PROMISE frame also
+      causes the promised stream to become "reserved (remote)", even
+      when the PUSH_PROMISE frame is received on a closed stream.
+      Additionally, the content of DATA frames count toward the
+      connection flow-control window.
 
       An endpoint can perform this minimal processing for all streams
       that are in the "closed" state.  Endpoints MAY use other signals
@@ -932,12 +933,13 @@ Table of Contents
    A HEADERS frame will transition the client-initiated stream
    identified by the stream identifier in the frame header from "idle"
    to "open".  A PUSH_PROMISE frame will transition the server-initiated
-   stream identified by the "Promised Stream ID" field in the frame
-   payload from "idle" to "reserved".  When a stream transitions out of
-   the "idle" state, all "idle" streams that might have been opened by
-   the peer with a lower-valued stream identifier immediately transition
-   to "closed".  That is, an endpoint may skip a stream identifier, with
-   the effect being that the skipped stream is immediately closed.
+   stream identified by the Promised Stream ID field in the frame
+   payload from "idle" to "reserved (local)" or "reserved (remote)".
+   When a stream transitions out of the "idle" state, all streams in the
+   "idle" state that might have been opened by the peer with a lower-
+   valued stream identifier immediately transition to "closed".  That
+   is, an endpoint may skip a stream identifier, with the effect being
+   that the skipped stream is immediately closed.
 
    Stream identifiers cannot be reused.  Long-lived connections can
    result in an endpoint exhausting the available range of stream
@@ -1021,7 +1023,7 @@ Table of Contents
        control.
 
    6.  An endpoint can choose to disable its own flow control, but an
-       endpoint cannot ignore flow control signals from its peer.
+       endpoint cannot ignore flow-control signals from its peer.
 
    7.  HTTP/2 defines only the format and semantics of the WINDOW_UPDATE
        frame (Section 6.9).  This document does not stipulate how a
@@ -1068,7 +1070,7 @@ Table of Contents
 
 5.2.3.  Flow-Control Performance
 
-   If an endpoint cannot ensure that its peer always has available flow
+   If an endpoint cannot ensure that its peer always has available flow-
    control window space that is greater than the peer's bandwidth *
    delay product on this connection, its receive throughput will be
    limited by HTTP/2 flow control.  This will result in degraded
@@ -1359,7 +1361,7 @@ Table of Contents
       |  Section 8.1.
 
    DATA frames MUST be associated with a stream.  If a DATA frame is
-   received whose stream identifier field is 0x00, the recipient MUST
+   received whose Stream Identifier field is 0x00, the recipient MUST
    respond with a connection error (Section 5.4.1) of type
    PROTOCOL_ERROR.
 
@@ -1469,7 +1471,7 @@ Table of Contents
    frame is continued in a CONTINUATION frame (Section 6.10).
 
    HEADERS frames MUST be associated with a stream.  If a HEADERS frame
-   is received whose stream identifier field is 0x00, the recipient MUST
+   is received whose Stream Identifier field is 0x00, the recipient MUST
    respond with a connection error (Section 5.4.1) of type
    PROTOCOL_ERROR.
 
@@ -1620,7 +1622,7 @@ Table of Contents
 
    SETTINGS frames always apply to a connection, never a single stream.
    The stream identifier for a SETTINGS frame MUST be zero (0x00).  If
-   an endpoint receives a SETTINGS frame whose stream identifier field
+   an endpoint receives a SETTINGS frame whose Stream Identifier field
    is anything other than 0x00, the endpoint MUST respond with a
    connection error (Section 5.4.1) of type PROTOCOL_ERROR.
 
@@ -1838,7 +1840,7 @@ Table of Contents
    PUSH_PROMISE frames MUST only be sent on a peer-initiated stream that
    is in either the "open" or "half-closed (remote)" state.  The stream
    identifier of a PUSH_PROMISE frame indicates the stream it is
-   associated with.  If the stream identifier field specifies the value
+   associated with.  If the Stream Identifier field specifies the value
    0x00, a recipient MUST respond with a connection error
    (Section 5.4.1) of type PROTOCOL_ERROR.
 
@@ -1860,11 +1862,12 @@ Table of Contents
    First, the inclusion of a field block (Section 4.3) potentially
    modifies the state maintained for field section compression.  Second,
    PUSH_PROMISE also reserves a stream for later use, causing the
-   promised stream to enter the "reserved" state.  A sender MUST NOT
-   send a PUSH_PROMISE on a stream unless that stream is either "open"
-   or "half-closed (remote)"; the sender MUST ensure that the promised
-   stream is a valid choice for a new stream identifier (Section 5.1.1)
-   (that is, the promised stream MUST be in the "idle" state).
+   promised stream to enter the "reserved (local)" or "reserved
+   (remote)" state.  A sender MUST NOT send a PUSH_PROMISE on a stream
+   unless that stream is either "open" or "half-closed (remote)"; the
+   sender MUST ensure that the promised stream is a valid choice for a
+   new stream identifier (Section 5.1.1) (that is, the promised stream
+   MUST be in the "idle" state).
 
    Since PUSH_PROMISE reserves a stream, ignoring a PUSH_PROMISE frame
    causes the stream state to become indeterminate.  A receiver MUST
@@ -1931,7 +1934,7 @@ Table of Contents
       this flag.
 
    PING frames are not associated with any individual stream.  If a PING
-   frame is received with a stream identifier field value other than
+   frame is received with a Stream Identifier field value other than
    0x00, the recipient MUST respond with a connection error
    (Section 5.4.1) of type PROTOCOL_ERROR.
 
@@ -2140,8 +2143,9 @@ Table of Contents
 
    WINDOW_UPDATE can be sent by a peer that has sent a frame with the
    END_STREAM flag set.  This means that a receiver could receive a
-   WINDOW_UPDATE frame on a "half-closed (remote)" or "closed" stream.
-   A receiver MUST NOT treat this as an error (see Section 5.1).
+   WINDOW_UPDATE frame on a stream in the "half-closed (remote)" or
+   "closed" state.  A receiver MUST NOT treat this as an error (see
+   Section 5.1).
 
    A receiver that receives a flow-controlled frame MUST always account
    for its contribution against the connection flow-control window,
@@ -2302,9 +2306,9 @@ Table of Contents
    Section 4.3.
 
    CONTINUATION frames MUST be associated with a stream.  If a
-   CONTINUATION frame is received whose stream identifier field is 0x00,
-   the recipient MUST respond with a connection error (Section 5.4.1) of
-   type PROTOCOL_ERROR.
+   CONTINUATION frame is received with a Stream Identifier field of
+   0x00, the recipient MUST respond with a connection error
+   (Section 5.4.1) of type PROTOCOL_ERROR.
 
    A CONTINUATION frame MUST be preceded by a HEADERS, PUSH_PROMISE or
    CONTINUATION frame without the END_HEADERS flag set.  A recipient
@@ -2511,7 +2515,7 @@ Table of Contents
 
    Failure to validate fields can be exploited for request smuggling
    attacks.  In particular, unvalidated fields might enable attacks when
-   messages are forwarded using HTTP 1.1 [HTTP/1.1], where characters
+   messages are forwarded using HTTP/1.1 [HTTP/1.1], where characters
    such as CR, LF, and COLON are used as delimiters.  Implementations
    MUST perform the following minimal validation of field names and
    values:
@@ -2880,7 +2884,7 @@ Table of Contents
    Advertising a SETTINGS_MAX_CONCURRENT_STREAMS value of zero prevents
    the server from opening the streams necessary to push responses.
    However, this does not prevent the server from reserving streams
-   using PUSH_PROMISE frames, because "reserved" streams do not count
+   using PUSH_PROMISE frames, because reserved streams do not count
    toward the concurrent stream limit.  Clients that do not wish to
    receive pushed resources need to reset any unwanted reserved streams
    or set SETTINGS_ENABLE_PUSH to 0.
@@ -3449,7 +3453,7 @@ Table of Contents
       -  An invalid request (or server push) can cause a peer to send
          RST_STREAM frames in response.
 
-   *  An attacker can provide large amounts of flow control credit at
+   *  An attacker can provide large amounts of flow-control credit at
       the HTTP/2 layer, but withhold credit at the TCP layer, preventing
       frames from being sent.  An endpoint that constructs and remembers
       frames for sending without considering TCP limits might be subject
@@ -3622,7 +3626,7 @@ Table of Contents
 11.  IANA Considerations
 
    This revision of the document marks the HTTP2-Settings header field
-   and the h2c Upgrade token, both defined in [RFC7540], as obsolete.
+   and the h2c upgrade token, both defined in [RFC7540], as obsolete.
 
    Section 11 of [RFC7540] registered the h2 and h2c ALPN identifiers
    along with the PRI HTTP method.  RFC 7540 also established a registry
