@@ -1127,7 +1127,7 @@ Table of Contents
    Signaling priority information is necessary to attain good
    performance in many cases.  Where signaling priority information is
    important, endpoints are encouraged to use an alternative scheme,
-   such as [I-D.ietf-httpbis-priority].
+   such as [HTTP-PRIORITY].
 
    Though the priority signaling from RFC 7540 was not widely adopted,
    the information it provides can still be useful in the absence of
@@ -3780,18 +3780,18 @@ Table of Contents
               Terminology", BCP 219, RFC 8499, DOI 10.17487/RFC8499,
               January 2019, <https://www.rfc-editor.org/rfc/rfc8499>.
 
-   [HTTP/1.1] Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
-              Ed., "HTTP/1.1", Work in Progress, Internet-Draft, draft-
-              ietf-httpbis-messaging-18, 18 August 2021,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-
-              messaging-18>.
-
-   [I-D.ietf-httpbis-priority]
+   [HTTP-PRIORITY]
               Oku, K. and L. Pardue, "Extensible Prioritization Scheme
               for HTTP", Work in Progress, Internet-Draft, draft-ietf-
               httpbis-priority-12, 17 January 2022,
               <https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-
               priority-12>.
+
+   [HTTP/1.1] Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
+              Ed., "HTTP/1.1", Work in Progress, Internet-Draft, draft-
+              ietf-httpbis-messaging-18, 18 August 2021,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-
+              messaging-18>.
 
    [NFLX-2019-002]
               Netflix, "HTTP/2 Denial of Service Advisory", 13 August
@@ -4152,8 +4152,7 @@ Appendix B.  Changes from RFC 7540
       governing when PRIORITY frames can be sent and received, but the
       semantics of these fields are only described in RFC 7540.  The
       priority signaling scheme from RFC 7540 was not successful.  Using
-      the simpler successor signaling [I-D.ietf-httpbis-priority] is
-      recommended.
+      the simpler successor signaling [HTTP-PRIORITY] is recommended.
 
    *  The HTTP/1.1 Upgrade mechanism is deprecated and no longer
       specified in this document.  It was never widely deployed, with
