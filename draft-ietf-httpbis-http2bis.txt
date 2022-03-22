@@ -6,7 +6,7 @@ HTTPbis                                                  M. Thomson, Ed.
 Internet-Draft                                                   Mozilla
 Obsoletes: 7540, 8740 (if approved)                     C. Benfield, Ed.
 Intended status: Standards Track                              Apple Inc.
-Expires: 10 September 2022                                  9 March 2022
+Expires: 23 September 2022                                 22 March 2022
 
 
                                  HTTP/2
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 10 September 2022.
+   This Internet-Draft will expire on 23 September 2022.
 
 Copyright Notice
 
@@ -273,8 +273,8 @@ Table of Contents
 
    While some of the frame and stream layer concepts are isolated from
    HTTP, this specification does not define a completely generic frame
-   layer.  The frame and stream layers are tailored to the needs of the
-   HTTP protocol.
+   layer.  The frame and stream layers are tailored to the needs of
+   HTTP.
 
 2.2.  Conventions and Terminology
 
@@ -3132,7 +3132,7 @@ Table of Contents
 
 9.  HTTP/2 Connections
 
-   This section outlines attributes of the HTTP protocol that improve
+   This section outlines attributes of HTTP that improve
    interoperability, reduce exposure to known security vulnerabilities,
    or reduce the potential for implementation variation.
 
