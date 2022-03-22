@@ -1813,7 +1813,7 @@ Table of Contents
       sender (see "new stream identifier" in Section 5.1.1).
 
    Field Block Fragment:  A field block fragment (Section 4.3)
-      containing request control data and header section.
+      containing the request control data and a header section.
 
    Padding:  Padding octets that contain no application semantic value.
       Padding octets MUST be set to zero when sending.  A receiver is
