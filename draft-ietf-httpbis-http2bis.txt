@@ -3047,7 +3047,7 @@ Table of Contents
 8.8.3.  Complex Request
 
    An HTTP POST request that includes control data and a request header
-   and message content is transmitted as one HEADERS frame, followed by
+   with message content is transmitted as one HEADERS frame, followed by
    zero or more CONTINUATION frames containing the request header,
    followed by one or more DATA frames, with the last CONTINUATION (or
    HEADERS) frame having the END_HEADERS flag set and the final DATA
@@ -3077,7 +3077,7 @@ Table of Contents
 
 8.8.4.  Response with Body
 
-   A response that includes control data and a response header and
+   A response that includes control data and a response header with
    message content is transmitted as a HEADERS frame, followed by zero
    or more CONTINUATION frames, followed by one or more DATA frames,
    with the last DATA frame in the sequence having the END_STREAM flag
