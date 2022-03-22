@@ -4524,7 +4524,7 @@ cookie: e=f
                 Clients MUST NOT generate a request with a <code>Host</code> header field that differs
                 from the "<code>:authority</code>" pseudo-header field.  A
                 server SHOULD treat a request as malformed if it contains a <code>Host</code> header
-                field that identifies a different entity to the "<code>:authority</code>" pseudo-header
+                field that identifies an entity that differs from the entity in the "<code>:authority</code>" pseudo-header
                 field.  The values of fields need to be normalized to compare them (see <span><a href="https://rfc-editor.org/rfc/rfc3986#section-6.2" class="relref">Section 6.2</a> of [<a href="#RFC3986" class="xref">RFC3986</a>]</span>).  An origin server can apply any normalization
                 method, whereas other servers MUST perform scheme-based normalization (see <span><a href="https://rfc-editor.org/rfc/rfc3986#section-6.2.3" class="relref">Section 6.2.3</a> of [<a href="#RFC3986" class="xref">RFC3986</a>]</span>) of the two fields.<a href="#section-8.3.1-2.3.3" class="pilcrow">¶</a></p>
 <p id="section-8.3.1-2.3.4">
