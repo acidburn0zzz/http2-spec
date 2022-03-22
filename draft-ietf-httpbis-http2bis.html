@@ -2440,8 +2440,8 @@ HTTP Frame {
               peer might have sent or enqueued for sending these frames before processing the <a href="#RST_STREAM" class="xref">RST_STREAM</a> frame. An endpoint MUST minimally
               process and then discard any frames it receives in this state.  This means updating
               header compression state for <a href="#HEADERS" class="xref">HEADERS</a> and
-              <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a> frames; <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a> frames also cause the promised
-              stream to become "reserved", even when the <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a> frame is received on a closed stream; and, the
+              <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a> frames.  <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a> frames also cause the promised
+              stream to become "reserved", even when the <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a> frame is received on a closed stream. Additionally, the
               content of <a href="#DATA" class="xref">DATA</a> frames count toward the
               connection flow-control window.<a href="#section-5.1-7.14.5" class="pilcrow">¶</a></p>
 <p id="section-5.1-7.14.6">

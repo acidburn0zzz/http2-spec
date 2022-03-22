@@ -878,10 +878,10 @@ Table of Contents
       frames before processing the RST_STREAM frame.  An endpoint MUST
       minimally process and then discard any frames it receives in this
       state.  This means updating header compression state for HEADERS
-      and PUSH_PROMISE frames; PUSH_PROMISE frames also cause the
+      and PUSH_PROMISE frames.  PUSH_PROMISE frames also cause the
       promised stream to become "reserved", even when the PUSH_PROMISE
-      frame is received on a closed stream; and, the content of DATA
-      frames count toward the connection flow-control window.
+      frame is received on a closed stream.  Additionally, the content
+      of DATA frames count toward the connection flow-control window.
 
       An endpoint can perform this minimal processing for all streams
       that are in the "closed" state.  Endpoints MAY use other signals
