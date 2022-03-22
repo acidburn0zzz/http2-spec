@@ -4152,7 +4152,7 @@ Appendix B.  Changes from RFC 7540
       governing when PRIORITY frames can be sent and received, but the
       semantics of these fields are only described in RFC 7540.  The
       priority signaling scheme from RFC 7540 was not successful.  Using
-      the simpler successor signaling [HTTP-PRIORITY] is recommended.
+      the simpler signaling in [HTTP-PRIORITY] is recommended.
 
    *  The HTTP/1.1 Upgrade mechanism is deprecated and no longer
       specified in this document.  It was never widely deployed, with
