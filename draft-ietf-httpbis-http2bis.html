@@ -4499,44 +4499,44 @@ cookie: e=f
 <ul class="normal">
 <li class="normal" id="section-8.3.1-2.1">
               <p id="section-8.3.1-2.1.1">
-                  The <code>:method</code> pseudo-header field includes the HTTP
+                  The "<code>:method</code>" pseudo-header field includes the HTTP
                   method (<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-9" class="relref">Section 9</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>).<a href="#section-8.3.1-2.1.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-8.3.1-2.2">
               <p id="section-8.3.1-2.2.1">
-                The <code>:scheme</code> pseudo-header field includes the scheme portion of the request
+                The "<code>:scheme</code>" pseudo-header field includes the scheme portion of the request
                 target. The scheme is taken from the target URI (<span><a href="https://rfc-editor.org/rfc/rfc3986#section-3.1" class="relref">Section 3.1</a> of [<a href="#RFC3986" class="xref">RFC3986</a>]</span>) when generating a request directly, or from the scheme of a
                 translated request (for example, see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-messaging-18#section-3.3" class="relref">Section 3.3</a> of [<a href="#HTTP11" class="xref">HTTP/1.1</a>]</span>). Scheme
                 is omitted for <span><a href="#CONNECT" class="xref">CONNECT requests</a> (<a href="#CONNECT" class="xref">Section 8.5</a>)</span>.<a href="#section-8.3.1-2.2.1" class="pilcrow">¶</a></p>
-<p id="section-8.3.1-2.2.2"><code>:scheme</code> is not restricted to <code>http</code> and <code>https</code> schemed
+<p id="section-8.3.1-2.2.2">"<code>:scheme</code>" is not restricted to <code>http</code> and <code>https</code> schemed
                 URIs.  A proxy or gateway can translate requests for non-HTTP schemes, enabling
                 the use of HTTP to interact with non-HTTP services.<a href="#section-8.3.1-2.2.2" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-8.3.1-2.3">
               <p id="section-8.3.1-2.3.1">
-                The <code>:authority</code> pseudo-header field conveys the authority portion (<span><a href="https://rfc-editor.org/rfc/rfc3986#section-3.2" class="relref">Section 3.2</a> of [<a href="#RFC3986" class="xref">RFC3986</a>]</span>) of the target URI (<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-7.1" class="relref">Section 7.1</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>). The recipient of a HTTP/2 request MUST NOT use the <code>Host</code>
-                header field to determine the target URI if <code>:authority</code> is present.<a href="#section-8.3.1-2.3.1" class="pilcrow">¶</a></p>
+                The "<code>:authority</code>" pseudo-header field conveys the authority portion (<span><a href="https://rfc-editor.org/rfc/rfc3986#section-3.2" class="relref">Section 3.2</a> of [<a href="#RFC3986" class="xref">RFC3986</a>]</span>) of the target URI (<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-7.1" class="relref">Section 7.1</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>). The recipient of a HTTP/2 request MUST NOT use the <code>Host</code>
+                header field to determine the target URI if "<code>:authority</code>" is present.<a href="#section-8.3.1-2.3.1" class="pilcrow">¶</a></p>
 <p id="section-8.3.1-2.3.2">
-                Clients that generate HTTP/2 requests directly MUST use the <code>:authority</code>
+                Clients that generate HTTP/2 requests directly MUST use the "<code>:authority</code>"
                 pseudo-header field to convey authority information, unless there is no authority
-                information to convey (in which case it MUST NOT generate :authority).<a href="#section-8.3.1-2.3.2" class="pilcrow">¶</a></p>
+                information to convey (in which case it MUST NOT generate "<code>:authority</code>").<a href="#section-8.3.1-2.3.2" class="pilcrow">¶</a></p>
 <p id="section-8.3.1-2.3.3">
                 Clients MUST NOT generate a request with a <code>Host</code> header field that differs
-                from the <code>:authority</code> pseudo-header field.  A
+                from the "<code>:authority</code>" pseudo-header field.  A
                 server SHOULD treat a request as malformed if it contains a <code>Host</code> header
-                field that identifies a different entity to the <code>:authority</code> pseudo-header
+                field that identifies a different entity to the "<code>:authority</code>" pseudo-header
                 field.  The values of fields need to be normalized to compare them (see <span><a href="https://rfc-editor.org/rfc/rfc3986#section-6.2" class="relref">Section 6.2</a> of [<a href="#RFC3986" class="xref">RFC3986</a>]</span>).  An origin server can apply any normalization
                 method, whereas other servers MUST perform scheme-based normalization (see <span><a href="https://rfc-editor.org/rfc/rfc3986#section-6.2.3" class="relref">Section 6.2.3</a> of [<a href="#RFC3986" class="xref">RFC3986</a>]</span>) of the two fields.<a href="#section-8.3.1-2.3.3" class="pilcrow">¶</a></p>
 <p id="section-8.3.1-2.3.4">
                 An intermediary that forwards a request over HTTP/2 MUST construct an
-                <code>:authority</code> pseudo-header field using the authority information from the
+                "<code>:authority</code>" pseudo-header field using the authority information from the
                 control data of the original request, unless the original request's target URI
                 does not contain authority information (in which case it MUST NOT generate
-                <code>:authority</code>). Note that the <code>Host</code> header field is not the sole
+                "<code>:authority</code>"). Note that the <code>Host</code> header field is not the sole
                 source of this information; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-7.2" class="relref">Section 7.2</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>.<a href="#section-8.3.1-2.3.4" class="pilcrow">¶</a></p>
 <p id="section-8.3.1-2.3.5">
                 An intermediary that needs to generate a <code>Host</code> header field (which might be
-                necessary to construct an HTTP/1.1 request) MUST use the value from the <code>:authority</code>
+                necessary to construct an HTTP/1.1 request) MUST use the value from the "<code>:authority</code>"
                 pseudo-header field as the value of the <code>Host</code> field,
                 unless the intermediary also changes the request target. This replaces any existing
                 <code>Host</code> field to avoid potential vulnerabilities in HTTP routing.<a href="#section-8.3.1-2.3.5" class="pilcrow">¶</a></p>
@@ -4547,17 +4547,17 @@ cookie: e=f
                 Note that request targets for CONNECT or asterisk-form OPTIONS requests never
                 include authority information; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-7.1" class="relref">Section 7.1</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>.<a href="#section-8.3.1-2.3.7" class="pilcrow">¶</a></p>
 <p id="section-8.3.1-2.3.8">
-                <code>:authority</code> MUST NOT include the deprecated userinfo subcomponent for
+                "<code>:authority</code>" MUST NOT include the deprecated userinfo subcomponent for
                 <code>http</code> or <code>https</code> schemed URIs.<a href="#section-8.3.1-2.3.8" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-8.3.1-2.4">
               <p id="section-8.3.1-2.4.1">
-                  The <code>:path</code> pseudo-header field includes the path and
+                  The "<code>:path</code>" pseudo-header field includes the path and
                   query parts of the target URI (the <code>absolute-path</code>
                   production and optionally a '?' character followed by the
                   <code>query</code> production; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-4.1" class="relref">Section 4.1</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>).
                   A request in asterisk form (for OPTIONS) includes the value '*' for the
-                  <code>:path</code> pseudo-header field.<a href="#section-8.3.1-2.4.1" class="pilcrow">¶</a></p>
+                  "<code>:path</code>" pseudo-header field.<a href="#section-8.3.1-2.4.1" class="pilcrow">¶</a></p>
 <p id="section-8.3.1-2.4.2">
                   This pseudo-header field MUST NOT be empty for <code>http</code> or <code>https</code>
                   URIs; <code>http</code> or <code>https</code> URIs that do not contain a path component
@@ -4565,18 +4565,18 @@ cookie: e=f
 <ul class="normal">
 <li class="normal" id="section-8.3.1-2.4.3.1">
                   an OPTIONS request for an <code>http</code> or <code>https</code> URI that does not include a path
-                  component; these MUST include a <code>:path</code> pseudo-header field with a value
+                  component; these MUST include a "<code>:path</code>" pseudo-header field with a value
                   of '*' (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-7.1" class="relref">Section 7.1</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>)<a href="#section-8.3.1-2.4.3.1" class="pilcrow">¶</a>
 </li>
                 <li class="normal" id="section-8.3.1-2.4.3.2">
-                  <span><a href="#CONNECT" class="xref">CONNECT requests</a> (<a href="#CONNECT" class="xref">Section 8.5</a>)</span>, where the <code>:path</code> pseudo-header field is omitted.<a href="#section-8.3.1-2.4.3.2" class="pilcrow">¶</a>
+                  <span><a href="#CONNECT" class="xref">CONNECT requests</a> (<a href="#CONNECT" class="xref">Section 8.5</a>)</span>, where the "<code>:path</code>" pseudo-header field is omitted.<a href="#section-8.3.1-2.4.3.2" class="pilcrow">¶</a>
 </li>
               </ul>
 </li>
           </ul>
 <p id="section-8.3.1-3">
-            All HTTP/2 requests MUST include exactly one valid value for the <code>:method</code>,
-            <code>:scheme</code>, and <code>:path</code> pseudo-header fields, unless it is a <span><a href="#CONNECT" class="xref">CONNECT request</a> (<a href="#CONNECT" class="xref">Section 8.5</a>)</span>. An HTTP request that omits mandatory
+            All HTTP/2 requests MUST include exactly one valid value for the "<code>:method</code>",
+            "<code>:scheme</code>", and "<code>:path</code>" pseudo-header fields, unless it is a <span><a href="#CONNECT" class="xref">CONNECT request</a> (<a href="#CONNECT" class="xref">Section 8.5</a>)</span>. An HTTP request that omits mandatory
             pseudo-header fields is <span><a href="#malformed" class="xref">malformed</a> (<a href="#malformed" class="xref">Section 8.1.1</a>)</span>.<a href="#section-8.3.1-3" class="pilcrow">¶</a></p>
 <p id="section-8.3.1-4">
             Individual HTTP/2 requests do not carry an explicit indicator of protocol version.
@@ -4590,7 +4590,7 @@ cookie: e=f
 <a href="#section-8.3.2" class="section-number selfRef">8.3.2. </a><a href="#name-response-pseudo-header-fiel" class="section-name selfRef">Response Pseudo-Header Fields</a>
           </h4>
 <p id="section-8.3.2-1">
-            For HTTP/2 responses, a single <code>:status</code> pseudo-header
+            For HTTP/2 responses, a single "<code>:status</code>" pseudo-header
             field is defined that carries the HTTP status code field (see
             <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-15" class="relref">Section 15</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>). This pseudo-header field MUST be included in all
             responses, including interim responses; otherwise, the response is
@@ -4647,7 +4647,7 @@ cookie: e=f
           Pushed responses that are not cacheable MUST NOT be stored by any HTTP cache. They MAY
           be made available to the application separately.<a href="#section-8.4-7" class="pilcrow">¶</a></p>
 <p id="section-8.4-8">
-          The server MUST include a value in the <code>:authority</code> pseudo-header field for which
+          The server MUST include a value in the "<code>:authority</code>" pseudo-header field for which
           the server is authoritative (see <a href="#authority" class="xref">Section 10.1</a>). A client MUST treat a <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a> for which the server is not
           authoritative as a <span><a href="#StreamErrorHandler" class="xref">stream error</a> (<a href="#StreamErrorHandler" class="xref">Section 5.4.2</a>)</span> of type <a href="#PROTOCOL_ERROR" class="xref">PROTOCOL_ERROR</a>.<a href="#section-8.4-8" class="pilcrow">¶</a></p>
 <p id="section-8.4-9">
@@ -4682,9 +4682,9 @@ cookie: e=f
             The header fields in <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a> and
             any subsequent <a href="#CONTINUATION" class="xref">CONTINUATION</a> frames MUST
             be a valid and complete set of <span><a href="#HttpRequest" class="xref">request header
-            fields</a> (<a href="#HttpRequest" class="xref">Section 8.3.1</a>)</span>. The server MUST include a method in the <code>:method</code> pseudo-header
+            fields</a> (<a href="#HttpRequest" class="xref">Section 8.3.1</a>)</span>. The server MUST include a method in the "<code>:method</code>" pseudo-header
             field that is safe and cacheable. If a client receives a <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a> that does not include a complete and valid set of
-            header fields or the <code>:method</code> pseudo-header field identifies a method that is
+            header fields or the "<code>:method</code>" pseudo-header field identifies a method that is
             not safe, it MUST respond on the promised stream with a <span><a href="#StreamErrorHandler" class="xref">stream error</a> (<a href="#StreamErrorHandler" class="xref">Section 5.4.2</a>)</span> of type <a href="#PROTOCOL_ERROR" class="xref">PROTOCOL_ERROR</a>.<a href="#section-8.4.1-4" class="pilcrow">¶</a></p>
 <p id="section-8.4.1-5">
             The server SHOULD send <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a>
@@ -4775,14 +4775,14 @@ cookie: e=f
           section is constructed as defined in <a href="#HttpRequest" class="xref">Section 8.3.1</a> ("<a href="#HttpRequest" class="xref">Request Pseudo-Header Fields</a>"), with a few differences. Specifically:<a href="#section-8.5-2" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-8.5-3.1">
-              The <code>:method</code> pseudo-header field is set to <code>CONNECT</code>.<a href="#section-8.5-3.1" class="pilcrow">¶</a>
+              The "<code>:method</code>" pseudo-header field is set to <code>CONNECT</code>.<a href="#section-8.5-3.1" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-8.5-3.2">
-              The <code>:scheme</code> and <code>:path</code> pseudo-header
+              The "<code>:scheme</code>" and "<code>:path</code>" pseudo-header
               fields MUST be omitted.<a href="#section-8.5-3.2" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-8.5-3.3">
-              The <code>:authority</code> pseudo-header field contains the host and port to
+              The "<code>:authority</code>" pseudo-header field contains the host and port to
               connect to (equivalent to the authority-form of the request-target of CONNECT
               requests; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-messaging-18#section-3.2.3" class="relref">Section 3.2.3</a> of [<a href="#HTTP11" class="xref">HTTP/1.1</a>]</span>).<a href="#section-8.5-3.3" class="pilcrow">¶</a>
 </li>
@@ -4791,7 +4791,7 @@ cookie: e=f
           A CONNECT request that does not conform to these restrictions is <span><a href="#malformed" class="xref">malformed</a> (<a href="#malformed" class="xref">Section 8.1.1</a>)</span>.<a href="#section-8.5-4" class="pilcrow">¶</a></p>
 <p id="section-8.5-5">
           A proxy that supports CONNECT establishes a <span><a href="#TCP" class="xref">TCP connection</a> [<a href="#TCP" class="xref">TCP</a>]</span> to
-          the host and port identified in the <code>:authority</code> pseudo-header field. Once
+          the host and port identified in the "<code>:authority</code>" pseudo-header field. Once
           this connection is successfully established, the proxy sends a <a href="#HEADERS" class="xref">HEADERS</a>
           frame containing a 2xx series status code to the client, as defined in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-9.3.6" class="relref">Section 9.3.6</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>.<a href="#section-8.5-5" class="pilcrow">¶</a></p>
 <p id="section-8.5-6">
@@ -5291,9 +5291,9 @@ cookie: e=f
 <p id="section-10.3-2">
           <a href="#HttpHeaders" class="xref">Section 8.2</a> does not include specific rules for validation of
           pseudo-header fields.  If the values of these fields are used, additional validation is
-          necessary. This is particularly important where <code>:scheme</code>, <code>:authority</code>, and
-          <code>:path</code> are combined to form a single URI string (<span>[<a href="#RFC3986" class="xref">RFC3986</a>]</span>). Similar problems might occur when that URI or just <code>:path</code> are
-          combined with <code>:method</code> to construct a request line (as in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-messaging-18#section-3" class="relref">Section 3</a> of [<a href="#HTTP11" class="xref">HTTP/1.1</a>]</span>). Simple concatenation is not secure unless the input values are fully
+          necessary. This is particularly important where "<code>:scheme</code>", "<code>:authority</code>", and
+          "<code>:path</code>" are combined to form a single URI string (<span>[<a href="#RFC3986" class="xref">RFC3986</a>]</span>). Similar problems might occur when that URI or just "<code>:path</code>" are
+          combined with "<code>:method</code>" to construct a request line (as in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-messaging-18#section-3" class="relref">Section 3</a> of [<a href="#HTTP11" class="xref">HTTP/1.1</a>]</span>). Simple concatenation is not secure unless the input values are fully
           validated.<a href="#section-10.3-2" class="pilcrow">¶</a></p>
 <p id="section-10.3-3">
           An intermediary can reject fields that contain invalid field names or values for other
@@ -6400,7 +6400,7 @@ cookie: e=f
           comprehensively identified.<a href="#appendix-B-2.6" class="pilcrow">¶</a>
 </li>
         <li class="normal" id="appendix-B-2.7">
-          <code>Host</code> and <code>:authority</code> are no longer permitted to disagree.<a href="#appendix-B-2.7" class="pilcrow">¶</a>
+          <code>Host</code> and "<code>:authority</code>" are no longer permitted to disagree.<a href="#appendix-B-2.7" class="pilcrow">¶</a>
 </li>
         <li class="normal" id="appendix-B-2.8">
           Rules for sending Dynamic Table Size Update instructions after changes in settings have

@@ -2640,52 +2640,53 @@ Table of Contents
 
    The following pseudo-header fields are defined for HTTP/2 requests:
 
-   *  The :method pseudo-header field includes the HTTP method
+   *  The ":method" pseudo-header field includes the HTTP method
       (Section 9 of [HTTP]).
 
-   *  The :scheme pseudo-header field includes the scheme portion of the
-      request target.  The scheme is taken from the target URI
+   *  The ":scheme" pseudo-header field includes the scheme portion of
+      the request target.  The scheme is taken from the target URI
       (Section 3.1 of [RFC3986]) when generating a request directly, or
       from the scheme of a translated request (for example, see
       Section 3.3 of [HTTP/1.1]).  Scheme is omitted for CONNECT
       requests (Section 8.5).
 
-      :scheme is not restricted to http and https schemed URIs.  A proxy
-      or gateway can translate requests for non-HTTP schemes, enabling
-      the use of HTTP to interact with non-HTTP services.
+      ":scheme" is not restricted to http and https schemed URIs.  A
+      proxy or gateway can translate requests for non-HTTP schemes,
+      enabling the use of HTTP to interact with non-HTTP services.
 
-   *  The :authority pseudo-header field conveys the authority portion
+   *  The ":authority" pseudo-header field conveys the authority portion
       (Section 3.2 of [RFC3986]) of the target URI (Section 7.1 of
       [HTTP]).  The recipient of a HTTP/2 request MUST NOT use the Host
-      header field to determine the target URI if :authority is present.
+      header field to determine the target URI if ":authority" is
+      present.
 
       Clients that generate HTTP/2 requests directly MUST use the
-      :authority pseudo-header field to convey authority information,
+      ":authority" pseudo-header field to convey authority information,
       unless there is no authority information to convey (in which case
-      it MUST NOT generate :authority).
+      it MUST NOT generate ":authority").
 
       Clients MUST NOT generate a request with a Host header field that
-      differs from the :authority pseudo-header field.  A server SHOULD
-      treat a request as malformed if it contains a Host header field
-      that identifies a different entity to the :authority pseudo-header
-      field.  The values of fields need to be normalized to compare them
-      (see Section 6.2 of [RFC3986]).  An origin server can apply any
-      normalization method, whereas other servers MUST perform scheme-
-      based normalization (see Section 6.2.3 of [RFC3986]) of the two
-      fields.
+      differs from the ":authority" pseudo-header field.  A server
+      SHOULD treat a request as malformed if it contains a Host header
+      field that identifies a different entity to the ":authority"
+      pseudo-header field.  The values of fields need to be normalized
+      to compare them (see Section 6.2 of [RFC3986]).  An origin server
+      can apply any normalization method, whereas other servers MUST
+      perform scheme-based normalization (see Section 6.2.3 of
+      [RFC3986]) of the two fields.
 
       An intermediary that forwards a request over HTTP/2 MUST construct
-      an :authority pseudo-header field using the authority information
-      from the control data of the original request, unless the original
-      request's target URI does not contain authority information (in
-      which case it MUST NOT generate :authority).  Note that the Host
-      header field is not the sole source of this information; see
-      Section 7.2 of [HTTP].
+      an ":authority" pseudo-header field using the authority
+      information from the control data of the original request, unless
+      the original request's target URI does not contain authority
+      information (in which case it MUST NOT generate ":authority").
+      Note that the Host header field is not the sole source of this
+      information; see Section 7.2 of [HTTP].
 
       An intermediary that needs to generate a Host header field (which
       might be necessary to construct an HTTP/1.1 request) MUST use the
-      value from the :authority pseudo-header field as the value of the
-      Host field, unless the intermediary also changes the request
+      value from the ":authority" pseudo-header field as the value of
+      the Host field, unless the intermediary also changes the request
       target.  This replaces any existing Host field to avoid potential
       vulnerabilities in HTTP routing.
 
@@ -2696,30 +2697,30 @@ Table of Contents
       requests never include authority information; see Section 7.1 of
       [HTTP].
 
-      :authority MUST NOT include the deprecated userinfo subcomponent
+      ":authority" MUST NOT include the deprecated userinfo subcomponent
       for http or https schemed URIs.
 
-   *  The :path pseudo-header field includes the path and query parts of
-      the target URI (the absolute-path production and optionally a '?'
-      character followed by the query production; see Section 4.1 of
+   *  The ":path" pseudo-header field includes the path and query parts
+      of the target URI (the absolute-path production and optionally a
+      '?' character followed by the query production; see Section 4.1 of
       [HTTP]).  A request in asterisk form (for OPTIONS) includes the
-      value '*' for the :path pseudo-header field.
+      value '*' for the ":path" pseudo-header field.
 
       This pseudo-header field MUST NOT be empty for http or https URIs;
       http or https URIs that do not contain a path component MUST
       include a value of '/'.  The exceptions to this rule are:
 
       -  an OPTIONS request for an http or https URI that does not
-         include a path component; these MUST include a :path pseudo-
+         include a path component; these MUST include a ":path" pseudo-
          header field with a value of '*' (see Section 7.1 of [HTTP])
 
-      -  CONNECT requests (Section 8.5), where the :path pseudo-header
+      -  CONNECT requests (Section 8.5), where the ":path" pseudo-header
          field is omitted.
 
    All HTTP/2 requests MUST include exactly one valid value for the
-   :method, :scheme, and :path pseudo-header fields, unless it is a
-   CONNECT request (Section 8.5).  An HTTP request that omits mandatory
-   pseudo-header fields is malformed (Section 8.1.1).
+   ":method", ":scheme", and ":path" pseudo-header fields, unless it is
+   a CONNECT request (Section 8.5).  An HTTP request that omits
+   mandatory pseudo-header fields is malformed (Section 8.1.1).
 
    Individual HTTP/2 requests do not carry an explicit indicator of
    protocol version.  All HTTP/2 requests implicitly have a protocol
@@ -2727,10 +2728,10 @@ Table of Contents
 
 8.3.2.  Response Pseudo-Header Fields
 
-   For HTTP/2 responses, a single :status pseudo-header field is defined
-   that carries the HTTP status code field (see Section 15 of [HTTP]).
-   This pseudo-header field MUST be included in all responses, including
-   interim responses; otherwise, the response is malformed
+   For HTTP/2 responses, a single ":status" pseudo-header field is
+   defined that carries the HTTP status code field (see Section 15 of
+   [HTTP]).  This pseudo-header field MUST be included in all responses,
+   including interim responses; otherwise, the response is malformed
    (Section 8.1.1).
 
    HTTP/2 responses implicitly have a protocol version of "2.0".
@@ -2783,10 +2784,11 @@ Table of Contents
    HTTP cache.  They MAY be made available to the application
    separately.
 
-   The server MUST include a value in the :authority pseudo-header field
-   for which the server is authoritative (see Section 10.1).  A client
-   MUST treat a PUSH_PROMISE for which the server is not authoritative
-   as a stream error (Section 5.4.2) of type PROTOCOL_ERROR.
+   The server MUST include a value in the ":authority" pseudo-header
+   field for which the server is authoritative (see Section 10.1).  A
+   client MUST treat a PUSH_PROMISE for which the server is not
+   authoritative as a stream error (Section 5.4.2) of type
+   PROTOCOL_ERROR.
 
    An intermediary can receive pushes from the server and choose not to
    forward them on to the client.  In other words, how to make use of
@@ -2818,12 +2820,12 @@ Table of Contents
 
    The header fields in PUSH_PROMISE and any subsequent CONTINUATION
    frames MUST be a valid and complete set of request header fields
-   (Section 8.3.1).  The server MUST include a method in the :method
+   (Section 8.3.1).  The server MUST include a method in the ":method"
    pseudo-header field that is safe and cacheable.  If a client receives
    a PUSH_PROMISE that does not include a complete and valid set of
-   header fields or the :method pseudo-header field identifies a method
-   that is not safe, it MUST respond on the promised stream with a
-   stream error (Section 5.4.2) of type PROTOCOL_ERROR.
+   header fields or the ":method" pseudo-header field identifies a
+   method that is not safe, it MUST respond on the promised stream with
+   a stream error (Section 5.4.2) of type PROTOCOL_ERROR.
 
    The server SHOULD send PUSH_PROMISE (Section 6.6) frames prior to
    sending any frames that reference the promised responses.  This
@@ -2912,11 +2914,11 @@ Table of Contents
    defined in Section 8.3.1 ("Request Pseudo-Header Fields"), with a few
    differences.  Specifically:
 
-   *  The :method pseudo-header field is set to CONNECT.
+   *  The ":method" pseudo-header field is set to CONNECT.
 
-   *  The :scheme and :path pseudo-header fields MUST be omitted.
+   *  The ":scheme" and ":path" pseudo-header fields MUST be omitted.
 
-   *  The :authority pseudo-header field contains the host and port to
+   *  The ":authority" pseudo-header field contains the host and port to
       connect to (equivalent to the authority-form of the request-target
       of CONNECT requests; see Section 3.2.3 of [HTTP/1.1]).
 
@@ -2924,7 +2926,7 @@ Table of Contents
    malformed (Section 8.1.1).
 
    A proxy that supports CONNECT establishes a TCP connection [TCP] to
-   the host and port identified in the :authority pseudo-header field.
+   the host and port identified in the ":authority" pseudo-header field.
    Once this connection is successfully established, the proxy sends a
    HEADERS frame containing a 2xx series status code to the client, as
    defined in Section 9.3.6 of [HTTP].
@@ -3371,11 +3373,11 @@ Table of Contents
    Section 8.2 does not include specific rules for validation of pseudo-
    header fields.  If the values of these fields are used, additional
    validation is necessary.  This is particularly important where
-   :scheme, :authority, and :path are combined to form a single URI
-   string ([RFC3986]).  Similar problems might occur when that URI or
-   just :path are combined with :method to construct a request line (as
-   in Section 3 of [HTTP/1.1]).  Simple concatenation is not secure
-   unless the input values are fully validated.
+   ":scheme", ":authority", and ":path" are combined to form a single
+   URI string ([RFC3986]).  Similar problems might occur when that URI
+   or just ":path" are combined with ":method" to construct a request
+   line (as in Section 3 of [HTTP/1.1]).  Simple concatenation is not
+   secure unless the input values are fully validated.
 
    An intermediary can reject fields that contain invalid field names or
    values for other reasons, in particular those that do not conform to
@@ -4170,7 +4172,7 @@ Appendix B.  Changes from RFC 7540
    *  Connection-specific header fields - which are prohibited - are
       more precisely and comprehensively identified.
 
-   *  Host and :authority are no longer permitted to disagree.
+   *  Host and ":authority" are no longer permitted to disagree.
 
    *  Rules for sending Dynamic Table Size Update instructions after
       changes in settings have been clarified in Section 4.3.1.
