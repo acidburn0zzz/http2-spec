@@ -2650,7 +2650,7 @@ Table of Contents
       Section 3.3 of [HTTP/1.1]).  Scheme is omitted for CONNECT
       requests (Section 8.5).
 
-      ":scheme" is not restricted to http and https schemed URIs.  A
+      ":scheme" is not restricted to "http" and "https" schemed URIs.  A
       proxy or gateway can translate requests for non-HTTP schemes,
       enabling the use of HTTP to interact with non-HTTP services.
 
@@ -2698,7 +2698,7 @@ Table of Contents
       7.2 of [HTTP].
 
       ":authority" MUST NOT include the deprecated userinfo subcomponent
-      for http or https schemed URIs.
+      for "http" or "https" schemed URIs.
 
    *  The ":path" pseudo-header field includes the path and query parts
       of the target URI (the absolute-path production and optionally a
@@ -2706,11 +2706,11 @@ Table of Contents
       [HTTP]).  A request in asterisk form (for OPTIONS) includes the
       value '*' for the ":path" pseudo-header field.
 
-      This pseudo-header field MUST NOT be empty for http or https URIs;
-      http or https URIs that do not contain a path component MUST
-      include a value of '/'.  The exceptions to this rule are:
+      This pseudo-header field MUST NOT be empty for "http" or "https"
+      URIs; "http" or "https" URIs that do not contain a path component
+      MUST include a value of '/'.  The exceptions to this rule are:
 
-      -  an OPTIONS request for an http or https URI that does not
+      -  an OPTIONS request for an "http" or "https" URI that does not
          include a path component; these MUST include a ":path" pseudo-
          header field with a value of '*' (see Section 7.1 of [HTTP])
 
@@ -3177,13 +3177,13 @@ Table of Contents
    is authoritative (Section 10.1).  For TCP connections without TLS,
    this depends on the host having resolved to the same IP address.
 
-   For https resources, connection reuse additionally depends on having
-   a certificate that is valid for the host in the URI.  The certificate
-   presented by the server MUST satisfy any checks that the client would
-   perform when forming a new TLS connection for the host in the URI.  A
-   single certificate can be used to establish authority for multiple
-   origins.  Section 4.3 of [HTTP] describes how a client determines
-   whether a server is authoritative for a URI.
+   For "https" resources, connection reuse additionally depends on
+   having a certificate that is valid for the host in the URI.  The
+   certificate presented by the server MUST satisfy any checks that the
+   client would perform when forming a new TLS connection for the host
+   in the URI.  A single certificate can be used to establish authority
+   for multiple origins.  Section 4.3 of [HTTP] describes how a client
+   determines whether a server is authoritative for a URI.
 
    In some deployments, reusing a connection for multiple origins can
    result in requests being directed to the wrong origin server.  For

@@ -4508,7 +4508,7 @@ cookie: e=f
                 target. The scheme is taken from the target URI (<span><a href="https://rfc-editor.org/rfc/rfc3986#section-3.1" class="relref">Section 3.1</a> of [<a href="#RFC3986" class="xref">RFC3986</a>]</span>) when generating a request directly, or from the scheme of a
                 translated request (for example, see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-messaging-18#section-3.3" class="relref">Section 3.3</a> of [<a href="#HTTP11" class="xref">HTTP/1.1</a>]</span>). Scheme
                 is omitted for <span><a href="#CONNECT" class="xref">CONNECT requests</a> (<a href="#CONNECT" class="xref">Section 8.5</a>)</span>.<a href="#section-8.3.1-2.2.1" class="pilcrow">¶</a></p>
-<p id="section-8.3.1-2.2.2">"<code>:scheme</code>" is not restricted to <code>http</code> and <code>https</code> schemed
+<p id="section-8.3.1-2.2.2">"<code>:scheme</code>" is not restricted to "<code>http</code>" and "<code>https</code>" schemed
                 URIs.  A proxy or gateway can translate requests for non-HTTP schemes, enabling
                 the use of HTTP to interact with non-HTTP services.<a href="#section-8.3.1-2.2.2" class="pilcrow">¶</a></p>
 </li>
@@ -4549,7 +4549,7 @@ cookie: e=f
                 of <span>[<a href="#HTTP" class="xref">HTTP</a>]</span>.<a href="#section-8.3.1-2.3.7" class="pilcrow">¶</a></p>
 <p id="section-8.3.1-2.3.8">
                 "<code>:authority</code>" MUST NOT include the deprecated userinfo subcomponent for
-                <code>http</code> or <code>https</code> schemed URIs.<a href="#section-8.3.1-2.3.8" class="pilcrow">¶</a></p>
+                "<code>http</code>" or "<code>https</code>" schemed URIs.<a href="#section-8.3.1-2.3.8" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-8.3.1-2.4">
               <p id="section-8.3.1-2.4.1">
@@ -4560,12 +4560,12 @@ cookie: e=f
                   A request in asterisk form (for OPTIONS) includes the value '*' for the
                   "<code>:path</code>" pseudo-header field.<a href="#section-8.3.1-2.4.1" class="pilcrow">¶</a></p>
 <p id="section-8.3.1-2.4.2">
-                  This pseudo-header field MUST NOT be empty for <code>http</code> or <code>https</code>
-                  URIs; <code>http</code> or <code>https</code> URIs that do not contain a path component
+                  This pseudo-header field MUST NOT be empty for "<code>http</code>" or "<code>https</code>"
+                  URIs; "<code>http</code>" or "<code>https</code>" URIs that do not contain a path component
                   MUST include a value of '/'. The exceptions to this rule are:<a href="#section-8.3.1-2.4.2" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-8.3.1-2.4.3.1">
-                  an OPTIONS request for an <code>http</code> or <code>https</code> URI that does not include a path
+                  an OPTIONS request for an "<code>http</code>" or "<code>https</code>" URI that does not include a path
                   component; these MUST include a "<code>:path</code>" pseudo-header field with a value
                   of '*' (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-7.1" class="relref">Section 7.1</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>)<a href="#section-8.3.1-2.4.3.1" class="pilcrow">¶</a>
 </li>
@@ -5089,7 +5089,7 @@ cookie: e=f
             connections without TLS, this depends on the host having resolved to the same IP
             address.<a href="#section-9.1.1-1" class="pilcrow">¶</a></p>
 <p id="section-9.1.1-2">
-            For <code>https</code> resources, connection reuse additionally depends
+            For "<code>https</code>" resources, connection reuse additionally depends
             on having a certificate that is valid for the host in the URI.  The certificate
             presented by the server MUST satisfy any checks that the client would perform when
             forming a new TLS connection for the host in the URI.  A single certificate can be
@@ -5250,8 +5250,8 @@ cookie: e=f
 <p id="section-10.1-1">
           HTTP/2 relies on the HTTP definition of authority for determining whether a server is
           authoritative in providing a given response (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-4.3" class="relref">Section 4.3</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>).
-          This relies on local name resolution for the "http" URI scheme and the authenticated server
-          identity for the "https" scheme.<a href="#section-10.1-1" class="pilcrow">¶</a></p>
+          This relies on local name resolution for the "<code>http</code>" URI scheme and the authenticated server
+          identity for the "<code>https</code>" scheme.<a href="#section-10.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <section id="section-10.2">
