@@ -3188,7 +3188,7 @@ Table of Contents
    In some deployments, reusing a connection for multiple origins can
    result in requests being directed to the wrong origin server.  For
    example, TLS termination might be performed by a middlebox that uses
-   the TLS Server Name Indication (SNI) [TLS-EXT] extension to select an
+   the TLS Server Name Indication [TLS-EXT] extension to select an
    origin server.  This means that it is possible for clients to send
    requests to servers that might not be the intended target for the
    request, even though the server is otherwise authoritative.

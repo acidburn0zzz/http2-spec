@@ -5098,10 +5098,10 @@ cookie: e=f
 <p id="section-9.1.1-3">
             In some deployments, reusing a connection for multiple origins can result in requests
             being directed to the wrong origin server.  For example, TLS termination might be
-            performed by a middlebox that uses the TLS <span><a href="#TLS-EXT" class="xref">Server Name Indication
-            (SNI)</a> [<a href="#TLS-EXT" class="xref">TLS-EXT</a>]</span> extension to select an origin server.  This means that it is possible
-            for clients to send requests to servers that might not be the intended
-            target for the request, even though the server is otherwise authoritative.<a href="#section-9.1.1-3" class="pilcrow">¶</a></p>
+            performed by a middlebox that uses the TLS <span><a href="#TLS-EXT" class="xref">Server Name
+            Indication</a> [<a href="#TLS-EXT" class="xref">TLS-EXT</a>]</span> extension to select an origin server.  This means that it is possible
+            for clients to send requests to servers that might not be the intended target for the
+            request, even though the server is otherwise authoritative.<a href="#section-9.1.1-3" class="pilcrow">¶</a></p>
 <p id="section-9.1.1-4">
             A server that does not wish clients to reuse connections can indicate that it is not
             authoritative for a request by sending a 421 (Misdirected Request) status code in response
