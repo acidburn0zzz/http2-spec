@@ -2694,8 +2694,8 @@ Table of Contents
       Host header field.
 
       Note that request targets for CONNECT or asterisk-form OPTIONS
-      requests never include authority information; see Section 7.1 of
-      [HTTP].
+      requests never include authority information; see Sections 7.1 and
+      7.2 of [HTTP].
 
       ":authority" MUST NOT include the deprecated userinfo subcomponent
       for http or https schemed URIs.
