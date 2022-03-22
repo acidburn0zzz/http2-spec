@@ -1807,8 +1807,6 @@ Table of Contents
       padding in units of octets.  This field is only present if the
       PADDED flag is set.
 
-   Reserved:  A single reserved bit.
-
    Promised Stream ID:  An unsigned 31-bit integer that identifies the
       stream that is reserved by the PUSH_PROMISE.  The promised stream
       identifier MUST be a valid choice for the next stream sent by the

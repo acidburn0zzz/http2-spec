@@ -3549,30 +3549,25 @@ PUSH_PROMISE Frame {
               field is only present if the PADDED flag is set.<a href="#section-6.6-4.2" class="pilcrow">¶</a>
 </dd>
           <dd class="break"></dd>
-<dt id="section-6.6-4.3">Reserved:</dt>
+<dt id="section-6.6-4.3">Promised Stream ID:</dt>
           <dd style="margin-left: 1.5em" id="section-6.6-4.4">
-              A single reserved bit.<a href="#section-6.6-4.4" class="pilcrow">¶</a>
-</dd>
-          <dd class="break"></dd>
-<dt id="section-6.6-4.5">Promised Stream ID:</dt>
-          <dd style="margin-left: 1.5em" id="section-6.6-4.6">
               An unsigned 31-bit integer that identifies the stream that is reserved by the
               PUSH_PROMISE.  The promised stream identifier MUST be a valid choice for the next
-              stream sent by the sender (see "new stream identifier" in <a href="#StreamIdentifiers" class="xref">Section 5.1.1</a>).<a href="#section-6.6-4.6" class="pilcrow">¶</a>
+              stream sent by the sender (see "new stream identifier" in <a href="#StreamIdentifiers" class="xref">Section 5.1.1</a>).<a href="#section-6.6-4.4" class="pilcrow">¶</a>
 </dd>
           <dd class="break"></dd>
-<dt id="section-6.6-4.7">Field Block Fragment:</dt>
-          <dd style="margin-left: 1.5em" id="section-6.6-4.8">
+<dt id="section-6.6-4.5">Field Block Fragment:</dt>
+          <dd style="margin-left: 1.5em" id="section-6.6-4.6">
               A <span><a href="#FieldBlock" class="xref">field block fragment</a> (<a href="#FieldBlock" class="xref">Section 4.3</a>)</span> containing request control data and
-              header section.<a href="#section-6.6-4.8" class="pilcrow">¶</a>
+              header section.<a href="#section-6.6-4.6" class="pilcrow">¶</a>
 </dd>
           <dd class="break"></dd>
-<dt id="section-6.6-4.9">Padding:</dt>
-          <dd style="margin-left: 1.5em" id="section-6.6-4.10">
+<dt id="section-6.6-4.7">Padding:</dt>
+          <dd style="margin-left: 1.5em" id="section-6.6-4.8">
               Padding octets that contain no application semantic value.  Padding octets MUST be set
               to zero when sending.  A receiver is not obligated to verify padding but MAY treat
               non-zero padding as a <span><a href="#ConnectionErrorHandler" class="xref">connection error</a> (<a href="#ConnectionErrorHandler" class="xref">Section 5.4.1</a>)</span> of
-              type <a href="#PROTOCOL_ERROR" class="xref">PROTOCOL_ERROR</a>.<a href="#section-6.6-4.10" class="pilcrow">¶</a>
+              type <a href="#PROTOCOL_ERROR" class="xref">PROTOCOL_ERROR</a>.<a href="#section-6.6-4.8" class="pilcrow">¶</a>
 </dd>
         <dd class="break"></dd>
 </dl>
