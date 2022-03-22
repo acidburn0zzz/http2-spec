@@ -5306,7 +5306,7 @@ cookie: e=f
           An intermediary that receives any field that requires removal before forwarding
           (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-7.6.1" class="relref">Section 7.6.1</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>) MUST remove or replace those header fields when
           forwarding messages. Additionally, intermediaries should take care when forwarding messages
-          containing Content-Length fields to ensure that the message is <span><a href="#malformed" class="xref">well-formed</a> (<a href="#malformed" class="xref">Section 8.1.1</a>)</span>.
+          containing <code>Content-Length</code> fields to ensure that the message is <span><a href="#malformed" class="xref">well-formed</a> (<a href="#malformed" class="xref">Section 8.1.1</a>)</span>.
           This ensures that if the message is translated into HTTP/1.1 at any point the framing will be correct.<a href="#section-10.3-4" class="pilcrow">¶</a></p>
 </section>
 <section id="section-10.4">
