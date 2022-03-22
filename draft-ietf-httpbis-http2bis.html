@@ -3721,10 +3721,10 @@ PING Frame {
           sending endpoint in this connection.  For instance, if the server sends a GOAWAY frame,
           the identified stream is the highest-numbered stream initiated by the client.<a href="#section-6.8-2" class="pilcrow">¶</a></p>
 <p id="section-6.8-3">
-          Once sent, the sender will ignore frames sent on streams initiated by the receiver if the
-          stream has an identifier higher than the included last stream identifier.  Receivers of a
-          GOAWAY frame MUST NOT open additional streams on the connection, although a new connection
-          can be established for new streams.<a href="#section-6.8-3" class="pilcrow">¶</a></p>
+          Once the GOAWAY is sent, the sender will ignore frames sent on streams initiated by the
+          receiver if the stream has an identifier higher than the included last stream identifier.
+          Receivers of a GOAWAY frame MUST NOT open additional streams on the connection, although a
+          new connection can be established for new streams.<a href="#section-6.8-3" class="pilcrow">¶</a></p>
 <p id="section-6.8-4">
           If the receiver of the GOAWAY has sent data on streams with a higher stream identifier
           than what is indicated in the GOAWAY frame, those streams are not or will not be

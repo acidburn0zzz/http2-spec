@@ -1955,11 +1955,11 @@ Table of Contents
    GOAWAY frame, the identified stream is the highest-numbered stream
    initiated by the client.
 
-   Once sent, the sender will ignore frames sent on streams initiated by
-   the receiver if the stream has an identifier higher than the included
-   last stream identifier.  Receivers of a GOAWAY frame MUST NOT open
-   additional streams on the connection, although a new connection can
-   be established for new streams.
+   Once the GOAWAY is sent, the sender will ignore frames sent on
+   streams initiated by the receiver if the stream has an identifier
+   higher than the included last stream identifier.  Receivers of a
+   GOAWAY frame MUST NOT open additional streams on the connection,
+   although a new connection can be established for new streams.
 
    If the receiver of the GOAWAY has sent data on streams with a higher
    stream identifier than what is indicated in the GOAWAY frame, those
