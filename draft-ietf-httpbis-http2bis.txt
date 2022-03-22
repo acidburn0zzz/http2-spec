@@ -2861,9 +2861,9 @@ Table of Contents
    the pushed response as a response (Section 8.3.2) on a server-
    initiated stream that uses the promised stream identifier.  The
    server uses this stream to transmit an HTTP response, using the same
-   sequence of frames as defined in Section 8.1.  This stream becomes
-   "half-closed" to the client (Section 5.1) after the initial HEADERS
-   frame is sent.
+   sequence of frames as that defined in Section 8.1.  This stream
+   becomes "half-closed" to the client (Section 5.1) after the initial
+   HEADERS frame is sent.
 
    Once a client receives a PUSH_PROMISE frame and chooses to accept the
    pushed response, the client SHOULD NOT issue any requests for the
