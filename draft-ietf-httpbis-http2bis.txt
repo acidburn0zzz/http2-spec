@@ -3587,7 +3587,7 @@ Table of Contents
 
    Several characteristics of HTTP/2 provide an observer an opportunity
    to correlate actions of a single client or server over time.  These
-   include the value of settings, the manner in which flow-control
+   include the values of settings, the manner in which flow-control
    windows are managed, the way priorities are allocated to streams, the
    timing of reactions to stimulus, and the handling of any features
    that are controlled by settings.
@@ -3616,8 +3616,8 @@ Table of Contents
    delivery, leaving only request order and the delivery of responses as
    sources of timing variability.
 
-   Ensuring that processing time is not dependent on the value of
-   secrets is the best defense against any form of timing attack.
+   Ensuring that processing time is not dependent on the value of a
+   secret is the best defense against any form of timing attack.
 
 11.  IANA Considerations
 
