@@ -1940,13 +1940,11 @@ HTTP Frame {
             on the amount of frame payload data allowed.<a href="#section-4.2-3.1" class="pilcrow">¶</a></p>
 </aside>
 <p id="section-4.2-4">
-          An endpoint MUST send an error code of <a href="#FRAME_SIZE_ERROR" class="xref">FRAME_SIZE_ERROR</a> if a frame exceeds the size
-          defined in <a href="#SETTINGS_MAX_FRAME_SIZE" class="xref">SETTINGS_MAX_FRAME_SIZE</a>, exceeds any limit defined for the frame type,
-          or is too small to contain mandatory frame data. A frame size error in a frame that
-          could alter the state of the entire connection MUST be treated as a <span><a href="#ConnectionErrorHandler" class="xref">connection error</a> (<a href="#ConnectionErrorHandler" class="xref">Section 5.4.1</a>)</span>; this includes any frame carrying
-          a <span><a href="#FieldBlock" class="xref">field block</a> (<a href="#FieldBlock" class="xref">Section 4.3</a>)</span> (that is, <a href="#HEADERS" class="xref">HEADERS</a>,
-          <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a>, and <a href="#CONTINUATION" class="xref">CONTINUATION</a>), <a href="#SETTINGS" class="xref">SETTINGS</a>,
-          and any frame with a stream identifier of 0.<a href="#section-4.2-4" class="pilcrow">¶</a></p>
+          An endpoint MUST send an error code of <a href="#FRAME_SIZE_ERROR" class="xref">FRAME_SIZE_ERROR</a> if a frame exceeds the size defined in <a href="#SETTINGS_MAX_FRAME_SIZE" class="xref">SETTINGS_MAX_FRAME_SIZE</a>, exceeds any
+          limit defined for the frame type, or is too small to contain mandatory frame data. A frame
+          size error in a frame that could alter the state of the entire connection MUST be treated
+          as a <span><a href="#ConnectionErrorHandler" class="xref">connection error</a> (<a href="#ConnectionErrorHandler" class="xref">Section 5.4.1</a>)</span>; this includes any
+          frame carrying a <span><a href="#FieldBlock" class="xref">field block</a> (<a href="#FieldBlock" class="xref">Section 4.3</a>)</span> (that is, <a href="#HEADERS" class="xref">HEADERS</a>, <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a>, and <a href="#CONTINUATION" class="xref">CONTINUATION</a>), a <a href="#SETTINGS" class="xref">SETTINGS</a> frame, and any frame with a stream identifier of 0.<a href="#section-4.2-4" class="pilcrow">¶</a></p>
 <p id="section-4.2-5">
           Endpoints are not obligated to use all available space in a frame. Responsiveness can be
           improved by using frames that are smaller than the permitted maximum size. Sending large
