@@ -3481,7 +3481,7 @@ Table of Contents
       could be exceeded without being an obvious protocol violation.
 
    Most of the features that might be exploited for denial of service --
-   i.e., SETTINGS changes, small frames, field section compression --
+   such as SETTINGS changes, small frames, field section compression --
    have legitimate uses.  These features become a burden only when they
    are used unnecessarily or to excess.
 
