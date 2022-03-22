@@ -5191,11 +5191,12 @@ cookie: e=f
             that is not prohibited, they have to be prepared to use that cipher suite with
             HTTP/2.<a href="#section-9.2.2-3" class="pilcrow">¶</a></p>
 <p id="section-9.2.2-4">
-            The list of prohibited cipher suites includes the cipher suite that TLS 1.2 makes mandatory,
-            which means that TLS 1.2 deployments could have non-intersecting sets of permitted cipher
-            suites.  To avoid this problem causing TLS handshake failures, deployments of HTTP/2 that use
-            TLS 1.2 MUST support TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 <span>[<a href="#TLS-ECDHE" class="xref">TLS-ECDHE</a>]</span> with
-            the P-256 elliptic curve <span>[<a href="#RFC8422" class="xref">RFC8422</a>]</span>.<a href="#section-9.2.2-4" class="pilcrow">¶</a></p>
+            The list of prohibited cipher suites includes the cipher suite that TLS 1.2 makes
+            mandatory, which means that TLS 1.2 deployments could have non-intersecting sets of
+            permitted cipher suites.  To avoid this problem, which causes TLS handshake failures,
+            deployments of HTTP/2 that use TLS 1.2 MUST support
+            TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 <span>[<a href="#TLS-ECDHE" class="xref">TLS-ECDHE</a>]</span> with the P-256 elliptic
+            curve <span>[<a href="#RFC8422" class="xref">RFC8422</a>]</span>.<a href="#section-9.2.2-4" class="pilcrow">¶</a></p>
 <p id="section-9.2.2-5">
             Note that clients might advertise support of cipher suites that are prohibited in
             order to allow for connection to servers that do not support HTTP/2.  This allows
