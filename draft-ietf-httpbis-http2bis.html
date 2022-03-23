@@ -16,7 +16,7 @@
         concurrent exchanges on the same connection.
        
        
-        This document obsoletes RFC 7540 and RFC 8740.
+        This document obsoletes RFCs 7540 and 8740.
        
     " name="description">
 <meta content="xml2rfc 3.12.3" name="generator">
@@ -1029,7 +1029,7 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Thomson &amp; Benfield</td>
-<td class="center">Expires 23 September 2022</td>
+<td class="center">Expires 24 September 2022</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1045,12 +1045,12 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 <a href="https://www.rfc-editor.org/rfc/rfc7540" class="eref">7540</a>, <a href="https://www.rfc-editor.org/rfc/rfc8740" class="eref">8740</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2022-03-22" class="published">22 March 2022</time>
+<time datetime="2022-03-23" class="published">23 March 2022</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2022-09-23">23 September 2022</time></dd>
+<dd class="expires"><time datetime="2022-09-24">24 September 2022</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1076,19 +1076,7 @@ svg [stroke="fill"], svg [fill^="#fff"] {
         reduced latency by introducing field compression and allowing multiple
         concurrent exchanges on the same connection.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 <p id="section-abstract-2">
-        This document obsoletes RFC 7540 and RFC 8740.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
-</section>
-<section class="note rfcEditorRemove" id="section-note.1">
-      <h2 id="name-discussion-venues">
-<a href="#name-discussion-venues" class="section-name selfRef">Discussion Venues</a>
-      </h2>
-<p id="section-note.1-1">This note is to be removed before publishing as an RFC.<a href="#section-note.1-1" class="pilcrow">¶</a></p>
-<p id="section-note.1-2">
-        Discussion of this document takes place on the HTTPBIS Working Group mailing list
-        (ietf-http-wg@w3.org), which is archived at <span><a href="https://lists.w3.org/Archives/Public/ietf-http-wg/">https://lists.w3.org/Archives/Public/ietf-http-wg/</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
-<p id="section-note.1-3">
-        Source for this draft and an issue tracker can be found at
-        <span><a href="https://github.com/httpwg/http2-spec">https://github.com/httpwg/http2-spec</a></span>.<a href="#section-note.1-3" class="pilcrow">¶</a></p>
+        This document obsoletes RFCs 7540 and 8740.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
 </section>
 <div id="status-of-memo">
 <section id="section-boilerplate.1">
@@ -1109,7 +1097,7 @@ svg [stroke="fill"], svg [fill^="#fff"] {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 23 September 2022.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 24 September 2022.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1159,7 +1147,7 @@ svg [stroke="fill"], svg [fill^="#fff"] {
                 <p id="section-toc.1-1.3.2.1.1"><a href="#section-3.1" class="xref">3.1</a>.  <a href="#name-http-2-version-identificati" class="xref">HTTP/2 Version Identification</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.2">
-                <p id="section-toc.1-1.3.2.2.1"><a href="#section-3.2" class="xref">3.2</a>.  <a href="#name-starting-http-2-for-https-u" class="xref">Starting HTTP/2 for "https" URIs</a></p>
+                <p id="section-toc.1-1.3.2.2.1"><a href="#section-3.2" class="xref">3.2</a>.  <a href="#name-starting-http-2-for-https-u" class="xref">Starting HTTP/2 for "<code>https</code>" URIs</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.3">
                 <p id="section-toc.1-1.3.2.3.1"><a href="#section-3.3" class="xref">3.3</a>.  <a href="#name-starting-http-2-with-prior-" class="xref">Starting HTTP/2 with Prior Knowledge</a></p>
@@ -1223,7 +1211,7 @@ svg [stroke="fill"], svg [fill^="#fff"] {
                     <p id="section-toc.1-1.5.2.3.2.1.1"><a href="#section-5.3.1" class="xref">5.3.1</a>.  <a href="#name-background-on-priority-in-r" class="xref">Background on Priority in RFC 7540</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3.2.2">
-                    <p id="section-toc.1-1.5.2.3.2.2.1"><a href="#section-5.3.2" class="xref">5.3.2</a>.  <a href="#name-priority-signaling-in-this-" class="xref">Priority Signaling in this Document</a></p>
+                    <p id="section-toc.1-1.5.2.3.2.2.1"><a href="#section-5.3.2" class="xref">5.3.2</a>.  <a href="#name-priority-signaling-in-this-" class="xref">Priority Signaling in This Document</a></p>
 </li>
                 </ul>
 </li>
@@ -1480,10 +1468,10 @@ svg [stroke="fill"], svg [fill^="#fff"] {
             <p id="section-toc.1-1.14.1"><a href="#appendix-B" class="xref">Appendix B</a>.  <a href="#name-changes-from-rfc-7540" class="xref">Changes from RFC 7540</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15">
-            <p id="section-toc.1-1.15.1"><a href="#appendix-C" class="xref"></a><a href="#name-contributors" class="xref">Contributors</a></p>
+            <p id="section-toc.1-1.15.1"><a href="#appendix-C" class="xref"></a><a href="#name-acknowledgments" class="xref">Acknowledgments</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16">
-            <p id="section-toc.1-1.16.1"><a href="#appendix-D" class="xref"></a><a href="#name-acknowledgments" class="xref">Acknowledgments</a></p>
+            <p id="section-toc.1-1.16.1"><a href="#appendix-D" class="xref"></a><a href="#name-contributors" class="xref">Contributors</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.17">
             <p id="section-toc.1-1.17.1"><a href="#appendix-E" class="xref"></a><a href="#name-authors-addresses" class="xref">Authors' Addresses</a></p>
@@ -1504,7 +1492,7 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 <p id="section-1-2">
         Making multiple concurrent requests can reduce latency and improve
         application performance. HTTP/1.0 allowed only one request to be
-        outstanding at a time on a given TCP <span>[<a href="#TCP" class="xref">TCP</a>]</span> connection. HTTP/1.1 (<span>[<a href="#HTTP11" class="xref">HTTP/1.1</a>]</span>)
+        outstanding at a time on a given TCP <span>[<a href="#TCP" class="xref">TCP</a>]</span> connection. HTTP/1.1 <span>[<a href="#HTTP11" class="xref">HTTP/1.1</a>]</span>
         added request pipelining, but this only partially addressed request
         concurrency and still suffers from application-layer head-of-line
         blocking. Therefore, HTTP/1.0 and HTTP/1.1 clients use multiple connections
@@ -1529,7 +1517,7 @@ svg [stroke="fill"], svg [fill^="#fff"] {
         Finally, HTTP/2 also enables more efficient processing of messages through use of binary
         message framing.<a href="#section-1-6" class="pilcrow">¶</a></p>
 <p id="section-1-7">
-        This document obsoletes <span><a href="#RFC7540" class="xref">RFC 7540</a> [<a href="#RFC7540" class="xref">RFC7540</a>]</span> and <span><a href="#RFC8740" class="xref">RFC 8740</a> [<a href="#RFC8740" class="xref">RFC8740</a>]</span>.  <a href="#revision-updates" class="xref">Appendix B</a> lists notable changes.<a href="#section-1-7" class="pilcrow">¶</a></p>
+        This document obsoletes RFCs 7540 and 8740.  <a href="#revision-updates" class="xref">Appendix B</a> lists notable changes.<a href="#section-1-7" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="Overview">
@@ -1599,7 +1587,7 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 </li>
         </ul>
 <p id="section-2.1-3">
-          While some of the frame and stream layer concepts are isolated from HTTP, this
+          While some of the frame- and stream-layer concepts are isolated from HTTP, this
           specification does not define a completely generic frame layer. The frame and stream
           layers are tailored to the needs of HTTP.<a href="#section-2.1-3" class="pilcrow">¶</a></p>
 </section>
@@ -1619,8 +1607,8 @@ svg [stroke="fill"], svg [fill^="#fff"] {
           Hexadecimal literals are prefixed with "<code>0x</code>" to distinguish them
           from decimal literals.<a href="#section-2.2-2" class="pilcrow">¶</a></p>
 <p id="section-2.2-3">
-          This specification describes binary formats using the convention described in <span><a href="https://rfc-editor.org/rfc/rfc9000#section-1.3" class="relref">Section 1.3</a> of RFC 9000 [<a href="#QUIC" class="xref">QUIC</a>]</span>.  Note that this format uses network byte
-          order and high-valued bits are listed before low-valued bits.<a href="#section-2.2-3" class="pilcrow">¶</a></p>
+          This specification describes binary formats using the conventions described in <span><a href="https://rfc-editor.org/rfc/rfc9000#section-1.3" class="relref">Section 1.3</a> of RFC 9000 [<a href="#QUIC" class="xref">QUIC</a>]</span>.  Note that this format uses network byte
+          order and that high-valued bits are listed before low-valued bits.<a href="#section-2.2-3" class="pilcrow">¶</a></p>
 <p id="section-2.2-4">
           The following terms are used:<a href="#section-2.2-4" class="pilcrow">¶</a></p>
 <span class="break"></span><dl class="dlParallel" id="section-2.2-5">
@@ -1702,13 +1690,13 @@ svg [stroke="fill"], svg [fill^="#fff"] {
         Implementations that generate HTTP requests need to discover whether a server supports
         HTTP/2.<a href="#section-3-1" class="pilcrow">¶</a></p>
 <p id="section-3-2">
-        HTTP/2 uses the "http" and "https" URI schemes defined in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-4.2" class="relref">Section 4.2</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>, with the same default port numbers as HTTP/1.1 (<span>[<a href="#HTTP11" class="xref">HTTP/1.1</a>]</span>). These URIs do not include any indication about what HTTP versions an
+        HTTP/2 uses the "<code>http</code>" and "<code>https</code>" URI schemes defined in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-4.2" class="relref">Section 4.2</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>, with the same default port numbers as HTTP/1.1 <span>[<a href="#HTTP11" class="xref">HTTP/1.1</a>]</span>. These URIs do not include any indication about what HTTP versions an
         upstream server (the immediate peer to which the client wishes to establish a connection)
         supports.<a href="#section-3-2" class="pilcrow">¶</a></p>
 <p id="section-3-3">
-        The means by which support for HTTP/2 is determined is different for "http" and "https"
-        URIs.  Discovery for "https" URIs is described in <a href="#discover-https" class="xref">Section 3.2</a>. HTTP/2
-        support for "http" URIs can only be discovered by out-of-band means, and requires prior knowledge
+        The means by which support for HTTP/2 is determined is different for "<code>http</code>" and "<code>https</code>"
+        URIs.  Discovery for "<code>https</code>" URIs is described in <a href="#discover-https" class="xref">Section 3.2</a>. HTTP/2
+        support for "<code>http</code>" URIs can only be discovered by out-of-band means and requires prior knowledge
         of the support as described in <a href="#known-http" class="xref">Section 3.3</a>.<a href="#section-3-3" class="pilcrow">¶</a></p>
 <div id="versioning">
 <section id="section-3.1">
@@ -1723,7 +1711,7 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 <li class="normal" id="section-3.1-2.1">
             <p id="section-3.1-2.1.1">
                 The string "h2" identifies the protocol where HTTP/2 uses Transport Layer Security
-                (TLS); see <a href="#TLSUsage" class="xref">Section 9.2</a>.  This identifier is used in the <span><a href="#TLS-ALPN" class="xref">TLS application-layer protocol negotiation (ALPN) extension</a> [<a href="#TLS-ALPN" class="xref">TLS-ALPN</a>]</span>
+                (TLS); see <a href="#TLSUsage" class="xref">Section 9.2</a>.  This identifier is used in the <span><a href="#TLS-ALPN" class="xref">TLS Application-Layer Protocol Negotiation (ALPN) extension</a> [<a href="#TLS-ALPN" class="xref">TLS-ALPN</a>]</span>
                 field and in any place where HTTP/2 over TLS is identified.<a href="#section-3.1-2.1.1" class="pilcrow">¶</a></p>
 <p id="section-3.1-2.1.2">
                 The "h2" string is serialized into an ALPN protocol identifier as the two-octet
@@ -1742,12 +1730,11 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 <div id="discover-https">
 <section id="section-3.2">
         <h3 id="name-starting-http-2-for-https-u">
-<a href="#section-3.2" class="section-number selfRef">3.2. </a><a href="#name-starting-http-2-for-https-u" class="section-name selfRef">Starting HTTP/2 for "https" URIs</a>
+<a href="#section-3.2" class="section-number selfRef">3.2. </a><a href="#name-starting-http-2-for-https-u" class="section-name selfRef">Starting HTTP/2 for "<code>https</code>" URIs</a>
         </h3>
 <p id="section-3.2-1">
-          A client that makes a request to an "https" URI uses <span><a href="#TLS13" class="xref">TLS</a> [<a href="#TLS13" class="xref">TLS13</a>]</span> with
-          the <span><a href="#TLS-ALPN" class="xref">application-layer protocol negotiation (ALPN)
-            extension</a> [<a href="#TLS-ALPN" class="xref">TLS-ALPN</a>]</span>.<a href="#section-3.2-1" class="pilcrow">¶</a></p>
+          A client that makes a request to an "<code>https</code>" URI uses <span><a href="#TLS13" class="xref">TLS</a> [<a href="#TLS13" class="xref">TLS13</a>]</span> with
+          the <span><a href="#TLS-ALPN" class="xref">ALPN extension</a> [<a href="#TLS-ALPN" class="xref">TLS-ALPN</a>]</span>.<a href="#section-3.2-1" class="pilcrow">¶</a></p>
 <p id="section-3.2-2">
           HTTP/2 over TLS uses the "h2" protocol identifier.  The "h2c" protocol identifier MUST NOT
           be sent by a client or selected by a server; the "h2c" protocol identifier describes a
@@ -1918,7 +1905,7 @@ HTTP Frame {
         <dd class="break"></dd>
 </dl>
 <p id="section-4.1-5">
-          The structure and content of the frame payload is dependent entirely on the frame type.<a href="#section-4.1-5" class="pilcrow">¶</a></p>
+          The structure and content of the frame payload are dependent entirely on the frame type.<a href="#section-4.1-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="FrameSize">
@@ -1961,7 +1948,7 @@ HTTP Frame {
 <p id="section-4.3-1">
           Field section compression is the process of compressing a set of field lines (<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-5.2" class="relref">Section 5.2</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>) to form a
           field block.  Field section decompression is the process of decoding a field block into a
-          set of field lines.  Details of HTTP/2 field section compression and decompression is
+          set of field lines.  Details of HTTP/2 field section compression and decompression are
           defined in <span>[<a href="#COMPRESSION" class="xref">COMPRESSION</a>]</span>, which, for historical reasons, refers to these
           processes as header compression and decompression.<a href="#section-4.3-1" class="pilcrow">¶</a></p>
 <p id="section-4.3-2">
@@ -1980,7 +1967,7 @@ HTTP Frame {
           carries a trailer section.<a href="#section-4.3-4" class="pilcrow">¶</a></p>
 <p id="section-4.3-5">
           A field section is a collection of field lines.  Each of the field lines in a
-          field block carry a single value.  The serialized field block is then divided into one or
+          field block carries a single value.  The serialized field block is then divided into one or
           more octet sequences, called field block fragments.  The first field block fragment is transmitted within the frame
           payload of <span><a href="#HEADERS" class="xref">HEADERS</a> (<a href="#HEADERS" class="xref">Section 6.2</a>)</span> or <span><a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a> (<a href="#PUSH_PROMISE" class="xref">Section 6.6</a>)</span>, each of which could be followed by <span><a href="#CONTINUATION" class="xref">CONTINUATION</a> (<a href="#CONTINUATION" class="xref">Section 6.10</a>)</span> frames to carry subsequent field block fragments.<a href="#section-4.3-5" class="pilcrow">¶</a></p>
 <p id="section-4.3-6">
@@ -2183,8 +2170,8 @@ HTTP Frame {
                     <text x="52" y="196">send H</text>
                     <text x="236" y="196">open</text>
                     <text x="420" y="196">recv H</text>
-                    <text x="100" y="260">half</text>
-                    <text x="372" y="260">half</text>
+                    <text x="100" y="260">half-</text>
+                    <text x="372" y="260">half-</text>
                     <text x="100" y="276">closed</text>
                     <text x="276" y="276">send R /</text>
                     <text x="372" y="276">closed</text>
@@ -2299,7 +2286,7 @@ HTTP Frame {
 <p id="section-5.1-7.2.4">
                 Receiving any frame other than <a href="#HEADERS" class="xref">HEADERS</a> or <a href="#PRIORITY" class="xref">PRIORITY</a> on
                 a stream in this state MUST be treated as a <span><a href="#ConnectionErrorHandler" class="xref">connection error</a> (<a href="#ConnectionErrorHandler" class="xref">Section 5.4.1</a>)</span> of type
-                <a href="#PROTOCOL_ERROR" class="xref">PROTOCOL_ERROR</a>. If this stream is server-initiated, as described in
+                <a href="#PROTOCOL_ERROR" class="xref">PROTOCOL_ERROR</a>. If this stream is initiated by the server, as described in
                 <a href="#StreamIdentifiers" class="xref">Section 5.1.1</a>, then receiving a <a href="#HEADERS" class="xref">HEADERS</a> frame MUST also
                 be treated as a <span><a href="#ConnectionErrorHandler" class="xref">connection error</a> (<a href="#ConnectionErrorHandler" class="xref">Section 5.4.1</a>)</span> of type
                 <a href="#PROTOCOL_ERROR" class="xref">PROTOCOL_ERROR</a>.<a href="#section-5.1-7.2.4" class="pilcrow">¶</a></p>
@@ -2442,7 +2429,7 @@ HTTP Frame {
               header compression state for <a href="#HEADERS" class="xref">HEADERS</a> and
               <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a> frames.  Receiving a <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a> frame also causes the promised
               stream to become "reserved (remote)", even when the <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a> frame is received on a closed stream. Additionally, the
-              content of <a href="#DATA" class="xref">DATA</a> frames count toward the
+              content of <a href="#DATA" class="xref">DATA</a> frames counts toward the
               connection flow-control window.<a href="#section-5.1-7.14.5" class="pilcrow">¶</a></p>
 <p id="section-5.1-7.14.6">
               An endpoint can perform this minimal processing for all streams that are in the
@@ -2465,7 +2452,7 @@ HTTP Frame {
           state.<a href="#section-5.1-8" class="pilcrow">¶</a></p>
 <p id="section-5.1-9">
           The rules in this section only apply to frames defined in this document.  Receipt of
-          frames for which the semantics are unknown cannot be treated as an error as the conditions
+          frames for which the semantics are unknown cannot be treated as an error, as the conditions
           for sending and receiving those frames are also unknown; see <a href="#extensibility" class="xref">Section 5.5</a>.<a href="#section-5.1-9" class="pilcrow">¶</a></p>
 <p id="section-5.1-10">
           An example of the state transitions for an HTTP request/response exchange can be found in
@@ -2545,7 +2532,7 @@ HTTP Frame {
           Using streams for multiplexing introduces contention over use of the TCP connection,
           resulting in blocked streams.  A flow-control scheme ensures that streams on the same
           connection do not destructively interfere with each other.  Flow control is used for both
-          individual streams and for the connection as a whole.<a href="#section-5.2-1" class="pilcrow">¶</a></p>
+          individual streams and the connection as a whole.<a href="#section-5.2-1" class="pilcrow">¶</a></p>
 <p id="section-5.2-2">
           HTTP/2 provides for flow control through use of the <span><a href="#WINDOW_UPDATE" class="xref">WINDOW_UPDATE frame</a> (<a href="#WINDOW_UPDATE" class="xref">Section 6.9</a>)</span>.<a href="#section-5.2-2" class="pilcrow">¶</a></p>
 <div id="fc-principles">
@@ -2631,7 +2618,7 @@ HTTP Frame {
             flow control can be difficult.  Endpoints MUST read and process HTTP/2 frames from the
             TCP receive buffer as soon as data is available.  Failure to read promptly could lead to
             a deadlock when critical frames, such as <a href="#WINDOW_UPDATE" class="xref">WINDOW_UPDATE</a>, are not read and acted upon. Reading frames promptly
-            does not expose endpoints to resource exhaustion attacks as HTTP/2 flow control limits
+            does not expose endpoints to resource exhaustion attacks, as HTTP/2 flow control limits
             resource commitments.<a href="#section-5.2.2-4" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -2648,7 +2635,7 @@ HTTP Frame {
 <p id="section-5.2.3-2">
             Sending timely <a href="#WINDOW_UPDATE" class="xref">WINDOW_UPDATE</a> frames
             can improve performance. Endpoints will want to balance the need to improve receive
-            throughput with the need to manage resource exhaustion risks, and should take careful
+            throughput with the need to manage resource exhaustion risks and should take careful
             note of <a href="#dos" class="xref">Section 10.5</a> in defining their strategy to manage window sizes.<a href="#section-5.2.3-2" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -2677,7 +2664,7 @@ HTTP Frame {
           </h4>
 <p id="section-5.3.1-1">
             RFC 7540 defined a rich system for signaling priority of requests.  However, this system
-            proved to be complex and it was not uniformly implemented.<a href="#section-5.3.1-1" class="pilcrow">¶</a></p>
+            proved to be complex, and it was not uniformly implemented.<a href="#section-5.3.1-1" class="pilcrow">¶</a></p>
 <p id="section-5.3.1-2">
             The flexible scheme meant that it was possible for clients to express priorities in very
             different ways, with little consistency in the approaches that were adopted.  For
@@ -2685,14 +2672,14 @@ HTTP Frame {
             priorities was uneven in both clients and servers.  Many server deployments ignored
             client signals when prioritizing their handling of requests.<a href="#section-5.3.1-2" class="pilcrow">¶</a></p>
 <p id="section-5.3.1-3">
-            In short, the prioritization signaling in <span><a href="#RFC7540" class="xref">RFC7540</a> [<a href="#RFC7540" class="xref">RFC7540</a>]</span> was not
+            In short, the prioritization signaling in <span><a href="#RFC7540" class="xref">RFC 7540</a> [<a href="#RFC7540" class="xref">RFC7540</a>]</span> was not
             successful.<a href="#section-5.3.1-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="PriorityHere">
 <section id="section-5.3.2">
           <h4 id="name-priority-signaling-in-this-">
-<a href="#section-5.3.2" class="section-number selfRef">5.3.2. </a><a href="#name-priority-signaling-in-this-" class="section-name selfRef">Priority Signaling in this Document</a>
+<a href="#section-5.3.2" class="section-number selfRef">5.3.2. </a><a href="#name-priority-signaling-in-this-" class="section-name selfRef">Priority Signaling in This Document</a>
           </h4>
 <p id="section-5.3.2-1">
             This update to HTTP/2 deprecates the priority signaling defined in <span><a href="#RFC7540" class="xref">RFC 7540</a> [<a href="#RFC7540" class="xref">RFC7540</a>]</span>.  The bulk of the text related to priority signals is
@@ -2705,7 +2692,7 @@ HTTP Frame {
 <p id="section-5.3.2-3">
             Signaling priority information is necessary to attain good performance in many cases.
             Where signaling priority information is important, endpoints are encouraged to use an
-            alternative scheme, such as <span>[<a href="#I-D.ietf-httpbis-priority" class="xref">HTTP-PRIORITY</a>]</span>.<a href="#section-5.3.2-3" class="pilcrow">¶</a></p>
+            alternative scheme, such as the scheme described in <span>[<a href="#I-D.ietf-httpbis-priority" class="xref">HTTP-PRIORITY</a>]</span>.<a href="#section-5.3.2-3" class="pilcrow">¶</a></p>
 <p id="section-5.3.2-4">
             Though the priority signaling from RFC 7540 was not widely adopted, the information it
             provides can still be useful in the absence of better information.  Endpoints that
@@ -2717,7 +2704,7 @@ HTTP Frame {
             the absence of any priority signals.  Servers MAY interpret the complete absence of
             signals as an indication that the client has not implemented the feature.  The defaults
             described in <span><a href="https://rfc-editor.org/rfc/rfc7540#section-5.3.5" class="relref">Section 5.3.5</a> of [<a href="#RFC7540" class="xref">RFC7540</a>]</span> are known to have poor performance
-            under most conditions and their use is unlikely to be deliberate.<a href="#section-5.3.2-5" class="pilcrow">¶</a></p>
+            under most conditions, and their use is unlikely to be deliberate.<a href="#section-5.3.2-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -2728,7 +2715,7 @@ HTTP Frame {
 <a href="#section-5.4" class="section-number selfRef">5.4. </a><a href="#name-error-handling" class="section-name selfRef">Error Handling</a>
         </h3>
 <p id="section-5.4-1">
-          HTTP/2 framing permits two classes of error:<a href="#section-5.4-1" class="pilcrow">¶</a></p>
+          HTTP/2 framing permits two classes of errors:<a href="#section-5.4-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-5.4-2.1">
               An error condition that renders the entire connection unusable is a connection error.<a href="#section-5.4-2.1" class="pilcrow">¶</a>
@@ -2875,8 +2862,8 @@ HTTP Frame {
       </h2>
 <p id="section-6-1">
         This specification defines a number of frame types, each identified by a unique 8-bit type
-        code. Each frame type serves a distinct purpose in the establishment and management either
-        of the connection as a whole or of individual streams.<a href="#section-6-1" class="pilcrow">¶</a></p>
+        code. Each frame type serves a distinct purpose in the establishment and management of either
+        the connection as a whole or individual streams.<a href="#section-6-1" class="pilcrow">¶</a></p>
 <p id="section-6-2">
         The transmission of specific frame types can alter the state of a connection. If endpoints
         fail to maintain a synchronized view of the connection state, successful communication
@@ -2976,7 +2963,7 @@ DATA Frame {
           DATA frames are subject to flow control and can only be sent when a stream is in the
           "open" or "half-closed (remote)" state. The entire DATA frame payload is included in flow
           control, including the Pad Length and Padding fields if present.  If a DATA frame is received
-          whose stream is not in "open" or "half-closed (local)" state, the recipient MUST respond
+          whose stream is not in the "open" or "half-closed (local)" state, the recipient MUST respond
           with a <span><a href="#StreamErrorHandler" class="xref">stream error</a> (<a href="#StreamErrorHandler" class="xref">Section 5.4.2</a>)</span> of type
           <a href="#STREAM_CLOSED" class="xref">STREAM_CLOSED</a>.<a href="#section-6.1-10" class="pilcrow">¶</a></p>
 <p id="section-6.1-11">
@@ -3375,7 +3362,7 @@ Setting {
             </dt>
 <dd style="margin-left: 1.5em" id="section-6.5.2-2.2">
               <p id="section-6.5.2-2.2.1">
-                  Allows the sender to inform the remote endpoint of the maximum size of the
+                  This setting allows the sender to inform the remote endpoint of the maximum size of the
                   compression table used to decode field blocks, in units of octets. The encoder can select
                   any size equal to or less than this value by using signaling specific to the
                   compression format inside a field block (see <span>[<a href="#COMPRESSION" class="xref">COMPRESSION</a>]</span>). The initial value is 4,096 octets.<a href="#section-6.5.2-2.2.1" class="pilcrow">¶</a></p>
@@ -3392,14 +3379,14 @@ Setting {
                 that has both set this parameter to 0 and had it acknowledged MUST treat the receipt
                 of a <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a> frame as a <span><a href="#ConnectionErrorHandler" class="xref">connection error</a> (<a href="#ConnectionErrorHandler" class="xref">Section 5.4.1</a>)</span> of type <a href="#PROTOCOL_ERROR" class="xref">PROTOCOL_ERROR</a>.<a href="#section-6.5.2-2.4.1" class="pilcrow">¶</a></p>
 <p id="section-6.5.2-2.4.2">
-                The initial value of SETTINGS_ENABLE_PUSH is 1.  For a client this value indicates that it
-                is willing to receive PUSH_PROMISE frames.  For a server this initial value has no effect, and
+                The initial value of SETTINGS_ENABLE_PUSH is 1.  For a client, this value indicates that it
+                is willing to receive PUSH_PROMISE frames.  For a server, this initial value has no effect, and
                 is equivalent to the value 0.  Any value other than 0 or 1 MUST be treated as a
                 <span><a href="#ConnectionErrorHandler" class="xref">connection error</a> (<a href="#ConnectionErrorHandler" class="xref">Section 5.4.1</a>)</span> of type
                 <a href="#PROTOCOL_ERROR" class="xref">PROTOCOL_ERROR</a>.<a href="#section-6.5.2-2.4.2" class="pilcrow">¶</a></p>
 <p id="section-6.5.2-2.4.3">
                 A server MUST NOT explicitly set this value to 1.  A server MAY choose to omit this
-                setting when it sends a SETTINGS frame, but if a server does include a value it MUST
+                setting when it sends a SETTINGS frame, but if a server does include a value, it MUST
                 be 0.  A client MUST treat receipt of a SETTINGS frame with SETTINGS_ENABLE_PUSH set
                 to 1 as a <span><a href="#ConnectionErrorHandler" class="xref">connection error</a> (<a href="#ConnectionErrorHandler" class="xref">Section 5.4.1</a>)</span> of type
                 <a href="#PROTOCOL_ERROR" class="xref">PROTOCOL_ERROR</a>.<a href="#section-6.5.2-2.4.3" class="pilcrow">¶</a></p>
@@ -3410,7 +3397,7 @@ Setting {
             </dt>
 <dd style="margin-left: 1.5em" id="section-6.5.2-2.6">
               <p id="section-6.5.2-2.6.1">
-                  Indicates the maximum number of concurrent streams that the sender will allow.
+                  This setting indicates the maximum number of concurrent streams that the sender will allow.
                   This limit is directional: it applies to the number of streams that the sender
                   permits the receiver to create. Initially, there is no limit to this value.  It is
                   recommended that this value be no smaller than 100, so as to not unnecessarily
@@ -3428,7 +3415,7 @@ Setting {
             </dt>
 <dd style="margin-left: 1.5em" id="section-6.5.2-2.8">
               <p id="section-6.5.2-2.8.1">
-                  Indicates the sender's initial window size (in units of octets) for stream-level flow
+                  This setting indicates the sender's initial window size (in units of octets) for stream-level flow
                   control.  The initial value is 2<sup>16</sup>-1 (65,535) octets.<a href="#section-6.5.2-2.8.1" class="pilcrow">¶</a></p>
 <p id="section-6.5.2-2.8.2">
                   This setting affects the window size of all streams (see <a href="#InitialWindowSize" class="xref">Section 6.9.2</a>).<a href="#section-6.5.2-2.8.2" class="pilcrow">¶</a></p>
@@ -3443,7 +3430,7 @@ Setting {
             </dt>
 <dd style="margin-left: 1.5em" id="section-6.5.2-2.10">
               <p id="section-6.5.2-2.10.1">
-                  Indicates the size of the largest frame payload that the sender is willing to
+                  This setting indicates the size of the largest frame payload that the sender is willing to
                   receive, in units of octets.<a href="#section-6.5.2-2.10.1" class="pilcrow">¶</a></p>
 <p id="section-6.5.2-2.10.2">
                   The initial value is 2<sup>14</sup> (16,384) octets.  The value advertised by
@@ -3458,7 +3445,7 @@ Setting {
             </dt>
 <dd style="margin-left: 1.5em" id="section-6.5.2-2.12">
               <p id="section-6.5.2-2.12.1">
-                  This advisory setting informs a peer of the maximum size of field section that the
+                  This advisory setting informs a peer of the maximum field section size that the
                   sender is prepared to accept, in units of octets. The value is based on the uncompressed
                   size of field lines, including the length of the name and value in units of octets plus
                   an overhead of 32 octets for each field line.<a href="#section-6.5.2-2.12.1" class="pilcrow">¶</a></p>
@@ -3495,7 +3482,7 @@ Setting {
             If the sender of a SETTINGS frame does not receive an acknowledgment within a
             reasonable amount of time, it MAY issue a <span><a href="#ConnectionErrorHandler" class="xref">connection error</a> (<a href="#ConnectionErrorHandler" class="xref">Section 5.4.1</a>)</span> of type <a href="#SETTINGS_TIMEOUT" class="xref">SETTINGS_TIMEOUT</a>. In setting a timeout,
             some allowance needs to be made for processing delays at the peer; a timeout that is
-            solely based on the round trip time between endpoints might result in spurious errors.<a href="#section-6.5.3-3" class="pilcrow">¶</a></p>
+            solely based on the round-trip time between endpoints might result in spurious errors.<a href="#section-6.5.3-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -3716,7 +3703,7 @@ PING Frame {
           administrative actions, like server maintenance.<a href="#section-6.8-1" class="pilcrow">¶</a></p>
 <p id="section-6.8-2">
           There is an inherent race condition between an endpoint starting new streams and the
-          remote sending a GOAWAY frame.  To deal with this case, the GOAWAY contains the stream
+          remote peer sending a GOAWAY frame.  To deal with this case, the GOAWAY contains the stream
           identifier of the last peer-initiated stream that was or might be processed on the
           sending endpoint in this connection.  For instance, if the server sends a GOAWAY frame,
           the identified stream is the highest-numbered stream initiated by the client.<a href="#section-6.8-2" class="pilcrow">¶</a></p>
@@ -3797,7 +3784,7 @@ GOAWAY Frame {
           DELETE.  Any protocol activity that uses higher-numbered streams can be safely retried
           using a new connection.<a href="#section-6.8-15" class="pilcrow">¶</a></p>
 <p id="section-6.8-16">
-          Activity on streams numbered lower or equal to the last stream identifier might still
+          Activity on streams numbered lower than or equal to the last stream identifier might still
           complete successfully.  The sender of a GOAWAY frame might gracefully shut down a
           connection by sending a GOAWAY frame, maintaining the connection in an "open" state until
           all in-progress streams complete.<a href="#section-6.8-16" class="pilcrow">¶</a></p>
@@ -3824,7 +3811,7 @@ GOAWAY Frame {
           receiver with identifiers higher than the identified last stream.  However, any frames
           that alter connection state cannot be completely ignored.  For instance,
           <a href="#HEADERS" class="xref">HEADERS</a>, <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a>, and <a href="#CONTINUATION" class="xref">CONTINUATION</a> frames
-          MUST be minimally processed to ensure the state maintained for field section compression is
+          MUST be minimally processed to ensure that the state maintained for field section compression is
           consistent (see <a href="#FieldBlock" class="xref">Section 4.3</a>); similarly, DATA frames MUST be counted
           toward the connection flow-control window.  Failure to process these frames can cause flow
           control or field section compression state to become unsynchronized.<a href="#section-6.8-19" class="pilcrow">¶</a></p>
@@ -3902,7 +3889,7 @@ WINDOW_UPDATE Frame {
           treated as a <span><a href="#ConnectionErrorHandler" class="xref">connection error</a> (<a href="#ConnectionErrorHandler" class="xref">Section 5.4.1</a>)</span>.<a href="#section-6.9-9" class="pilcrow">¶</a></p>
 <p id="section-6.9-10">
           WINDOW_UPDATE can be sent by a peer that has sent a frame with the END_STREAM flag set.
-          This means that a receiver could receive a WINDOW_UPDATE frame on a stream in the "half-closed (remote)"
+          This means that a receiver could receive a WINDOW_UPDATE frame on a stream in a "half-closed (remote)"
           or "closed" state.  A receiver MUST NOT treat this as an error (see <a href="#StreamStates" class="xref">Section 5.1</a>).<a href="#section-6.9-10" class="pilcrow">¶</a></p>
 <p id="section-6.9-11">
           A receiver that receives a flow-controlled frame MUST always account for its contribution
@@ -4163,7 +4150,7 @@ CONTINUATION Frame {
 <dt id="section-7-4.17">CANCEL (0x08):</dt>
         <dd id="section-7-4.18" style="margin-left: 1.5em">
 <div id="CANCEL">
-            Used by the endpoint to indicate that the stream is no longer needed.<a href="#CANCEL" class="pilcrow">¶</a>
+            The endpoint uses this error code to indicate that the stream is no longer needed.<a href="#CANCEL" class="pilcrow">¶</a>
 </div>
         </dd>
 <dd class="break"></dd>
@@ -4347,12 +4334,12 @@ CONTINUATION Frame {
 <p id="section-8.2.1-1">
             The definitions of field names and values in HTTP prohibit some characters that HPACK
             might be able to convey.  HTTP/2 implementations SHOULD validate field names and values
-            according to their definitions in Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-5.1" class="relref">5.1</a> and <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-5.5" class="relref">5.5</a> of <span>[<a href="#HTTP" class="xref">HTTP</a>]</span> respectively and treat messages that contain prohibited characters as
+            according to their definitions in Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-5.1" class="relref">5.1</a> and <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-5.5" class="relref">5.5</a> of <span>[<a href="#HTTP" class="xref">HTTP</a>]</span>, respectively, and treat messages that contain prohibited characters as
             <span><a href="#malformed" class="xref">malformed</a> (<a href="#malformed" class="xref">Section 8.1.1</a>)</span>.<a href="#section-8.2.1-1" class="pilcrow">¶</a></p>
 <p id="section-8.2.1-2">
             Failure to validate fields can be exploited for request smuggling attacks.  In
             particular, unvalidated fields might enable attacks when messages are forwarded using
-            <span><a href="#HTTP11" class="xref">HTTP/1.1</a> [<a href="#HTTP11" class="xref">HTTP/1.1</a>]</span>, where characters such as CR, LF, and COLON are
+            <span><a href="#HTTP11" class="xref">HTTP/1.1</a> [<a href="#HTTP11" class="xref">HTTP/1.1</a>]</span>, where characters such as carriage return (CR), line feed (LF), and COLON are
             used as delimiters.  Implementations MUST perform the following minimal validation of
             field names and values:<a href="#section-8.2.1-2" class="pilcrow">¶</a></p>
 <ul class="normal">
@@ -4378,7 +4365,7 @@ CONTINUATION Frame {
           </ul>
 <aside id="section-8.2.1-4">
             <p id="section-8.2.1-4.1">
-            Note: An implementation that validates fields according the definitions in Sections
+            Note: An implementation that validates fields according to the definitions in Sections
             <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-5.1" class="relref">5.1</a> and <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-5.5" class="relref">5.5</a> of <span>[<a href="#HTTP" class="xref">HTTP</a>]</span> only needs an additional check
             that field names do not include uppercase characters.<a href="#section-8.2.1-4.1" class="pilcrow">¶</a></p>
 </aside>
@@ -4434,10 +4421,10 @@ CONTINUATION Frame {
           </h4>
 <p id="section-8.2.3-1">
             The <span><a href="#COOKIE" class="xref">Cookie header field</a> [<a href="#COOKIE" class="xref">COOKIE</a>]</span> uses a semicolon (";") to delimit
-            cookie-pairs (or "crumbs").  This header field contains multiple values but does not use
+            cookie-pairs (or "crumbs").  This header field contains multiple values, but does not use
             a COMMA (",") as a separator, thereby preventing cookie-pairs from being sent on
             multiple field lines (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-5.2" class="relref">Section 5.2</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>).  This can significantly
-            reduce compression efficiency as updates to individual cookie-pairs would invalidate any
+            reduce compression efficiency, as updates to individual cookie-pairs would invalidate any
             field lines that are stored in the HPACK table.<a href="#section-8.2.3-1" class="pilcrow">¶</a></p>
 <p id="section-8.2.3-2">
             To allow for better compression efficiency, the Cookie header field MAY be split into
@@ -4468,7 +4455,7 @@ cookie: e=f
 <a href="#section-8.3" class="section-number selfRef">8.3. </a><a href="#name-http-control-data" class="section-name selfRef">HTTP Control Data</a>
         </h3>
 <p id="section-8.3-1">
-          HTTP/2 uses special pseudo-header fields beginning with ':' character (ASCII 0x3a) to
+          HTTP/2 uses special pseudo-header fields beginning with a ':' character (ASCII 0x3a) to
           convey message control data (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-6.2" class="relref">Section 6.2</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>).<a href="#section-8.3-1" class="pilcrow">¶</a></p>
 <p id="section-8.3-2">
           Pseudo-header fields are not HTTP header fields.  Endpoints MUST NOT generate
@@ -4555,7 +4542,7 @@ cookie: e=f
               <p id="section-8.3.1-2.4.1">
                   The "<code>:path</code>" pseudo-header field includes the path and
                   query parts of the target URI (the <code>absolute-path</code>
-                  production and optionally a '?' character followed by the
+                  production and, optionally, a '?' character followed by the
                   <code>query</code> production; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-4.1" class="relref">Section 4.1</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>).
                   A request in asterisk form (for OPTIONS) includes the value '*' for the
                   "<code>:path</code>" pseudo-header field.<a href="#section-8.3.1-2.4.1" class="pilcrow">¶</a></p>
@@ -4567,7 +4554,7 @@ cookie: e=f
 <li class="normal" id="section-8.3.1-2.4.3.1">
                   an OPTIONS request for an "<code>http</code>" or "<code>https</code>" URI that does not include a path
                   component; these MUST include a "<code>:path</code>" pseudo-header field with a value
-                  of '*' (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-7.1" class="relref">Section 7.1</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>)<a href="#section-8.3.1-2.4.3.1" class="pilcrow">¶</a>
+                  of '*' (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-7.1" class="relref">Section 7.1</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>).<a href="#section-8.3.1-2.4.3.1" class="pilcrow">¶</a>
 </li>
                 <li class="normal" id="section-8.3.1-2.4.3.2">
                   <span><a href="#CONNECT" class="xref">CONNECT requests</a> (<a href="#CONNECT" class="xref">Section 8.5</a>)</span>, where the "<code>:path</code>" pseudo-header field is omitted.<a href="#section-8.3.1-2.4.3.2" class="pilcrow">¶</a>
@@ -4577,7 +4564,7 @@ cookie: e=f
           </ul>
 <p id="section-8.3.1-3">
             All HTTP/2 requests MUST include exactly one valid value for the "<code>:method</code>",
-            "<code>:scheme</code>", and "<code>:path</code>" pseudo-header fields, unless it is a <span><a href="#CONNECT" class="xref">CONNECT request</a> (<a href="#CONNECT" class="xref">Section 8.5</a>)</span>. An HTTP request that omits mandatory
+            "<code>:scheme</code>", and "<code>:path</code>" pseudo-header fields, unless they are <span><a href="#CONNECT" class="xref">CONNECT requests</a> (<a href="#CONNECT" class="xref">Section 8.5</a>)</span>. An HTTP request that omits mandatory
             pseudo-header fields is <span><a href="#malformed" class="xref">malformed</a> (<a href="#malformed" class="xref">Section 8.1.1</a>)</span>.<a href="#section-8.3.1-3" class="pilcrow">¶</a></p>
 <p id="section-8.3.1-4">
             Individual HTTP/2 requests do not carry an explicit indicator of protocol version.
@@ -4624,7 +4611,7 @@ cookie: e=f
           account factors such as caching, content negotiation, and user behavior. Errors in
           prediction can lead to performance degradation, due to the opportunity cost that the
           additional data on the wire represents. In particular, pushing any significant amount of
-          data can cause contention issues with more-important responses.<a href="#section-8.4-3" class="pilcrow">¶</a></p>
+          data can cause contention issues with responses that are more important.<a href="#section-8.4-3" class="pilcrow">¶</a></p>
 <p id="section-8.4-4">
           A client can request that server push be disabled, though this is negotiated for each hop
           independently. The <a href="#SETTINGS_ENABLE_PUSH" class="xref">SETTINGS_ENABLE_PUSH</a> setting can be set to 0 to indicate that server
@@ -4635,7 +4622,7 @@ cookie: e=f
           or a trailer section. Clients that receive a promised request that is not cacheable, that
           is not known to be safe, or that indicates the presence of request content MUST reset the
           promised stream with a <span><a href="#StreamErrorHandler" class="xref">stream error</a> (<a href="#StreamErrorHandler" class="xref">Section 5.4.2</a>)</span> of type
-          <a href="#PROTOCOL_ERROR" class="xref">PROTOCOL_ERROR</a>. Note this could result
+          <a href="#PROTOCOL_ERROR" class="xref">PROTOCOL_ERROR</a>. Note that this could result
           in the promised stream being reset if the client does not recognize a newly defined
           method as being safe.<a href="#section-8.4-5" class="pilcrow">¶</a></p>
 <p id="section-8.4-6">
@@ -4643,7 +4630,7 @@ cookie: e=f
           stored by the client, if it implements an HTTP cache. Pushed responses are considered
           successfully validated on the origin server (e.g., if the "no-cache" cache response
           directive is present; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cache-18#section-5.2.2.4" class="relref">Section 5.2.2.4</a> of [<a href="#CACHE" class="xref">HTTP-CACHING</a>]</span>) while the stream
-          identified by the promised stream ID is still open.<a href="#section-8.4-6" class="pilcrow">¶</a></p>
+          identified by the promised stream identifier is still open.<a href="#section-8.4-6" class="pilcrow">¶</a></p>
 <p id="section-8.4-7">
           Pushed responses that are not cacheable MUST NOT be stored by any HTTP cache. They MAY
           be made available to the application separately.<a href="#section-8.4-7" class="pilcrow">¶</a></p>
@@ -4746,7 +4733,7 @@ cookie: e=f
             authoritative (see <a href="#authority" class="xref">Section 10.1</a>) or the proxy that provided the pushed
             response is configured for the corresponding request. For example, a server that offers
             a certificate for only the <code>example.com</code> DNS-ID (see <span>[<a href="#RFC6125" class="xref">RFC6125</a>]</span>)
-            is not permitted to push a response for <code>https://www.example.org/doc</code>.<a href="#section-8.4.2-5" class="pilcrow">¶</a></p>
+            is not permitted to push a response for &lt;<code>https://www.example.org/doc</code>&gt;.<a href="#section-8.4.2-5" class="pilcrow">¶</a></p>
 <p id="section-8.4.2-6">
             The response for a <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a> stream begins with a
             <a href="#HEADERS" class="xref">HEADERS</a> frame, which immediately puts the stream into the "half-closed
@@ -4769,7 +4756,7 @@ cookie: e=f
           The CONNECT method (<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-9.3.6" class="relref">Section 9.3.6</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>) is
           used to convert an HTTP connection into a tunnel to a remote host.
           CONNECT is primarily used with HTTP proxies to establish a TLS session with an origin
-          server for the purposes of interacting with <code>https</code> resources.<a href="#section-8.5-1" class="pilcrow">¶</a></p>
+          server for the purposes of interacting with "<code>https</code>" resources.<a href="#section-8.5-1" class="pilcrow">¶</a></p>
 <p id="section-8.5-2">
           In HTTP/2, the CONNECT method establishes a tunnel over a single HTTP/2 stream to a
           remote host, rather than converting the entire connection to a tunnel. A CONNECT header
@@ -4794,7 +4781,7 @@ cookie: e=f
           A proxy that supports CONNECT establishes a <span><a href="#TCP" class="xref">TCP connection</a> [<a href="#TCP" class="xref">TCP</a>]</span> to
           the host and port identified in the "<code>:authority</code>" pseudo-header field. Once
           this connection is successfully established, the proxy sends a <a href="#HEADERS" class="xref">HEADERS</a>
-          frame containing a 2xx series status code to the client, as defined in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-9.3.6" class="relref">Section 9.3.6</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>.<a href="#section-8.5-5" class="pilcrow">¶</a></p>
+          frame containing a 2xx-series status code to the client, as defined in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-9.3.6" class="relref">Section 9.3.6</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>.<a href="#section-8.5-5" class="pilcrow">¶</a></p>
 <p id="section-8.5-6">
           After the initial <a href="#HEADERS" class="xref">HEADERS</a> frame sent by each
           peer, all subsequent <a href="#DATA" class="xref">DATA</a> frames correspond to
@@ -4829,7 +4816,7 @@ cookie: e=f
 <p id="section-8.6-2">
           The semantics of 101 (Switching Protocols) aren't applicable to a multiplexed protocol.
           Similar functionality might be enabled through the use of <span><a href="#RFC8441" class="xref">extended
-          CONNECT</a> [<a href="#RFC8441" class="xref">RFC8441</a>]</span> and other protocols are able to use the same mechanisms that HTTP/2 uses to
+          CONNECT</a> [<a href="#RFC8441" class="xref">RFC8441</a>]</span>, and other protocols are able to use the same mechanisms that HTTP/2 uses to
           negotiate their use (see <a href="#starting" class="xref">Section 3</a>).<a href="#section-8.6-2" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -5129,7 +5116,7 @@ cookie: e=f
 <p id="section-9.2-3">
           Requirements for deployments of HTTP/2 that negotiate <span><a href="#TLS13" class="xref">TLS 1.3</a> [<a href="#TLS13" class="xref">TLS13</a>]</span>
           are included in <a href="#tls13features" class="xref">Section 9.2.3</a>.  Deployments of TLS 1.2 are subject to
-          the requirements in <a href="#tls12features" class="xref">Section 9.2.1</a> and <a href="#tls12ciphers" class="xref">Section 9.2.2</a>.
+          the requirements in Sections <a href="#tls12features" class="xref">9.2.1</a> and <a href="#tls12ciphers" class="xref">9.2.2</a>.
           Implementations are encouraged to provide defaults that comply, but it is recognized that
           deployments are ultimately responsible for compliance.<a href="#section-9.2-3" class="pilcrow">¶</a></p>
 <div id="tls12features">
@@ -5144,7 +5131,7 @@ cookie: e=f
             connection that does not meet these TLS requirements with a <span><a href="#ConnectionErrorHandler" class="xref">connection error</a> (<a href="#ConnectionErrorHandler" class="xref">Section 5.4.1</a>)</span> of type <a href="#INADEQUATE_SECURITY" class="xref">INADEQUATE_SECURITY</a>.<a href="#section-9.2.1-1" class="pilcrow">¶</a></p>
 <p id="section-9.2.1-2">
             A deployment of HTTP/2 over TLS 1.2 MUST disable compression. TLS compression can lead
-            to the exposure of information that would not otherwise be revealed <span>[<a href="#RFC3749" class="xref">RFC3749</a>]</span>. Generic compression is unnecessary since HTTP/2 provides
+            to the exposure of information that would not otherwise be revealed <span>[<a href="#RFC3749" class="xref">RFC3749</a>]</span>. Generic compression is unnecessary, since HTTP/2 provides
             compression features that are more aware of context and therefore likely to be more
             appropriate for use for performance, security, or other reasons.<a href="#section-9.2.1-2" class="pilcrow">¶</a></p>
 <p id="section-9.2.1-3">
@@ -5161,11 +5148,11 @@ cookie: e=f
 <p id="section-9.2.1-5">
             This effectively prevents the use of renegotiation in response to a request for a
             specific protected resource.  A future specification might provide a way to support this
-            use case. Alternatively, a server might use an <span><a href="#ErrorHandler" class="xref">error</a> (<a href="#ErrorHandler" class="xref">Section 5.4</a>)</span> of type <a href="#HTTP_1_1_REQUIRED" class="xref">HTTP_1_1_REQUIRED</a> to request the client
+            use case. Alternatively, a server might use an <span><a href="#ErrorHandler" class="xref">error</a> (<a href="#ErrorHandler" class="xref">Section 5.4</a>)</span> of type <a href="#HTTP_1_1_REQUIRED" class="xref">HTTP_1_1_REQUIRED</a> to request that the client
             use a protocol that supports renegotiation.<a href="#section-9.2.1-5" class="pilcrow">¶</a></p>
 <p id="section-9.2.1-6">
             Implementations MUST support ephemeral key exchange sizes of at least 2048 bits for
-            cipher suites that use ephemeral finite field Diffie-Hellman (DHE) (<span><a href="https://rfc-editor.org/rfc/rfc5246#section-8.1.2" class="relref">Section 8.1.2</a> of [<a href="#TLS12" class="xref">TLS12</a>]</span> and 224 bits for cipher suites that use ephemeral elliptic curve
+            cipher suites that use ephemeral finite field Diffie-Hellman (DHE) (<span><a href="https://rfc-editor.org/rfc/rfc5246#section-8.1.2" class="relref">Section 8.1.2</a> of [<a href="#TLS12" class="xref">TLS12</a>]</span>) and 224 bits for cipher suites that use ephemeral elliptic curve
             Diffie-Hellman (ECDHE) <span>[<a href="#RFC8422" class="xref">RFC8422</a>]</span>. Clients MUST accept DHE sizes of up to
             4096 bits. Endpoints MAY treat negotiation of key sizes smaller than the lower limits
             as a <span><a href="#ConnectionErrorHandler" class="xref">connection error</a> (<a href="#ConnectionErrorHandler" class="xref">Section 5.4.1</a>)</span> of type <a href="#INADEQUATE_SECURITY" class="xref">INADEQUATE_SECURITY</a>.<a href="#section-9.2.1-6" class="pilcrow">¶</a></p>
@@ -5177,8 +5164,7 @@ cookie: e=f
 <a href="#section-9.2.2" class="section-number selfRef">9.2.2. </a><a href="#name-tls-12-cipher-suites" class="section-name selfRef">TLS 1.2 Cipher Suites</a>
           </h4>
 <p id="section-9.2.2-1">
-            A deployment of HTTP/2 over TLS 1.2 SHOULD NOT use any of the cipher suites that are
-            listed in the  <span><a href="#BadCipherSuites" class="xref">list of prohibited cipher suites</a> (<a href="#BadCipherSuites" class="xref">Appendix A</a>)</span>.<a href="#section-9.2.2-1" class="pilcrow">¶</a></p>
+            A deployment of HTTP/2 over TLS 1.2 SHOULD NOT use any of the prohibited cipher suites listed in <a href="#BadCipherSuites" class="xref">Appendix A</a>.<a href="#section-9.2.2-1" class="pilcrow">¶</a></p>
 <p id="section-9.2.2-2">
             Endpoints MAY choose to generate a <span><a href="#ConnectionErrorHandler" class="xref">connection
             error</a> (<a href="#ConnectionErrorHandler" class="xref">Section 5.4.1</a>)</span> of type <a href="#INADEQUATE_SECURITY" class="xref">INADEQUATE_SECURITY</a> if one of the prohibited cipher suites is
@@ -5294,20 +5280,20 @@ cookie: e=f
           <a href="#HttpHeaders" class="xref">Section 8.2</a> does not include specific rules for validation of
           pseudo-header fields.  If the values of these fields are used, additional validation is
           necessary. This is particularly important where "<code>:scheme</code>", "<code>:authority</code>", and
-          "<code>:path</code>" are combined to form a single URI string (<span>[<a href="#RFC3986" class="xref">RFC3986</a>]</span>). Similar problems might occur when that URI or just "<code>:path</code>" are
+          "<code>:path</code>" are combined to form a single URI string <span>[<a href="#RFC3986" class="xref">RFC3986</a>]</span>. Similar problems might occur when that URI or just "<code>:path</code>" is
           combined with "<code>:method</code>" to construct a request line (as in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-messaging-18#section-3" class="relref">Section 3</a> of [<a href="#HTTP11" class="xref">HTTP/1.1</a>]</span>). Simple concatenation is not secure unless the input values are fully
           validated.<a href="#section-10.3-2" class="pilcrow">¶</a></p>
 <p id="section-10.3-3">
           An intermediary can reject fields that contain invalid field names or values for other
-          reasons, in particular those that do not conform to the HTTP ABNF grammar from <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-5" class="relref">Section 5</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>. Intermediaries that do not perform any validation of fields
+          reasons -- in particular, those fields that do not conform to the HTTP ABNF grammar from <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-5" class="relref">Section 5</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>. Intermediaries that do not perform any validation of fields
           other than the minimum required by <a href="#HttpHeaders" class="xref">Section 8.2</a> could forward messages
           that contain invalid field names or values.<a href="#section-10.3-3" class="pilcrow">¶</a></p>
 <p id="section-10.3-4">
-          An intermediary that receives any field that requires removal before forwarding
+          An intermediary that receives any fields that require removal before forwarding
           (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-7.6.1" class="relref">Section 7.6.1</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>) MUST remove or replace those header fields when
           forwarding messages. Additionally, intermediaries should take care when forwarding messages
           containing <code>Content-Length</code> fields to ensure that the message is <span><a href="#malformed" class="xref">well-formed</a> (<a href="#malformed" class="xref">Section 8.1.1</a>)</span>.
-          This ensures that if the message is translated into HTTP/1.1 at any point the framing will be correct.<a href="#section-10.3-4" class="pilcrow">¶</a></p>
+          This ensures that if the message is translated into HTTP/1.1 at any point, the framing will be correct.<a href="#section-10.3-4" class="pilcrow">¶</a></p>
 </section>
 <section id="section-10.4">
         <h3 id="name-cacheability-of-pushed-resp">
@@ -5348,8 +5334,8 @@ cookie: e=f
           of server push streams can be treated as a <span><a href="#StreamErrorHandler" class="xref">stream
           error</a> (<a href="#StreamErrorHandler" class="xref">Section 5.4.2</a>)</span> of type <a href="#ENHANCE_YOUR_CALM" class="xref">ENHANCE_YOUR_CALM</a>.<a href="#section-10.5-2" class="pilcrow">¶</a></p>
 <p id="section-10.5-3">
-          A number of HTTP/2 implementations were found to be vulnerable to denial of service <span>[<a href="#NFLX-2019-002" class="xref">NFLX-2019-002</a>]</span>.  The following lists known ways that implementations might be
-          subject to denial of service attack:<a href="#section-10.5-3" class="pilcrow">¶</a></p>
+          A number of HTTP/2 implementations were found to be vulnerable to denial of service <span>[<a href="#NFLX-2019-002" class="xref">NFLX-2019-002</a>]</span>.  Below is a list of known ways that implementations might be
+          subject to denial-of-service attacks:<a href="#section-10.5-3" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-10.5-4.1">
             <p id="section-10.5-4.1.1">
@@ -5374,7 +5360,7 @@ cookie: e=f
             </ul>
 </li>
           <li class="normal" id="section-10.5-4.2">
-            An attacker can provide large amounts of flow-control credit at the HTTP/2 layer, but
+            An attacker can provide large amounts of flow-control credit at the HTTP/2 layer but
             withhold credit at the TCP layer, preventing frames from being sent.  An endpoint that
             constructs and remembers frames for sending without considering TCP limits might be
             subject to resource exhaustion.<a href="#section-10.5-4.2" class="pilcrow">¶</a>
@@ -5470,7 +5456,7 @@ cookie: e=f
           (<a href="#FieldBlock" class="xref">Section 4.3</a>); the following concerns also apply to the use of HTTP
           compressed content-codings (<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-8.4.1" class="relref">Section 8.4.1</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>).<a href="#section-10.6-1" class="pilcrow">¶</a></p>
 <p id="section-10.6-2">
-          There are demonstrable attacks on compression that exploit the characteristics of the web
+          There are demonstrable attacks on compression that exploit the characteristics of the Web
           (e.g., <span>[<a href="#BREACH" class="xref">BREACH</a>]</span>).  The attacker induces multiple requests containing
           varying plaintext, observing the length of the resulting ciphertext in each, which
           reveals a shorter length when a guess about the secret is correct.<a href="#section-10.6-2" class="pilcrow">¶</a></p>
@@ -5498,7 +5484,7 @@ cookie: e=f
           preferable to padding as a countermeasure.<a href="#section-10.7-2" class="pilcrow">¶</a></p>
 <p id="section-10.7-3">
           Padding can be used to obscure the exact size of frame content and is provided to
-          mitigate specific attacks within HTTP, for example, attacks where compressed content
+          mitigate specific attacks within HTTP -- for example, attacks where compressed content
           includes both attacker-controlled plaintext and secret data (e.g., <span>[<a href="#BREACH" class="xref">BREACH</a>]</span>).<a href="#section-10.7-3" class="pilcrow">¶</a></p>
 <p id="section-10.7-4">
           Use of padding can result in less protection than might seem immediately obvious.  At
@@ -5509,7 +5495,7 @@ cookie: e=f
           fixed size exposes information as frame payload sizes cross the fixed-sized boundary, which could
           be possible if an attacker can control plaintext.<a href="#section-10.7-4" class="pilcrow">¶</a></p>
 <p id="section-10.7-5">
-          Intermediaries SHOULD retain padding for <a href="#DATA" class="xref">DATA</a> frames, but MAY drop padding
+          Intermediaries SHOULD retain padding for <a href="#DATA" class="xref">DATA</a> frames but MAY drop padding
           for <a href="#HEADERS" class="xref">HEADERS</a> and <a href="#PUSH_PROMISE" class="xref">PUSH_PROMISE</a> frames.  A valid reason for an
           intermediary to change the amount of padding of frames is to improve the protections that
           padding provides.<a href="#section-10.7-5" class="pilcrow">¶</a></p>
@@ -5561,7 +5547,7 @@ cookie: e=f
 <a href="#section-11" class="section-number selfRef">11. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
       </h2>
 <p id="section-11-1">
-        This revision of the document marks the <code>HTTP2-Settings</code> header field and the
+        This revision of HTTP/2 marks the <code>HTTP2-Settings</code> header field and the
         <code>h2c</code> upgrade token, both defined in <span>[<a href="#RFC7540" class="xref">RFC7540</a>]</span>, as obsolete.<a href="#section-11-1" class="pilcrow">¶</a></p>
 <p id="section-11-2">
         <span><a href="https://rfc-editor.org/rfc/rfc7540#section-11" class="relref">Section 11</a> of [<a href="#RFC7540" class="xref">RFC7540</a>]</span> registered the <code>h2</code> and <code>h2c</code> ALPN
@@ -5569,23 +5555,27 @@ cookie: e=f
         for frame types, settings, and error codes.  These registrations and registries apply to
         HTTP/2, but are not redefined in this document.<a href="#section-11-2" class="pilcrow">¶</a></p>
 <p id="section-11-3">
-        IANA is requested to update references to RFC 7540 in the following registries to refer to
-        this document: Application-Layer Protocol Negotiation (ALPN) Protocol IDs, HTTP/2 Frame
-        Type, HTTP/2 Settings, HTTP/2 Error Code, and HTTP Method Registry.  The registration of the
-        <code>PRI</code> method needs to be updated to refer to <a href="#preface" class="xref">Section 3.4</a>; all other
-        section numbers have not changed.<a href="#section-11-3" class="pilcrow">¶</a></p>
+        IANA has updated references to RFC 7540 in the
+        following registries to refer to this document: "TLS
+        Application-Layer Protocol Negotiation (ALPN) Protocol IDs",
+        "HTTP/2 Frame Type", "HTTP/2 Settings", "HTTP/2 Error Code",
+        and "HTTP Method Registry".  The registration of the
+        <code>PRI</code> method has been updated to refer to <a href="#preface" class="xref">Section 3.4</a>; all other section numbers have not
+        changed.<a href="#section-11-3" class="pilcrow">¶</a></p>
 <p id="section-11-4">
-        IANA is requested to change the policy on those portions of the "HTTP/2 Frame Type" and
-        "HTTP/2 Settings" registries that were reserved for Experimental Use in RFC 7540. These
-        portions of the registry shall operate on the same policy as the remainder of each registry.<a href="#section-11-4" class="pilcrow">¶</a></p>
+        IANA has changed the policy on those portions of the "HTTP/2
+        Frame Type" and "HTTP/2 Settings" registries that were
+        reserved for Experimental Use in RFC 7540. These portions of
+        the registries shall operate on the same policy as the
+        remainder of each registry.<a href="#section-11-4" class="pilcrow">¶</a></p>
 <div id="HTTP2-Settings">
 <section id="section-11.1">
         <h3 id="name-http2-settings-header-field">
 <a href="#section-11.1" class="section-number selfRef">11.1. </a><a href="#name-http2-settings-header-field" class="section-name selfRef">HTTP2-Settings Header Field Registration</a>
         </h3>
 <p id="section-11.1-1">
-          This section marks the <code>HTTP2-Settings</code> header field registered by <span><a href="https://rfc-editor.org/rfc/rfc7540#section-11.5" class="relref">Section 11.5</a> of [<a href="#RFC7540" class="xref">RFC7540</a>]</span> in the Hypertext Transfer Protocol (HTTP) Field Name
-          Registry as obsolete.  This capability has been removed: see <a href="#versioning" class="xref">Section 3.1</a>.
+          This section marks the <code>HTTP2-Settings</code> header field registered by <span><a href="https://rfc-editor.org/rfc/rfc7540#section-11.5" class="relref">Section 11.5</a> of [<a href="#RFC7540" class="xref">RFC7540</a>]</span> in the "Hypertext Transfer Protocol (HTTP) Field Name
+          Registry" as obsolete.  This capability has been removed: see <a href="#versioning" class="xref">Section 3.1</a>.
           The registration is updated to include the details as required by <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-18#section-18.4" class="relref">Section 18.4</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span>:<a href="#section-11.1-1" class="pilcrow">¶</a></p>
 <span class="break"></span><dl class="dlParallel" id="section-11.1-2">
           <dt id="section-11.1-2.1">Field Name:</dt>
@@ -5596,13 +5586,13 @@ cookie: e=f
           <dd style="margin-left: 1.5em" id="section-11.1-2.4">obsoleted<a href="#section-11.1-2.4" class="pilcrow">¶</a>
 </dd>
           <dd class="break"></dd>
-<dt id="section-11.1-2.5">Ref.:</dt>
+<dt id="section-11.1-2.5">Reference:</dt>
           <dd style="margin-left: 1.5em" id="section-11.1-2.6">
             <span><a href="https://rfc-editor.org/rfc/rfc7540#section-3.2.1" class="relref">Section 3.2.1</a> of [<a href="#RFC7540" class="xref">RFC7540</a>]</span><a href="#section-11.1-2.6" class="pilcrow">¶</a>
 </dd>
           <dd class="break"></dd>
 <dt id="section-11.1-2.7">Comments:</dt>
-          <dd style="margin-left: 1.5em" id="section-11.1-2.8">Obsolete; see <a href="#HTTP2-Settings" class="xref">Section 11.1</a> of this document<a href="#section-11.1-2.8" class="pilcrow">¶</a>
+          <dd style="margin-left: 1.5em" id="section-11.1-2.8">Obsolete; see <a href="#HTTP2-Settings" class="xref">Section 11.1</a> of this document.<a href="#section-11.1-2.8" class="pilcrow">¶</a>
 </dd>
         <dd class="break"></dd>
 </dl>
@@ -5614,7 +5604,7 @@ cookie: e=f
 <a href="#section-11.2" class="section-number selfRef">11.2. </a><a href="#name-the-h2c-upgrade-token" class="section-name selfRef">The h2c Upgrade Token</a>
         </h3>
 <p id="section-11.2-1">
-          This section records the <code>h2c</code> upgrade token registered by <span><a href="https://rfc-editor.org/rfc/rfc7540#section-11.8" class="relref">Section 11.8</a> of [<a href="#RFC7540" class="xref">RFC7540</a>]</span> in the Hypertext Transfer Protocol (HTTP) Upgrade Token Registry as
+          This section records the <code>h2c</code> upgrade token registered by <span><a href="https://rfc-editor.org/rfc/rfc7540#section-11.8" class="relref">Section 11.8</a> of [<a href="#RFC7540" class="xref">RFC7540</a>]</span> in the "Hypertext Transfer Protocol (HTTP) Upgrade Token Registry" as
           obsolete.  This capability has been removed: see <a href="#versioning" class="xref">Section 3.1</a>.  The
           registration is updated as follows:<a href="#section-11.2-1" class="pilcrow">¶</a></p>
 <span class="break"></span><dl class="dlParallel" id="section-11.2-2">
@@ -6374,7 +6364,7 @@ cookie: e=f
         This revision includes the following substantive changes:<a href="#appendix-B-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="appendix-B-2.1">
-          Use of TLS 1.3 was defined based on RFC 8740, which this document obsoletes.<a href="#appendix-B-2.1" class="pilcrow">¶</a>
+          Use of TLS 1.3 was defined based on <span>[<a href="#RFC8740" class="xref">RFC8740</a>]</span>, which this document obsoletes.<a href="#appendix-B-2.1" class="pilcrow">¶</a>
 </li>
         <li class="normal" id="appendix-B-2.2">
           The priority scheme defined in RFC 7540 is deprecated.  Definitions for the format of the
@@ -6392,15 +6382,15 @@ cookie: e=f
 </li>
         <li class="normal" id="appendix-B-2.4">
           Validation for field names and values has been narrowed.  The validation that is mandatory
-          for intermediaries is precisely defined and error reporting for requests has been amended
+          for intermediaries is precisely defined, and error reporting for requests has been amended
           to encourage sending 400-series status codes.<a href="#appendix-B-2.4" class="pilcrow">¶</a>
 </li>
         <li class="normal" id="appendix-B-2.5">
-          The ranges of codepoints for settings and frame types that were reserved for "Experimental
-          Use" are now available for general use.<a href="#appendix-B-2.5" class="pilcrow">¶</a>
+          The ranges of codepoints for settings and frame types that were reserved for Experimental
+          Use are now available for general use.<a href="#appendix-B-2.5" class="pilcrow">¶</a>
 </li>
         <li class="normal" id="appendix-B-2.6">
-          Connection-specific header fields - which are prohibited - are more precisely and
+          Connection-specific header fields -- which are prohibited -- are more precisely and
           comprehensively identified.<a href="#appendix-B-2.6" class="pilcrow">¶</a>
 </li>
         <li class="normal" id="appendix-B-2.7">
@@ -6419,20 +6409,20 @@ cookie: e=f
 </section>
 </div>
 <section id="appendix-C">
-      <h2 id="name-contributors">
-<a href="#name-contributors" class="section-name selfRef">Contributors</a>
-      </h2>
-<p id="appendix-C-1">
-        The previous version of this document was authored by Mike Belshe and Roberto Peon.<a href="#appendix-C-1" class="pilcrow">¶</a></p>
-</section>
-<section id="appendix-D">
       <h2 id="name-acknowledgments">
 <a href="#name-acknowledgments" class="section-name selfRef">Acknowledgments</a>
       </h2>
-<p id="appendix-D-1">
+<p id="appendix-C-1">
         Credit for non-trivial input to this document is owed to a large number of people who have
-        contributed to the HTTP working group over the years.  <span>[<a href="#RFC7540" class="xref">RFC7540</a>]</span> contains a
-        more extensive list of people that deserve acknowledgment for their contributions.<a href="#appendix-D-1" class="pilcrow">¶</a></p>
+        contributed to the HTTP Working Group over the years.  <span>[<a href="#RFC7540" class="xref">RFC7540</a>]</span> contains a
+        more extensive list of people that deserve acknowledgment for their contributions.<a href="#appendix-C-1" class="pilcrow">¶</a></p>
+</section>
+<section id="appendix-D">
+      <h2 id="name-contributors">
+<a href="#name-contributors" class="section-name selfRef">Contributors</a>
+      </h2>
+<p id="appendix-D-1">
+        <span class="contact-name">Mike Belshe</span> and <span class="contact-name">Roberto Peon</span> authored the text that this document is based on.<a href="#appendix-D-1" class="pilcrow">¶</a></p>
 </section>
 <div id="authors-addresses">
 <section id="appendix-E">

@@ -6,7 +6,7 @@ HTTPbis                                                  M. Thomson, Ed.
 Internet-Draft                                                   Mozilla
 Obsoletes: 7540, 8740 (if approved)                     C. Benfield, Ed.
 Intended status: Standards Track                              Apple Inc.
-Expires: 23 September 2022                                 22 March 2022
+Expires: 24 September 2022                                 23 March 2022
 
 
                                  HTTP/2
@@ -20,18 +20,7 @@ Abstract
    resources and a reduced latency by introducing field compression and
    allowing multiple concurrent exchanges on the same connection.
 
-   This document obsoletes RFC 7540 and RFC 8740.
-
-Discussion Venues
-
-   This note is to be removed before publishing as an RFC.
-
-   Discussion of this document takes place on the HTTPBIS Working Group
-   mailing list (ietf-http-wg@w3.org), which is archived at
-   https://lists.w3.org/Archives/Public/ietf-http-wg/.
-
-   Source for this draft and an issue tracker can be found at
-   https://github.com/httpwg/http2-spec.
+   This document obsoletes RFCs 7540 and 8740.
 
 Status of This Memo
 
@@ -48,7 +37,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 23 September 2022.
+   This Internet-Draft will expire on 24 September 2022.
 
 Copyright Notice
 
@@ -90,7 +79,7 @@ Table of Contents
        5.2.3.  Flow-Control Performance
      5.3.  Prioritization
        5.3.1.  Background on Priority in RFC 7540
-       5.3.2.  Priority Signaling in this Document
+       5.3.2.  Priority Signaling in This Document
      5.4.  Error Handling
        5.4.1.  Connection Error Handling
        5.4.2.  Stream Error Handling
@@ -163,8 +152,8 @@ Table of Contents
      12.2.  Informative References
    Appendix A.  Prohibited TLS 1.2 Cipher Suites
    Appendix B.  Changes from RFC 7540
-   Contributors
    Acknowledgments
+   Contributors
    Authors' Addresses
 
 1.  Introduction
@@ -177,7 +166,7 @@ Table of Contents
    Making multiple concurrent requests can reduce latency and improve
    application performance.  HTTP/1.0 allowed only one request to be
    outstanding at a time on a given TCP [TCP] connection.  HTTP/1.1
-   ([HTTP/1.1]) added request pipelining, but this only partially
+   [HTTP/1.1] added request pipelining, but this only partially
    addressed request concurrency and still suffers from application-
    layer head-of-line blocking.  Therefore, HTTP/1.0 and HTTP/1.1
    clients use multiple connections to a server to make concurrent
@@ -205,8 +194,8 @@ Table of Contents
    Finally, HTTP/2 also enables more efficient processing of messages
    through use of binary message framing.
 
-   This document obsoletes RFC 7540 [RFC7540] and RFC 8740 [RFC8740].
-   Appendix B lists notable changes.
+   This document obsoletes RFCs 7540 and 8740.  Appendix B lists notable
+   changes.
 
 2.  HTTP/2 Protocol Overview
 
@@ -271,7 +260,7 @@ Table of Contents
       describe how HTTP semantics are expressed using frames and
       streams.
 
-   While some of the frame and stream layer concepts are isolated from
+   While some of the frame- and stream-layer concepts are isolated from
    HTTP, this specification does not define a completely generic frame
    layer.  The frame and stream layers are tailored to the needs of
    HTTP.
@@ -289,10 +278,10 @@ Table of Contents
    or hexadecimal as appropriate.  Hexadecimal literals are prefixed
    with "0x" to distinguish them from decimal literals.
 
-   This specification describes binary formats using the convention
+   This specification describes binary formats using the conventions
    described in Section 1.3 of RFC 9000 [QUIC].  Note that this format
-   uses network byte order and high-valued bits are listed before low-
-   valued bits.
+   uses network byte order and that high-valued bits are listed before
+   low-valued bits.
 
    The following terms are used:
 
@@ -338,15 +327,15 @@ Table of Contents
    a server supports HTTP/2.
 
    HTTP/2 uses the "http" and "https" URI schemes defined in Section 4.2
-   of [HTTP], with the same default port numbers as HTTP/1.1
-   ([HTTP/1.1]).  These URIs do not include any indication about what
-   HTTP versions an upstream server (the immediate peer to which the
-   client wishes to establish a connection) supports.
+   of [HTTP], with the same default port numbers as HTTP/1.1 [HTTP/1.1].
+   These URIs do not include any indication about what HTTP versions an
+   upstream server (the immediate peer to which the client wishes to
+   establish a connection) supports.
 
    The means by which support for HTTP/2 is determined is different for
    "http" and "https" URIs.  Discovery for "https" URIs is described in
    Section 3.2.  HTTP/2 support for "http" URIs can only be discovered
-   by out-of-band means, and requires prior knowledge of the support as
+   by out-of-band means and requires prior knowledge of the support as
    described in Section 3.3.
 
 3.1.  HTTP/2 Version Identification
@@ -357,7 +346,7 @@ Table of Contents
 
    *  The string "h2" identifies the protocol where HTTP/2 uses
       Transport Layer Security (TLS); see Section 9.2.  This identifier
-      is used in the TLS application-layer protocol negotiation (ALPN)
+      is used in the TLS Application-Layer Protocol Negotiation (ALPN)
       extension [TLS-ALPN] field and in any place where HTTP/2 over TLS
       is identified.
 
@@ -373,8 +362,7 @@ Table of Contents
 3.2.  Starting HTTP/2 for "https" URIs
 
    A client that makes a request to an "https" URI uses TLS [TLS13] with
-   the application-layer protocol negotiation (ALPN) extension
-   [TLS-ALPN].
+   the ALPN extension [TLS-ALPN].
 
    HTTP/2 over TLS uses the "h2" protocol identifier.  The "h2c"
    protocol identifier MUST NOT be sent by a client or selected by a
@@ -507,7 +495,7 @@ Table of Contents
       frames that are associated with the connection as a whole as
       opposed to an individual stream.
 
-   The structure and content of the frame payload is dependent entirely
+   The structure and content of the frame payload are dependent entirely
    on the frame type.
 
 4.2.  Frame Size
@@ -547,7 +535,7 @@ Table of Contents
    field lines (Section 5.2 of [HTTP]) to form a field block.  Field
    section decompression is the process of decoding a field block into a
    set of field lines.  Details of HTTP/2 field section compression and
-   decompression is defined in [COMPRESSION], which, for historical
+   decompression are defined in [COMPRESSION], which, for historical
    reasons, refers to these processes as header compression and
    decompression.
 
@@ -566,7 +554,7 @@ Table of Contents
    include a field block that carries a trailer section.
 
    A field section is a collection of field lines.  Each of the field
-   lines in a field block carry a single value.  The serialized field
+   lines in a field block carries a single value.  The serialized field
    block is then divided into one or more octet sequences, called field
    block fragments.  The first field block fragment is transmitted
    within the frame payload of HEADERS (Section 6.2) or PUSH_PROMISE
@@ -690,7 +678,7 @@ Table of Contents
        |          |    /        |        |        \    |          |
        |          v   v         +---+----+         v   v          |
        |      +----------+          |           +----------+      |
-       |      |   half   |          |           |   half   |      |
+       |      |   half-  |          |           |   half-  |      |
        |      |  closed  |          | send R /  |  closed  |      |
        |      | (remote) |          | recv R    | (local)  |      |
        |      +----+-----+          |           +-----+----+      |
@@ -760,10 +748,10 @@ Table of Contents
 
       Receiving any frame other than HEADERS or PRIORITY on a stream in
       this state MUST be treated as a connection error (Section 5.4.1)
-      of type PROTOCOL_ERROR.  If this stream is server-initiated, as
-      described in Section 5.1.1, then receiving a HEADERS frame MUST
-      also be treated as a connection error (Section 5.4.1) of type
-      PROTOCOL_ERROR.
+      of type PROTOCOL_ERROR.  If this stream is initiated by the
+      server, as described in Section 5.1.1, then receiving a HEADERS
+      frame MUST also be treated as a connection error (Section 5.4.1)
+      of type PROTOCOL_ERROR.
 
    reserved (local):  A stream in the "reserved (local)" state is one
       that has been promised by sending a PUSH_PROMISE frame.  A
@@ -881,7 +869,7 @@ Table of Contents
       and PUSH_PROMISE frames.  Receiving a PUSH_PROMISE frame also
       causes the promised stream to become "reserved (remote)", even
       when the PUSH_PROMISE frame is received on a closed stream.
-      Additionally, the content of DATA frames count toward the
+      Additionally, the content of DATA frames counts toward the
       connection flow-control window.
 
       An endpoint can perform this minimal processing for all streams
@@ -907,7 +895,7 @@ Table of Contents
 
    The rules in this section only apply to frames defined in this
    document.  Receipt of frames for which the semantics are unknown
-   cannot be treated as an error as the conditions for sending and
+   cannot be treated as an error, as the conditions for sending and
    receiving those frames are also unknown; see Section 5.5.
 
    An example of the state transitions for an HTTP request/response
@@ -984,7 +972,7 @@ Table of Contents
    TCP connection, resulting in blocked streams.  A flow-control scheme
    ensures that streams on the same connection do not destructively
    interfere with each other.  Flow control is used for both individual
-   streams and for the connection as a whole.
+   streams and the connection as a whole.
 
    HTTP/2 provides for flow control through use of the WINDOW_UPDATE
    frame (Section 6.9).
@@ -1065,7 +1053,7 @@ Table of Contents
    is available.  Failure to read promptly could lead to a deadlock when
    critical frames, such as WINDOW_UPDATE, are not read and acted upon.
    Reading frames promptly does not expose endpoints to resource
-   exhaustion attacks as HTTP/2 flow control limits resource
+   exhaustion attacks, as HTTP/2 flow control limits resource
    commitments.
 
 5.2.3.  Flow-Control Performance
@@ -1078,7 +1066,7 @@ Table of Contents
 
    Sending timely WINDOW_UPDATE frames can improve performance.
    Endpoints will want to balance the need to improve receive throughput
-   with the need to manage resource exhaustion risks, and should take
+   with the need to manage resource exhaustion risks and should take
    careful note of Section 10.5 in defining their strategy to manage
    window sizes.
 
@@ -1100,7 +1088,7 @@ Table of Contents
 5.3.1.  Background on Priority in RFC 7540
 
    RFC 7540 defined a rich system for signaling priority of requests.
-   However, this system proved to be complex and it was not uniformly
+   However, this system proved to be complex, and it was not uniformly
    implemented.
 
    The flexible scheme meant that it was possible for clients to express
@@ -1110,10 +1098,10 @@ Table of Contents
    uneven in both clients and servers.  Many server deployments ignored
    client signals when prioritizing their handling of requests.
 
-   In short, the prioritization signaling in RFC7540 [RFC7540] was not
+   In short, the prioritization signaling in RFC 7540 [RFC7540] was not
    successful.
 
-5.3.2.  Priority Signaling in this Document
+5.3.2.  Priority Signaling in This Document
 
    This update to HTTP/2 deprecates the priority signaling defined in
    RFC 7540 [RFC7540].  The bulk of the text related to priority signals
@@ -1129,7 +1117,7 @@ Table of Contents
    Signaling priority information is necessary to attain good
    performance in many cases.  Where signaling priority information is
    important, endpoints are encouraged to use an alternative scheme,
-   such as [HTTP-PRIORITY].
+   such as the scheme described in [HTTP-PRIORITY].
 
    Though the priority signaling from RFC 7540 was not widely adopted,
    the information it provides can still be useful in the absence of
@@ -1144,11 +1132,11 @@ Table of Contents
    MAY interpret the complete absence of signals as an indication that
    the client has not implemented the feature.  The defaults described
    in Section 5.3.5 of [RFC7540] are known to have poor performance
-   under most conditions and their use is unlikely to be deliberate.
+   under most conditions, and their use is unlikely to be deliberate.
 
 5.4.  Error Handling
 
-   HTTP/2 framing permits two classes of error:
+   HTTP/2 framing permits two classes of errors:
 
    *  An error condition that renders the entire connection unusable is
       a connection error.
@@ -1286,8 +1274,8 @@ Table of Contents
 
    This specification defines a number of frame types, each identified
    by a unique 8-bit type code.  Each frame type serves a distinct
-   purpose in the establishment and management either of the connection
-   as a whole or of individual streams.
+   purpose in the establishment and management of either the connection
+   as a whole or individual streams.
 
    The transmission of specific frame types can alter the state of a
    connection.  If endpoints fail to maintain a synchronized view of the
@@ -1369,7 +1357,7 @@ Table of Contents
    stream is in the "open" or "half-closed (remote)" state.  The entire
    DATA frame payload is included in flow control, including the Pad
    Length and Padding fields if present.  If a DATA frame is received
-   whose stream is not in "open" or "half-closed (local)" state, the
+   whose stream is not in the "open" or "half-closed (local)" state, the
    recipient MUST respond with a stream error (Section 5.4.2) of type
    STREAM_CLOSED.
 
@@ -1673,12 +1661,12 @@ Table of Contents
 
    The following settings are defined:
 
-   SETTINGS_HEADER_TABLE_SIZE (0x01):  Allows the sender to inform the
-      remote endpoint of the maximum size of the compression table used
-      to decode field blocks, in units of octets.  The encoder can
-      select any size equal to or less than this value by using
-      signaling specific to the compression format inside a field block
-      (see [COMPRESSION]).  The initial value is 4,096 octets.
+   SETTINGS_HEADER_TABLE_SIZE (0x01):  This setting allows the sender to
+      inform the remote endpoint of the maximum size of the compression
+      table used to decode field blocks, in units of octets.  The
+      encoder can select any size equal to or less than this value by
+      using signaling specific to the compression format inside a field
+      block (see [COMPRESSION]).  The initial value is 4,096 octets.
 
    SETTINGS_ENABLE_PUSH (0x02):  This setting can be used to enable or
       disable server push.  A server MUST NOT send a PUSH_PROMISE frame
@@ -1687,24 +1675,25 @@ Table of Contents
       had it acknowledged MUST treat the receipt of a PUSH_PROMISE frame
       as a connection error (Section 5.4.1) of type PROTOCOL_ERROR.
 
-      The initial value of SETTINGS_ENABLE_PUSH is 1.  For a client this
-      value indicates that it is willing to receive PUSH_PROMISE frames.
-      For a server this initial value has no effect, and is equivalent
-      to the value 0.  Any value other than 0 or 1 MUST be treated as a
-      connection error (Section 5.4.1) of type PROTOCOL_ERROR.
+      The initial value of SETTINGS_ENABLE_PUSH is 1.  For a client,
+      this value indicates that it is willing to receive PUSH_PROMISE
+      frames.  For a server, this initial value has no effect, and is
+      equivalent to the value 0.  Any value other than 0 or 1 MUST be
+      treated as a connection error (Section 5.4.1) of type
+      PROTOCOL_ERROR.
 
       A server MUST NOT explicitly set this value to 1.  A server MAY
       choose to omit this setting when it sends a SETTINGS frame, but if
-      a server does include a value it MUST be 0.  A client MUST treat
+      a server does include a value, it MUST be 0.  A client MUST treat
       receipt of a SETTINGS frame with SETTINGS_ENABLE_PUSH set to 1 as
       a connection error (Section 5.4.1) of type PROTOCOL_ERROR.
 
-   SETTINGS_MAX_CONCURRENT_STREAMS (0x03):  Indicates the maximum number
-      of concurrent streams that the sender will allow.  This limit is
-      directional: it applies to the number of streams that the sender
-      permits the receiver to create.  Initially, there is no limit to
-      this value.  It is recommended that this value be no smaller than
-      100, so as to not unnecessarily limit parallelism.
+   SETTINGS_MAX_CONCURRENT_STREAMS (0x03):  This setting indicates the
+      maximum number of concurrent streams that the sender will allow.
+      This limit is directional: it applies to the number of streams
+      that the sender permits the receiver to create.  Initially, there
+      is no limit to this value.  It is recommended that this value be
+      no smaller than 100, so as to not unnecessarily limit parallelism.
 
       A value of 0 for SETTINGS_MAX_CONCURRENT_STREAMS SHOULD NOT be
       treated as special by endpoints.  A zero value does prevent the
@@ -1713,9 +1702,9 @@ Table of Contents
       set a zero value for short durations; if a server does not wish to
       accept requests, closing the connection is more appropriate.
 
-   SETTINGS_INITIAL_WINDOW_SIZE (0x04):  Indicates the sender's initial
-      window size (in units of octets) for stream-level flow control.
-      The initial value is 2^16-1 (65,535) octets.
+   SETTINGS_INITIAL_WINDOW_SIZE (0x04):  This setting indicates the
+      sender's initial window size (in units of octets) for stream-level
+      flow control.  The initial value is 2^16-1 (65,535) octets.
 
       This setting affects the window size of all streams (see
       Section 6.9.2).
@@ -1724,9 +1713,9 @@ Table of Contents
       be treated as a connection error (Section 5.4.1) of type
       FLOW_CONTROL_ERROR.
 
-   SETTINGS_MAX_FRAME_SIZE (0x05):  Indicates the size of the largest
-      frame payload that the sender is willing to receive, in units of
-      octets.
+   SETTINGS_MAX_FRAME_SIZE (0x05):  This setting indicates the size of
+      the largest frame payload that the sender is willing to receive,
+      in units of octets.
 
       The initial value is 2^14 (16,384) octets.  The value advertised
       by an endpoint MUST be between this initial value and the maximum
@@ -1735,7 +1724,7 @@ Table of Contents
       (Section 5.4.1) of type PROTOCOL_ERROR.
 
    SETTINGS_MAX_HEADER_LIST_SIZE (0x06):  This advisory setting informs
-      a peer of the maximum size of field section that the sender is
+      a peer of the maximum field section size that the sender is
       prepared to accept, in units of octets.  The value is based on the
       uncompressed size of field lines, including the length of the name
       and value in units of octets plus an overhead of 32 octets for
@@ -1768,7 +1757,7 @@ Table of Contents
    within a reasonable amount of time, it MAY issue a connection error
    (Section 5.4.1) of type SETTINGS_TIMEOUT.  In setting a timeout, some
    allowance needs to be made for processing delays at the peer; a
-   timeout that is solely based on the round trip time between endpoints
+   timeout that is solely based on the round-trip time between endpoints
    might result in spurious errors.
 
 6.6.  PUSH_PROMISE
@@ -1951,9 +1940,9 @@ Table of Contents
    administrative actions, like server maintenance.
 
    There is an inherent race condition between an endpoint starting new
-   streams and the remote sending a GOAWAY frame.  To deal with this
-   case, the GOAWAY contains the stream identifier of the last peer-
-   initiated stream that was or might be processed on the sending
+   streams and the remote peer sending a GOAWAY frame.  To deal with
+   this case, the GOAWAY contains the stream identifier of the last
+   peer-initiated stream that was or might be processed on the sending
    endpoint in this connection.  For instance, if the server sends a
    GOAWAY frame, the identified stream is the highest-numbered stream
    initiated by the client.
@@ -2035,7 +2024,7 @@ Table of Contents
    protocol activity that uses higher-numbered streams can be safely
    retried using a new connection.
 
-   Activity on streams numbered lower or equal to the last stream
+   Activity on streams numbered lower than or equal to the last stream
    identifier might still complete successfully.  The sender of a GOAWAY
    frame might gracefully shut down a connection by sending a GOAWAY
    frame, maintaining the connection in an "open" state until all in-
@@ -2067,7 +2056,7 @@ Table of Contents
    identified last stream.  However, any frames that alter connection
    state cannot be completely ignored.  For instance, HEADERS,
    PUSH_PROMISE, and CONTINUATION frames MUST be minimally processed to
-   ensure the state maintained for field section compression is
+   ensure that the state maintained for field section compression is
    consistent (see Section 4.3); similarly, DATA frames MUST be counted
    toward the connection flow-control window.  Failure to process these
    frames can cause flow control or field section compression state to
@@ -2143,7 +2132,7 @@ Table of Contents
 
    WINDOW_UPDATE can be sent by a peer that has sent a frame with the
    END_STREAM flag set.  This means that a receiver could receive a
-   WINDOW_UPDATE frame on a stream in the "half-closed (remote)" or
+   WINDOW_UPDATE frame on a stream in a "half-closed (remote)" or
    "closed" state.  A receiver MUST NOT treat this as an error (see
    Section 5.1).
 
@@ -2354,8 +2343,8 @@ Table of Contents
       performing any application processing (see Section 8.7 for
       details).
 
-   CANCEL (0x08):  Used by the endpoint to indicate that the stream is
-      no longer needed.
+   CANCEL (0x08):  The endpoint uses this error code to indicate that
+      the stream is no longer needed.
 
    COMPRESSION_ERROR (0x09):  The endpoint is unable to maintain the
       field section compression context for the connection.
@@ -2509,16 +2498,16 @@ Table of Contents
    The definitions of field names and values in HTTP prohibit some
    characters that HPACK might be able to convey.  HTTP/2
    implementations SHOULD validate field names and values according to
-   their definitions in Sections 5.1 and 5.5 of [HTTP] respectively and
-   treat messages that contain prohibited characters as malformed
+   their definitions in Sections 5.1 and 5.5 of [HTTP], respectively,
+   and treat messages that contain prohibited characters as malformed
    (Section 8.1.1).
 
    Failure to validate fields can be exploited for request smuggling
    attacks.  In particular, unvalidated fields might enable attacks when
    messages are forwarded using HTTP/1.1 [HTTP/1.1], where characters
-   such as CR, LF, and COLON are used as delimiters.  Implementations
-   MUST perform the following minimal validation of field names and
-   values:
+   such as carriage return (CR), line feed (LF), and COLON are used as
+   delimiters.  Implementations MUST perform the following minimal
+   validation of field names and values:
 
    *  A field name MUST NOT contain characters in the ranges 0x00-0x20,
       0x41-0x5a, or 0x7f-0xff (all ranges inclusive).  This specifically
@@ -2536,7 +2525,7 @@ Table of Contents
    *  A field value MUST NOT start or end with an ASCII whitespace
       character (ASCII SP or HTAB, 0x20 or 0x09).
 
-      |  Note: An implementation that validates fields according the
+      |  Note: An implementation that validates fields according to the
       |  definitions in Sections 5.1 and 5.5 of [HTTP] only needs an
       |  additional check that field names do not include uppercase
       |  characters.
@@ -2588,11 +2577,11 @@ Table of Contents
 
    The Cookie header field [COOKIE] uses a semicolon (";") to delimit
    cookie-pairs (or "crumbs").  This header field contains multiple
-   values but does not use a COMMA (",") as a separator, thereby
+   values, but does not use a COMMA (",") as a separator, thereby
    preventing cookie-pairs from being sent on multiple field lines (see
    Section 5.2 of [HTTP]).  This can significantly reduce compression
-   efficiency as updates to individual cookie-pairs would invalidate any
-   field lines that are stored in the HPACK table.
+   efficiency, as updates to individual cookie-pairs would invalidate
+   any field lines that are stored in the HPACK table.
 
    To allow for better compression efficiency, the Cookie header field
    MAY be split into separate header fields, each with one or more
@@ -2613,9 +2602,9 @@ Table of Contents
 
 8.3.  HTTP Control Data
 
-   HTTP/2 uses special pseudo-header fields beginning with ':' character
-   (ASCII 0x3a) to convey message control data (see Section 6.2 of
-   [HTTP]).
+   HTTP/2 uses special pseudo-header fields beginning with a ':'
+   character (ASCII 0x3a) to convey message control data (see
+   Section 6.2 of [HTTP]).
 
    Pseudo-header fields are not HTTP header fields.  Endpoints MUST NOT
    generate pseudo-header fields other than those defined in this
@@ -2705,7 +2694,7 @@ Table of Contents
       for "http" or "https" schemed URIs.
 
    *  The ":path" pseudo-header field includes the path and query parts
-      of the target URI (the absolute-path production and optionally a
+      of the target URI (the absolute-path production and, optionally, a
       '?' character followed by the query production; see Section 4.1 of
       [HTTP]).  A request in asterisk form (for OPTIONS) includes the
       value '*' for the ":path" pseudo-header field.
@@ -2716,14 +2705,14 @@ Table of Contents
 
       -  an OPTIONS request for an "http" or "https" URI that does not
          include a path component; these MUST include a ":path" pseudo-
-         header field with a value of '*' (see Section 7.1 of [HTTP])
+         header field with a value of '*' (see Section 7.1 of [HTTP]).
 
       -  CONNECT requests (Section 8.5), where the ":path" pseudo-header
          field is omitted.
 
    All HTTP/2 requests MUST include exactly one valid value for the
-   ":method", ":scheme", and ":path" pseudo-header fields, unless it is
-   a CONNECT request (Section 8.5).  An HTTP request that omits
+   ":method", ":scheme", and ":path" pseudo-header fields, unless they
+   are CONNECT requests (Section 8.5).  An HTTP request that omits
    mandatory pseudo-header fields is malformed (Section 8.1.1).
 
    Individual HTTP/2 requests do not carry an explicit indicator of
@@ -2760,8 +2749,8 @@ Table of Contents
    content negotiation, and user behavior.  Errors in prediction can
    lead to performance degradation, due to the opportunity cost that the
    additional data on the wire represents.  In particular, pushing any
-   significant amount of data can cause contention issues with more-
-   important responses.
+   significant amount of data can cause contention issues with responses
+   that are more important.
 
    A client can request that server push be disabled, though this is
    negotiated for each hop independently.  The SETTINGS_ENABLE_PUSH
@@ -2773,16 +2762,16 @@ Table of Contents
    promised request that is not cacheable, that is not known to be safe,
    or that indicates the presence of request content MUST reset the
    promised stream with a stream error (Section 5.4.2) of type
-   PROTOCOL_ERROR.  Note this could result in the promised stream being
-   reset if the client does not recognize a newly defined method as
-   being safe.
+   PROTOCOL_ERROR.  Note that this could result in the promised stream
+   being reset if the client does not recognize a newly defined method
+   as being safe.
 
    Pushed responses that are cacheable (see Section 3 of [HTTP-CACHING])
    can be stored by the client, if it implements an HTTP cache.  Pushed
    responses are considered successfully validated on the origin server
    (e.g., if the "no-cache" cache response directive is present; see
    Section 5.2.2.4 of [HTTP-CACHING]) while the stream identified by the
-   promised stream ID is still open.
+   promised stream identifier is still open.
 
    Pushed responses that are not cacheable MUST NOT be stored by any
    HTTP cache.  They MAY be made available to the application
@@ -2894,7 +2883,7 @@ Table of Contents
    the pushed response is configured for the corresponding request.  For
    example, a server that offers a certificate for only the example.com
    DNS-ID (see [RFC6125]) is not permitted to push a response for
-   https://www.example.org/doc.
+   <https://www.example.org/doc>.
 
    The response for a PUSH_PROMISE stream begins with a HEADERS frame,
    which immediately puts the stream into the "half-closed (remote)"
@@ -2910,7 +2899,7 @@ Table of Contents
    The CONNECT method (Section 9.3.6 of [HTTP]) is used to convert an
    HTTP connection into a tunnel to a remote host.  CONNECT is primarily
    used with HTTP proxies to establish a TLS session with an origin
-   server for the purposes of interacting with https resources.
+   server for the purposes of interacting with "https" resources.
 
    In HTTP/2, the CONNECT method establishes a tunnel over a single
    HTTP/2 stream to a remote host, rather than converting the entire
@@ -2932,7 +2921,7 @@ Table of Contents
    A proxy that supports CONNECT establishes a TCP connection [TCP] to
    the host and port identified in the ":authority" pseudo-header field.
    Once this connection is successfully established, the proxy sends a
-   HEADERS frame containing a 2xx series status code to the client, as
+   HEADERS frame containing a 2xx-series status code to the client, as
    defined in Section 9.3.6 of [HTTP].
 
    After the initial HEADERS frame sent by each peer, all subsequent
@@ -2968,9 +2957,9 @@ Table of Contents
 
    The semantics of 101 (Switching Protocols) aren't applicable to a
    multiplexed protocol.  Similar functionality might be enabled through
-   the use of extended CONNECT [RFC8441] and other protocols are able to
-   use the same mechanisms that HTTP/2 uses to negotiate their use (see
-   Section 3).
+   the use of extended CONNECT [RFC8441], and other protocols are able
+   to use the same mechanisms that HTTP/2 uses to negotiate their use
+   (see Section 3).
 
 8.7.  Request Reliability
 
@@ -3220,9 +3209,9 @@ Table of Contents
 
    Requirements for deployments of HTTP/2 that negotiate TLS 1.3 [TLS13]
    are included in Section 9.2.3.  Deployments of TLS 1.2 are subject to
-   the requirements in Section 9.2.1 and Section 9.2.2.  Implementations
-   are encouraged to provide defaults that comply, but it is recognized
-   that deployments are ultimately responsible for compliance.
+   the requirements in Sections 9.2.1 and 9.2.2.  Implementations are
+   encouraged to provide defaults that comply, but it is recognized that
+   deployments are ultimately responsible for compliance.
 
 9.2.1.  TLS 1.2 Features
 
@@ -3235,7 +3224,7 @@ Table of Contents
 
    A deployment of HTTP/2 over TLS 1.2 MUST disable compression.  TLS
    compression can lead to the exposure of information that would not
-   otherwise be revealed [RFC3749].  Generic compression is unnecessary
+   otherwise be revealed [RFC3749].  Generic compression is unnecessary,
    since HTTP/2 provides compression features that are more aware of
    context and therefore likely to be more appropriate for use for
    performance, security, or other reasons.
@@ -3257,11 +3246,11 @@ Table of Contents
    request for a specific protected resource.  A future specification
    might provide a way to support this use case.  Alternatively, a
    server might use an error (Section 5.4) of type HTTP_1_1_REQUIRED to
-   request the client use a protocol that supports renegotiation.
+   request that the client use a protocol that supports renegotiation.
 
    Implementations MUST support ephemeral key exchange sizes of at least
    2048 bits for cipher suites that use ephemeral finite field Diffie-
-   Hellman (DHE) (Section 8.1.2 of [TLS12] and 224 bits for cipher
+   Hellman (DHE) (Section 8.1.2 of [TLS12]) and 224 bits for cipher
    suites that use ephemeral elliptic curve Diffie-Hellman (ECDHE)
    [RFC8422].  Clients MUST accept DHE sizes of up to 4096 bits.
    Endpoints MAY treat negotiation of key sizes smaller than the lower
@@ -3270,9 +3259,8 @@ Table of Contents
 
 9.2.2.  TLS 1.2 Cipher Suites
 
-   A deployment of HTTP/2 over TLS 1.2 SHOULD NOT use any of the cipher
-   suites that are listed in the list of prohibited cipher suites
-   (Appendix A).
+   A deployment of HTTP/2 over TLS 1.2 SHOULD NOT use any of the
+   prohibited cipher suites listed in Appendix A.
 
    Endpoints MAY choose to generate a connection error (Section 5.4.1)
    of type INADEQUATE_SECURITY if one of the prohibited cipher suites is
@@ -3378,25 +3366,25 @@ Table of Contents
    header fields.  If the values of these fields are used, additional
    validation is necessary.  This is particularly important where
    ":scheme", ":authority", and ":path" are combined to form a single
-   URI string ([RFC3986]).  Similar problems might occur when that URI
-   or just ":path" are combined with ":method" to construct a request
-   line (as in Section 3 of [HTTP/1.1]).  Simple concatenation is not
-   secure unless the input values are fully validated.
+   URI string [RFC3986].  Similar problems might occur when that URI or
+   just ":path" is combined with ":method" to construct a request line
+   (as in Section 3 of [HTTP/1.1]).  Simple concatenation is not secure
+   unless the input values are fully validated.
 
    An intermediary can reject fields that contain invalid field names or
-   values for other reasons, in particular those that do not conform to
-   the HTTP ABNF grammar from Section 5 of [HTTP].  Intermediaries that
-   do not perform any validation of fields other than the minimum
-   required by Section 8.2 could forward messages that contain invalid
-   field names or values.
+   values for other reasons -- in particular, those fields that do not
+   conform to the HTTP ABNF grammar from Section 5 of [HTTP].
+   Intermediaries that do not perform any validation of fields other
+   than the minimum required by Section 8.2 could forward messages that
+   contain invalid field names or values.
 
-   An intermediary that receives any field that requires removal before
+   An intermediary that receives any fields that require removal before
    forwarding (see Section 7.6.1 of [HTTP]) MUST remove or replace those
    header fields when forwarding messages.  Additionally, intermediaries
    should take care when forwarding messages containing Content-Length
    fields to ensure that the message is well-formed (Section 8.1.1).
    This ensures that if the message is translated into HTTP/1.1 at any
-   point the framing will be correct.
+   point, the framing will be correct.
 
 10.4.  Cacheability of Pushed Responses
 
@@ -3434,8 +3422,8 @@ Table of Contents
    error (Section 5.4.2) of type ENHANCE_YOUR_CALM.
 
    A number of HTTP/2 implementations were found to be vulnerable to
-   denial of service [NFLX-2019-002].  The following lists known ways
-   that implementations might be subject to denial of service attack:
+   denial of service [NFLX-2019-002].  Below is a list of known ways
+   that implementations might be subject to denial-of-service attacks:
 
    *  Inefficient tracking of outstanding outbound frames can lead to
       overload if an adversary can cause large numbers of frames to be
@@ -3454,7 +3442,7 @@ Table of Contents
          RST_STREAM frames in response.
 
    *  An attacker can provide large amounts of flow-control credit at
-      the HTTP/2 layer, but withhold credit at the TCP layer, preventing
+      the HTTP/2 layer but withhold credit at the TCP layer, preventing
       frames from being sent.  An endpoint that constructs and remembers
       frames for sending without considering TCP limits might be subject
       to resource exhaustion.
@@ -3542,7 +3530,7 @@ Table of Contents
    codings (Section 8.4.1 of [HTTP]).
 
    There are demonstrable attacks on compression that exploit the
-   characteristics of the web (e.g., [BREACH]).  The attacker induces
+   characteristics of the Web (e.g., [BREACH]).  The attacker induces
    multiple requests containing varying plaintext, observing the length
    of the resulting ciphertext in each, which reveals a shorter length
    when a guess about the secret is correct.
@@ -3568,7 +3556,7 @@ Table of Contents
    compression might be preferable to padding as a countermeasure.
 
    Padding can be used to obscure the exact size of frame content and is
-   provided to mitigate specific attacks within HTTP, for example,
+   provided to mitigate specific attacks within HTTP -- for example,
    attacks where compressed content includes both attacker-controlled
    plaintext and secret data (e.g., [BREACH]).
 
@@ -3582,7 +3570,7 @@ Table of Contents
    information as frame payload sizes cross the fixed-sized boundary,
    which could be possible if an attacker can control plaintext.
 
-   Intermediaries SHOULD retain padding for DATA frames, but MAY drop
+   Intermediaries SHOULD retain padding for DATA frames but MAY drop
    padding for HEADERS and PUSH_PROMISE frames.  A valid reason for an
    intermediary to change the amount of padding of frames is to improve
    the protections that padding provides.
@@ -3625,32 +3613,31 @@ Table of Contents
 
 11.  IANA Considerations
 
-   This revision of the document marks the HTTP2-Settings header field
-   and the h2c upgrade token, both defined in [RFC7540], as obsolete.
+   This revision of HTTP/2 marks the HTTP2-Settings header field and the
+   h2c upgrade token, both defined in [RFC7540], as obsolete.
 
    Section 11 of [RFC7540] registered the h2 and h2c ALPN identifiers
    along with the PRI HTTP method.  RFC 7540 also established a registry
    for frame types, settings, and error codes.  These registrations and
    registries apply to HTTP/2, but are not redefined in this document.
 
-   IANA is requested to update references to RFC 7540 in the following
-   registries to refer to this document: Application-Layer Protocol
-   Negotiation (ALPN) Protocol IDs, HTTP/2 Frame Type, HTTP/2 Settings,
-   HTTP/2 Error Code, and HTTP Method Registry.  The registration of the
-   PRI method needs to be updated to refer to Section 3.4; all other
-   section numbers have not changed.
+   IANA has updated references to RFC 7540 in the following registries
+   to refer to this document: "TLS Application-Layer Protocol
+   Negotiation (ALPN) Protocol IDs", "HTTP/2 Frame Type", "HTTP/2
+   Settings", "HTTP/2 Error Code", and "HTTP Method Registry".  The
+   registration of the PRI method has been updated to refer to
+   Section 3.4; all other section numbers have not changed.
 
-   IANA is requested to change the policy on those portions of the
-   "HTTP/2 Frame Type" and "HTTP/2 Settings" registries that were
-   reserved for Experimental Use in RFC 7540.  These portions of the
-   registry shall operate on the same policy as the remainder of each
-   registry.
+   IANA has changed the policy on those portions of the "HTTP/2 Frame
+   Type" and "HTTP/2 Settings" registries that were reserved for
+   Experimental Use in RFC 7540.  These portions of the registries shall
+   operate on the same policy as the remainder of each registry.
 
 11.1.  HTTP2-Settings Header Field Registration
 
    This section marks the HTTP2-Settings header field registered by
-   Section 11.5 of [RFC7540] in the Hypertext Transfer Protocol (HTTP)
-   Field Name Registry as obsolete.  This capability has been removed:
+   Section 11.5 of [RFC7540] in the "Hypertext Transfer Protocol (HTTP)
+   Field Name Registry" as obsolete.  This capability has been removed:
    see Section 3.1.  The registration is updated to include the details
    as required by Section 18.4 of [HTTP]:
 
@@ -3658,15 +3645,15 @@ Table of Contents
 
    Status:  obsoleted
 
-   Ref.:  Section 3.2.1 of [RFC7540]
+   Reference:  Section 3.2.1 of [RFC7540]
 
-   Comments:  Obsolete; see Section 11.1 of this document
+   Comments:  Obsolete; see Section 11.1 of this document.
 
 11.2.  The h2c Upgrade Token
 
    This section records the h2c upgrade token registered by Section 11.8
-   of [RFC7540] in the Hypertext Transfer Protocol (HTTP) Upgrade Token
-   Registry as obsolete.  This capability has been removed: see
+   of [RFC7540] in the "Hypertext Transfer Protocol (HTTP) Upgrade Token
+   Registry" as obsolete.  This capability has been removed: see
    Section 3.1.  The registration is updated as follows:
 
    Value:  h2c
@@ -4147,7 +4134,7 @@ Appendix B.  Changes from RFC 7540
 
    This revision includes the following substantive changes:
 
-   *  Use of TLS 1.3 was defined based on RFC 8740, which this document
+   *  Use of TLS 1.3 was defined based on [RFC8740], which this document
       obsoletes.
 
    *  The priority scheme defined in RFC 7540 is deprecated.
@@ -4165,13 +4152,13 @@ Appendix B.  Changes from RFC 7540
 
    *  Validation for field names and values has been narrowed.  The
       validation that is mandatory for intermediaries is precisely
-      defined and error reporting for requests has been amended to
+      defined, and error reporting for requests has been amended to
       encourage sending 400-series status codes.
 
    *  The ranges of codepoints for settings and frame types that were
-      reserved for "Experimental Use" are now available for general use.
+      reserved for Experimental Use are now available for general use.
 
-   *  Connection-specific header fields - which are prohibited - are
+   *  Connection-specific header fields -- which are prohibited -- are
       more precisely and comprehensively identified.
 
    *  Host and ":authority" are no longer permitted to disagree.
@@ -4185,17 +4172,17 @@ Appendix B.  Changes from RFC 7540
    that were first defined in RFC 7540, such as the 421 status code or
    connection coalescing.
 
-Contributors
-
-   The previous version of this document was authored by Mike Belshe and
-   Roberto Peon.
-
 Acknowledgments
 
    Credit for non-trivial input to this document is owed to a large
-   number of people who have contributed to the HTTP working group over
+   number of people who have contributed to the HTTP Working Group over
    the years.  [RFC7540] contains a more extensive list of people that
    deserve acknowledgment for their contributions.
+
+Contributors
+
+   Mike Belshe and Roberto Peon authored the text that this document is
+   based on.
 
 Authors' Addresses
 
