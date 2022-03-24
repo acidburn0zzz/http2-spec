@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-03-10T01:20:41.971569+00:00",
+  "timestamp": "2022-03-24T01:23:03.688289+00:00",
   "repo": "httpwg/http2-spec",
   "labels": [
     {
@@ -107,6 +107,11 @@
       "name": "RFC-editor",
       "description": null,
       "color": "eb6420"
+    },
+    {
+      "name": "auth48",
+      "description": null,
+      "color": "b6d7a8"
     }
   ],
   "issues": [
@@ -20710,6 +20715,946 @@
           "body": "@martinthomson I understand and your approach looks reasonable, many thanks! I've added a tiny comment so that we don't forget to mention \":method\" that was also severely abused there, and it's OK for me. @mnot I'm not trying to perform substantial changes but have been trying to reload that one over the last 6 months so that we don't miss it. It has been the main cause of generalized vulnerabilities coming from word-for-word implementation of the spec into code, the least we can do is warn implementers.",
           "createdAt": "2022-01-13T04:20:08Z",
           "updatedAt": "2022-01-13T04:20:08Z"
+        }
+      ]
+    },
+    {
+      "number": 1027,
+      "id": "I_kwDOAHsHi85GG4dg",
+      "title": "RFC Editor comment 1",
+      "url": "https://github.com/httpwg/http2-spec/issues/1027",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "Please note that, per the rest of this cluster of\ndocuments, \"[HTTP11]\" has been changed to \"[HTTP/1.1]\".  Please\nlet us know any objections. ",
+      "createdAt": "2022-03-22T03:15:05Z",
+      "updatedAt": "2022-03-22T11:28:19Z",
+      "closedAt": "2022-03-22T11:28:18Z",
+      "comments": [
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "No objection from me.",
+          "createdAt": "2022-03-22T08:22:57Z",
+          "updatedAt": "2022-03-22T08:22:57Z"
+        },
+        {
+          "author": "martinthomson",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Already done locally with #1026.",
+          "createdAt": "2022-03-22T11:28:18Z",
+          "updatedAt": "2022-03-22T11:28:18Z"
+        }
+      ]
+    },
+    {
+      "number": 1028,
+      "id": "I_kwDOAHsHi85GG4d2",
+      "title": "Sections 2.1 and 9 (comment 2)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1028",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Sections 2.1](https://www.rfc-editor.org/authors/rfc9113.html#section-2.1) and 9:  To avoid the appearance of \"of the\nHypertext Transfer Protocol protocol\", should these two instances of\n\"of the HTTP protocol\" be \"of HTTP\" (or perhaps, in the case of\n[Section 9](https://www.rfc-editor.org/authors/rfc9113.html#section-9), \"HTTP attributes\" instead of \"attributes of the HTTP\nprotocol\")?\n\nOriginal:\n\n     The frame and stream layers are tailored to the needs of the\n     HTTP protocol.\n    ...\n     This section outlines attributes of the HTTP protocol that improve\n     interoperability, reduce exposure to known security vulnerabilities,\n     or reduce the potential for implementation variation. ",
+      "createdAt": "2022-03-22T03:15:06Z",
+      "updatedAt": "2022-03-22T12:46:57Z",
+      "closedAt": "2022-03-22T12:46:57Z",
+      "comments": [
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Yeah, \"of HTTP\" is probably best here.",
+          "createdAt": "2022-03-22T08:23:14Z",
+          "updatedAt": "2022-03-22T08:23:14Z"
+        }
+      ]
+    },
+    {
+      "number": 1029,
+      "id": "I_kwDOAHsHi85GG4eD",
+      "title": "RFC Editor comment 3",
+      "url": "https://github.com/httpwg/http2-spec/issues/1029",
+      "state": "OPEN",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "Please review the \"type\" attribute of each artwork\nelement.  Should any of them be tagged as sourcecode?  If yes, please\nspecify the type (e.g., perhaps \"http-message\" for the illustrations\nin [Sections 8.8.1](https://www.rfc-editor.org/authors/rfc9113.html#section-8.8.1) through 8.8.5).\n\nIf the current list of preferred values for \"type\"\n(https://www.rfc-editor.org/materials/sourcecode-types.txt)\ndoes not contain an applicable type, please let us know. ",
+      "createdAt": "2022-03-22T03:15:07Z",
+      "updatedAt": "2022-03-22T12:46:23Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "martinthomson",
+          "authorAssociation": "COLLABORATOR",
+          "body": "`<artwork>` is correct for each of these.  For better or worse, these are pictures and not messages.  Propose no action.",
+          "createdAt": "2022-03-22T11:27:41Z",
+          "updatedAt": "2022-03-22T11:27:41Z"
+        },
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Agree.",
+          "createdAt": "2022-03-22T12:46:22Z",
+          "updatedAt": "2022-03-22T12:46:22Z"
+        }
+      ]
+    },
+    {
+      "number": 1030,
+      "id": "I_kwDOAHsHi85GG4eM",
+      "title": "Section 4.2 (comment 4)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1030",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Section 4.2](https://www.rfc-editor.org/authors/rfc9113.html#section-4.2):  We had trouble parsing this sentence.\nIs a word missing?  If neither suggestion below is correct, please\nclarify what \"any frame carrying ... SETTINGS\" refers to.\n\nOriginal:\n\n     A frame size error in a frame that could alter\n     the state of the entire connection MUST be treated as a connection\n     error ([Section 5.4.1](https://www.rfc-editor.org/authors/rfc9113.html#section-5.4.1)); this includes any frame carrying a field block\n     ([Section 4.3](https://www.rfc-editor.org/authors/rfc9113.html#section-4.3)) (that is, HEADERS, PUSH_PROMISE, and CONTINUATION),\n     SETTINGS, and any frame with a stream identifier of 0.\n\nSuggestion #1 (... and a SETTINGS frame):\n A frame size error in a frame that could alter\n the state of the entire connection MUST be treated as a connection\n error ([Section 5.4.1](https://www.rfc-editor.org/authors/rfc9113.html#section-5.4.1)); this includes any frame carrying a field block\n ([Section 4.3](https://www.rfc-editor.org/authors/rfc9113.html#section-4.3)) (that is, HEADERS, PUSH_PROMISE, and CONTINUATION) and\n a SETTINGS frame, and any frame with a stream identifier of 0.\n\nSuggestion #2 (... or a SETTINGS frame):\n A frame size error in a frame that could alter\n the state of the entire connection MUST be treated as a connection\n error ([Section 5.4.1](https://www.rfc-editor.org/authors/rfc9113.html#section-5.4.1)); this includes any frame carrying a field block\n ([Section 4.3](https://www.rfc-editor.org/authors/rfc9113.html#section-4.3)) (that is, HEADERS, PUSH_PROMISE, and CONTINUATION) or\n a SETTINGS frame, and any frame with a stream identifier of 0. ",
+      "createdAt": "2022-03-22T03:15:08Z",
+      "updatedAt": "2022-03-22T12:50:05Z",
+      "closedAt": "2022-03-22T12:50:05Z",
+      "comments": [
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Suggestion 1 is correct.",
+          "createdAt": "2022-03-22T08:24:30Z",
+          "updatedAt": "2022-03-22T08:24:30Z"
+        },
+        {
+          "author": "martinthomson",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I think that the list structure is supposed to be... includes:\r\n\r\n* any frame carrying a field block (...),\r\n* a SETTINGS frame, and\r\n* any frame with a stream identifier of 0.\r\n\r\nWhich suggests option 3, in my PR.",
+          "createdAt": "2022-03-22T11:34:13Z",
+          "updatedAt": "2022-03-22T11:34:13Z"
+        }
+      ]
+    },
+    {
+      "number": 1031,
+      "id": "I_kwDOAHsHi85GG4ed",
+      "title": "Section 5.1 (comment 5)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1031",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Section 5.1](https://www.rfc-editor.org/authors/rfc9113.html#section-5.1):  The punctuation in this sentence was\ndifficult to follow.  We updated it as noted below.  If this is\nincorrect, please provide alternative text.\n\nOriginal (\"the content ... count\" has also been corrected):\n This means updating header compression state for HEADERS\n and PUSH_PROMISE frames; PUSH_PROMISE frames also cause the\n promised stream to become \"reserved\", even when the PUSH_PROMISE\n frame is received on a closed stream; and, the content of DATA\n frames count toward the connection flow-control window.\n\nCurrently:\n\n     This means updating header compression state for HEADERS\n     and PUSH_PROMISE frames.  PUSH_PROMISE frames also cause the\n     promised stream to become \"reserved\", even when the PUSH_PROMISE\n     frame is received on a closed stream.  Additionally, the content\n     of DATA frames counts toward the connection flow-control window. ",
+      "createdAt": "2022-03-22T03:15:10Z",
+      "updatedAt": "2022-03-22T12:50:47Z",
+      "closedAt": "2022-03-22T12:50:47Z",
+      "comments": []
+    },
+    {
+      "number": 1032,
+      "id": "I_kwDOAHsHi85GG4ek",
+      "title": "Sections 5.2.2 and 5.2.3 (comment 6)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1032",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Sections 5.2.2](https://www.rfc-editor.org/authors/rfc9113.html#section-5.2.2) and 5.2.3:  Should \"bandwidth-delay\nproduct\" be written as \"bandwidth * delay product\" per RFC 7323?\n\nOriginal:\n\n     Note, however, that this can lead to suboptimal use of available\n     network resources if flow control is enabled without knowledge of the\n     bandwidth-delay product (see [RFC7323]).\n\n Even with full awareness of the current bandwidth-delay product,\n implementation of flow control can be difficult.\n...\n If an endpoint cannot ensure that its peer always has available flow\n control window space that is greater than the peer's bandwidth-delay\n product on this connection, its receive throughput will be limited by\n HTTP/2 flow control. ",
+      "createdAt": "2022-03-22T03:15:11Z",
+      "updatedAt": "2022-03-22T12:53:12Z",
+      "closedAt": "2022-03-22T12:53:12Z",
+      "comments": [
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I think \"bandwidth-delay product\" is the standard representation of the term. It's not a term specific to this document but a broader term of art. I recommend not taking this suggestion.",
+          "createdAt": "2022-03-22T08:26:00Z",
+          "updatedAt": "2022-03-22T08:26:00Z"
+        }
+      ]
+    },
+    {
+      "number": 1033,
+      "id": "I_kwDOAHsHi85GG4ex",
+      "title": "Section 5.2.3 (comment 7)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1033",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Section 5.2.3](https://www.rfc-editor.org/authors/rfc9113.html#section-5.2.3):  We changed \"Flow Control Performance\" to\n\"Flow-Control Performance\" per the title of [Section 5.2.1](https://www.rfc-editor.org/authors/rfc9113.html#section-5.2.1) \n(\"Flow-Control Principles\").  Please let us know any concerns.\n\nOriginal:\n\n     5.2.3.  Flow Control Performance\n\nCurrently:\n\n     5.2.3.  Flow-Control Performance ",
+      "createdAt": "2022-03-22T03:15:12Z",
+      "updatedAt": "2022-03-22T12:53:13Z",
+      "closedAt": "2022-03-22T12:53:13Z",
+      "comments": []
+    },
+    {
+      "number": 1034,
+      "id": "I_kwDOAHsHi85GG4fB",
+      "title": "Section 6.1 (comment 8)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1034",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Section 6.1](https://www.rfc-editor.org/authors/rfc9113.html#section-6.1):  It appears that \"as\" in this sentence\nmeans \"because\" instead of \"while\", so we added a comma after\n\"trailers\".  Please let us know if this is incorrect.\n\nOriginal:\n\n     This is\n     only possible if the endpoint does not send trailers as the\n     END_STREAM flag appears on a HEADERS frame in that case; see\n     [Section 8.1](https://www.rfc-editor.org/authors/rfc9113.html#section-8.1)\n\nCurrently:\n\n     |  ...  This is\n     |  only possible if the endpoint does not send trailers, as the\n     |  END_STREAM flag appears on a HEADERS frame in that case; see\n     |  [Section 8.1](https://www.rfc-editor.org/authors/rfc9113.html#section-8.1) ",
+      "createdAt": "2022-03-22T03:15:13Z",
+      "updatedAt": "2022-03-22T12:55:23Z",
+      "closedAt": "2022-03-22T12:55:23Z",
+      "comments": []
+    },
+    {
+      "number": 1035,
+      "id": "I_kwDOAHsHi85GG4fN",
+      "title": "Section 6.5.2 (comment 9)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1035",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Section 6.5.2](https://www.rfc-editor.org/authors/rfc9113.html#section-6.5.2):  As compared to other parameter\ndefinitions in this document, this text reads oddly and is a bit\nconfusing at first: the first sentence defines behavior when the\nparameter is unset, where most or all of the other parameter\ndefinitions appear to define behavior when set.  Would it help to\nupdate as suggested?\n\nOriginal:\n\n     SETTINGS_ENABLE_PUSH (0x2):  This setting can be used to disable\n        server push ([Section 8.4](https://www.rfc-editor.org/authors/rfc9113.html#section-8.4)).  A server MUST NOT send a PUSH_PROMISE\n        frame if it receives this parameter set to a value of 0.\n\nSuggested:\n\n     SETTINGS_ENABLE_PUSH (0x2):  This setting can be used to enable or\n        disable server push.  A server MUST NOT send a PUSH_PROMISE frame\n        if it receives this parameter set to a value of 0 ([Section 8.4](https://www.rfc-editor.org/authors/rfc9113.html#section-8.4)). ",
+      "createdAt": "2022-03-22T03:15:14Z",
+      "updatedAt": "2022-03-22T12:55:58Z",
+      "closedAt": "2022-03-22T12:55:58Z",
+      "comments": [
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Probably fine. We could nitpick the wording a bit, but I think the suggestion is reasonable.",
+          "createdAt": "2022-03-22T08:27:18Z",
+          "updatedAt": "2022-03-22T08:27:18Z"
+        }
+      ]
+    },
+    {
+      "number": 1036,
+      "id": "I_kwDOAHsHi85GG4fd",
+      "title": "Section 6.6 (comment 10)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1036",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Section 6.6](https://www.rfc-editor.org/authors/rfc9113.html#section-6.6):  Is this \"Reserved:\" paragraph needed here\n(after Figure 8) as an \"additional\" field description, when it\nappears to be already defined in [Section 4](https://www.rfc-editor.org/authors/rfc9113.html#section-4)?  Also, we do not see a\n\"Reserved:\" paragraph after Figures 10 and 11, which also show two\n\"Reserved (1),\" entries each.\n\nOriginal:\n\n                      Figure 8: PUSH_PROMISE Frame Format\n\n The Length, Type, Unused Flag(s), Reserved, and Stream Identifier\n fields are described in [Section 4](https://www.rfc-editor.org/authors/rfc9113.html#section-4)  The PUSH_PROMISE frame payload\n has the following additional fields:\n\n Pad Length:  An 8-bit field containing the length of the frame\n    padding in units of octets.  This field is only present if the\n    PADDED flag is set.\n\n Reserved:  A single reserved bit.\n\n Promised Stream ID:  An unsigned 31-bit integer that identifies the\n...\n\nPossibly:\n\n                      Figure 8: PUSH_PROMISE Frame Format\n\n The Length, Type, Unused Flag(s), Reserved, and Stream Identifier\n fields are described in [Section 4](https://www.rfc-editor.org/authors/rfc9113.html#section-4)  The PUSH_PROMISE frame payload\n has the following additional fields:\n\n Pad Length:  An 8-bit field containing the length of the frame\n    padding in units of octets.  This field is only present if the\n    PADDED flag is set.\n\n Promised Stream ID:  An unsigned 31-bit integer that identifies the\n ... ",
+      "createdAt": "2022-03-22T03:15:16Z",
+      "updatedAt": "2022-03-22T12:56:13Z",
+      "closedAt": "2022-03-22T12:56:13Z",
+      "comments": [
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Good spot, the `reserved` comment there is unnecessary.",
+          "createdAt": "2022-03-22T08:28:34Z",
+          "updatedAt": "2022-03-22T08:28:34Z"
+        }
+      ]
+    },
+    {
+      "number": 1037,
+      "id": "I_kwDOAHsHi85GG4ft",
+      "title": "Section 6.6 (comment 11)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1037",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Section 6.6](https://www.rfc-editor.org/authors/rfc9113.html#section-6.6):  Should \"containing request control data\nand header section\" be \"containing request control data and a header\nsection\" or \"containing request control data and header sections\"?\n\nOriginal:\n\n     Field Block Fragment:  A field block fragment ([Section 4.3](https://www.rfc-editor.org/authors/rfc9113.html#section-4.3))\n        containing request control data and header section. ",
+      "createdAt": "2022-03-22T03:15:17Z",
+      "updatedAt": "2022-03-22T13:06:30Z",
+      "closedAt": "2022-03-22T13:06:30Z",
+      "comments": [
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Hmm. I think neither. Perhaps \"containing the request control data and header section\"?",
+          "createdAt": "2022-03-22T08:30:21Z",
+          "updatedAt": "2022-03-22T08:30:21Z"
+        },
+        {
+          "author": "martinthomson",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I've implemented that, but do we need to say \"*a* header section\" ?",
+          "createdAt": "2022-03-22T11:51:39Z",
+          "updatedAt": "2022-03-22T11:51:39Z"
+        },
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Ye~es, probably. We only have bad language for this but I think that's the closest to right.",
+          "createdAt": "2022-03-22T12:57:02Z",
+          "updatedAt": "2022-03-22T12:57:02Z"
+        }
+      ]
+    },
+    {
+      "number": 1038,
+      "id": "I_kwDOAHsHi85GG4f4",
+      "title": "Section 6.8 (comment 12)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1038",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Section 6.8](https://www.rfc-editor.org/authors/rfc9113.html#section-6.8):  As this sentence seemed to indicate that\nthe sender itself was sent, we updated the text to clarify that the\nGOAWAY is sent.  Please let us know if this update is incorrect.\n\nOriginal:\n\n     Once sent, the sender will ignore frames sent on streams initiated by\n     the receiver if the stream has an identifier higher than the included\n     last stream identifier.\n\nCurrently:\n\n     Once the GOAWAY is sent, the sender will ignore frames sent on\n     streams initiated by the receiver if the stream has an identifier\n     higher than the included last stream identifier. ",
+      "createdAt": "2022-03-22T03:15:18Z",
+      "updatedAt": "2022-03-22T12:58:09Z",
+      "closedAt": "2022-03-22T12:58:09Z",
+      "comments": []
+    },
+    {
+      "number": 1039,
+      "id": "I_kwDOAHsHi85GG4gH",
+      "title": "Section 8.2.3 (comment 13)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1039",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Section 8.2.3](https://www.rfc-editor.org/authors/rfc9113.html#section-8.2.3):  We had trouble parsing this sentence.\nIf the suggested text is not correct, please clarify what prevents\ncookie-pairs from being sent on multiple field lines.\n\nOriginal:\n\n     This header field contains multiple\n     values, but does not use a COMMA (\",\") as a separator, which prevents\n     cookie-pairs from being sent on multiple field lines (see Section 5.2 of [HTTP]).\n\nSuggested:\n\n     This header field contains multiple\n     values but does not use a COMMA (\",\") as a separator, thereby\n     preventing cookie-pairs from being sent on multiple field lines (see\n     Section 5.2 of [HTTP]). ",
+      "createdAt": "2022-03-22T03:15:19Z",
+      "updatedAt": "2022-03-22T12:58:53Z",
+      "closedAt": "2022-03-22T12:58:53Z",
+      "comments": []
+    },
+    {
+      "number": 1040,
+      "id": "I_kwDOAHsHi85GG4ga",
+      "title": "Sections 8.3.1 and subsequent (comment 14)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1040",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Sections 8.3.1](https://www.rfc-editor.org/authors/rfc9113.html#section-8.3.1) and subsequent:  Please note that, per\nthe rest of this cluster of documents, we have placed the terms\nbeginning with a colon (\":method\", \":scheme\", etc.) in double quotes\nwhere they appear in running text.  Please review, and let us know\nany objections. ",
+      "createdAt": "2022-03-22T03:15:20Z",
+      "updatedAt": "2022-03-22T13:00:10Z",
+      "closedAt": "2022-03-22T13:00:10Z",
+      "comments": []
+    },
+    {
+      "number": 1041,
+      "id": "I_kwDOAHsHi85GG4gj",
+      "title": "Section 8.3.1 (comment 15)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1041",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Section 8.3.1](https://www.rfc-editor.org/authors/rfc9113.html#section-8.3.1):  We made quoting consistent around\nlowercase instances of \"http\" and \"https\" when describing URIs or\nschemed URIs, per quoted instances in [Sections 3](https://www.rfc-editor.org/authors/rfc9113.html#section-3), 3.2, and 10.1.\nPlease let us know any objections.\n\nOriginal:\n\n     http and https schemed URIs\n     http or https schemed URIs\n     http or https URIs\n\nCurrently:\n\n     \"http\" and \"https\" schemed URIs\n     \"http\" or \"https\" schemed URIs\n     \"http\" or \"https\" URIs ",
+      "createdAt": "2022-03-22T03:15:22Z",
+      "updatedAt": "2022-03-22T13:06:38Z",
+      "closedAt": "2022-03-22T13:06:38Z",
+      "comments": []
+    },
+    {
+      "number": 1042,
+      "id": "I_kwDOAHsHi85GG4gv",
+      "title": "Section 8.3.1 (comment 16)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1042",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Section 8.3.1](https://www.rfc-editor.org/authors/rfc9113.html#section-8.3.1):  Please confirm that [Section 7.1](https://www.rfc-editor.org/authors/rfc9113.html#section-7.1)\n(\"Determining the Target Resource\") of [HTTP] and not [Section 7.2](https://www.rfc-editor.org/authors/rfc9113.html#section-7.2)\n(\"Host and :authority\") of [HTTP] is intended in these sentences.\nWould it be appropriate to cite both sections?  We ask because we do\nnot see \"authority\" mentioned in Section 7.1 of [HTTP].\n\nOriginal:\n\n      Note that request targets for CONNECT or asterisk-form OPTIONS\n      requests never include authority information; see Section 7.1 of [HTTP].\n    ...\n     Note that request targets for CONNECT or asterisk-form OPTIONS\n     requests never include authority information; see Section 7.1 of [HTTP]. ",
+      "createdAt": "2022-03-22T03:15:23Z",
+      "updatedAt": "2022-03-22T13:00:39Z",
+      "closedAt": "2022-03-22T13:00:39Z",
+      "comments": [
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I think we should reference both sections: the reference to Section 7.1 is for the request targets, and 7.2 is for the authority information citation.",
+          "createdAt": "2022-03-22T08:33:49Z",
+          "updatedAt": "2022-03-22T08:33:49Z"
+        }
+      ]
+    },
+    {
+      "number": 1043,
+      "id": "I_kwDOAHsHi85GG4g6",
+      "title": "Section 8.3.1 (comment 17)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1043",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Section 8.3.1](https://www.rfc-editor.org/authors/rfc9113.html#section-8.3.1):  We had trouble following \"a different\nentity to\" in this sentence.  Does it mean \"an entity different from\"\n(per \"Host header field that differs from\" in the previous sentence),\n\"a different entity for\", or something else?\n\nOriginal (the previous sentence is included for context):\n Clients MUST NOT generate a request with a Host header field that\n differs from the :authority pseudo-header field.  A server SHOULD\n treat a request as malformed if it contains a Host header field\n that identifies a different entity to the :authority pseudo-header\n field. ",
+      "createdAt": "2022-03-22T03:15:24Z",
+      "updatedAt": "2022-03-22T13:02:57Z",
+      "closedAt": "2022-03-22T13:02:57Z",
+      "comments": [
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "It means \"an entity different from\": that is, the request is in error if it contains a Host header field and an \":authority\" pseudo-header field, and the two field values differ.",
+          "createdAt": "2022-03-22T08:35:08Z",
+          "updatedAt": "2022-03-22T08:35:08Z"
+        },
+        {
+          "author": "martinthomson",
+          "authorAssociation": "COLLABORATOR",
+          "body": "We have to be careful not to catch differences in representation (\"example.com\" vs. \"Example.com\").",
+          "createdAt": "2022-03-22T12:14:29Z",
+          "updatedAt": "2022-03-22T12:14:29Z"
+        }
+      ]
+    },
+    {
+      "number": 1044,
+      "id": "I_kwDOAHsHi85GG4hG",
+      "title": "Section 8.4.2 (comment 18)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1044",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Section 8.4.2](https://www.rfc-editor.org/authors/rfc9113.html#section-8.4.2):  Does \"the same sequence of frames as\ndefined in [Section 8.1](https://www.rfc-editor.org/authors/rfc9113.html#section-8.1)\" mean \"the same sequence of frames as that\ndefined in [Section 8.1](https://www.rfc-editor.org/authors/rfc9113.html#section-8.1)\" or \"the same sequence of frames, as defined\nin [Section 8.1](https://www.rfc-editor.org/authors/rfc9113.html#section-8.1)\"?  It appears to us that it means \"...as that defined\nin [Section 8.1](https://www.rfc-editor.org/authors/rfc9113.html#section-8.1)\", but please advise.\n\nOriginal:\n\n     The\n     server uses this stream to transmit an HTTP response, using the same\n     sequence of frames as defined in [Section 8.1](https://www.rfc-editor.org/authors/rfc9113.html#section-8.1) ",
+      "createdAt": "2022-03-22T03:15:25Z",
+      "updatedAt": "2022-03-22T13:03:32Z",
+      "closedAt": "2022-03-22T13:03:32Z",
+      "comments": [
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "It means \"as that defined in Section 8.1\".",
+          "createdAt": "2022-03-22T08:35:38Z",
+          "updatedAt": "2022-03-22T08:35:38Z"
+        }
+      ]
+    },
+    {
+      "number": 1045,
+      "id": "I_kwDOAHsHi85GG4hW",
+      "title": "Sections 8.5 and 9.1.1 (comment 19)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1045",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Sections 8.5](https://www.rfc-editor.org/authors/rfc9113.html#section-8.5) and 9.1.1:  We quoted \"https\" where\npreceded by \"resources\".  Please let us know if this is incorrect.\n\nOriginal:\n\n     CONNECT is primarily\n     used with HTTP proxies to establish a TLS session with an origin\n     server for the purposes of interacting with https resources.\n    ...\n     For https resources, connection reuse additionally depends on having\n     a certificate that is valid for the host in the URI.\n\nCurrently (best viewed in the .html or .pdf output):\n CONNECT is primarily\n used with HTTP proxies to establish a TLS session with an origin\n server for the purposes of interacting with \"https\" resources.\n...\n For \"https\" resources, connection reuse additionally depends on\n having a certificate that is valid for the host in the URI. ",
+      "createdAt": "2022-03-22T03:15:27Z",
+      "updatedAt": "2022-03-22T13:06:38Z",
+      "closedAt": "2022-03-22T13:06:38Z",
+      "comments": [
+        {
+          "author": "martinthomson",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Folded into #1085.",
+          "createdAt": "2022-03-22T12:40:04Z",
+          "updatedAt": "2022-03-22T12:40:04Z"
+        }
+      ]
+    },
+    {
+      "number": 1046,
+      "id": "I_kwDOAHsHi85GG4hj",
+      "title": "Section 8.7 (comment 20)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1046",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Section 8.7](https://www.rfc-editor.org/authors/rfc9113.html#section-8.7):  Does \"as\" mean \"while\" or \"because\" in\nthis sentence?\n\nOriginal:\n\n     Connections that remain idle can\n     become broken as some middleboxes (for instance, network address\n     translators or load balancers) silently discard connection bindings. ",
+      "createdAt": "2022-03-22T03:15:28Z",
+      "updatedAt": "2022-03-22T13:07:13Z",
+      "closedAt": "2022-03-22T13:07:13Z",
+      "comments": [
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "\"As\" means \"because\" in this sentence.",
+          "createdAt": "2022-03-22T08:36:10Z",
+          "updatedAt": "2022-03-22T08:36:10Z"
+        }
+      ]
+    },
+    {
+      "number": 1057,
+      "id": "I_kwDOAHsHi85GG7vY",
+      "title": "Sections 8.8.3 and 8.8.4 (comment 21)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1057",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Sections 8.8.3](https://www.rfc-editor.org/authors/rfc9113.html#section-8.8.3) and 8.8.4:  Because \"control data and a\nrequest header and message content\" reads a bit oddly, we changed it\nto \"control data and a request header with message content\" per\n\"control data and a request header with no message content\" in\n[Section 8.1.1](https://www.rfc-editor.org/authors/rfc9113.html#section-8.1.1)  Please let us know if this is incorrect.\n\nOriginal:\n\n     An HTTP POST request that includes control data and a request header\n     and message content is transmitted as one HEADERS frame, followed by\n     zero or more CONTINUATION frames containing the request header,\n     followed by one or more DATA frames, with the last CONTINUATION (or\n     HEADERS) frame having the END_HEADERS flag set and the final DATA\n     frame having the END_STREAM flag set:\n    ...\n     A response that includes control data and a response header and\n     message content is transmitted as a HEADERS frame, followed by zero\n     or more CONTINUATION frames, followed by one or more DATA frames,\n     with the last DATA frame in the sequence having the END_STREAM flag\n     set:\n\nCurrently:\n\n     An HTTP POST request that includes control data and a request header\n     with message content is transmitted as one HEADERS frame, followed by\n     zero or more CONTINUATION frames containing the request header,\n     followed by one or more DATA frames, with the last CONTINUATION (or\n     HEADERS) frame having the END_HEADERS flag set and the final DATA\n     frame having the END_STREAM flag set:\n    ...\n     A response that includes control data and a response header with\n     message content is transmitted as a HEADERS frame, followed by zero\n     or more CONTINUATION frames, followed by one or more DATA frames,\n     with the last DATA frame in the sequence having the END_STREAM flag\n     set: ",
+      "createdAt": "2022-03-22T03:37:55Z",
+      "updatedAt": "2022-03-22T13:08:57Z",
+      "closedAt": "2022-03-22T13:08:57Z",
+      "comments": []
+    },
+    {
+      "number": 1058,
+      "id": "I_kwDOAHsHi85GG7vp",
+      "title": "Sections 9.1.1 and 9.2 (comment 22)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1058",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Sections 9.1.1](https://www.rfc-editor.org/authors/rfc9113.html#section-9.1.1) and 9.2:  \"SNI\" is not used in [TLS-EXT]\n(RFC 6066) or elsewhere in this document.  Also, this abbreviation\nwasn't used in [Section 9.1](https://www.rfc-editor.org/authors/rfc9113.html#section-9.1), Paragraph 4.  Is it necessary?\n\nWe also see one instance of \"SNI\" in RFC-to-be 9114; the abbreviation\ndoesn't appear to serve any specific purpose:\nServer Name Indication (SNI; [RFC6066])\n\nOriginal:\n\n     For\n     example, TLS termination might be performed by a middlebox that uses\n     the TLS Server Name Indication (SNI) [TLS-EXT] extension to select an\n     origin server.\n    ...\n     The TLS implementation MUST support the Server Name Indication (SNI)\n     [TLS-EXT] extension to TLS. ",
+      "createdAt": "2022-03-22T03:37:57Z",
+      "updatedAt": "2022-03-22T13:08:26Z",
+      "closedAt": "2022-03-22T13:08:26Z",
+      "comments": [
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "We can safely remove it.",
+          "createdAt": "2022-03-22T08:37:20Z",
+          "updatedAt": "2022-03-22T08:37:20Z"
+        }
+      ]
+    },
+    {
+      "number": 1059,
+      "id": "I_kwDOAHsHi85GG7v2",
+      "title": "Section 9.2.2 (comment 23)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1059",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Section 9.2.2](https://www.rfc-editor.org/authors/rfc9113.html#section-9.2.2):  This sentence reads oddly.  As it\nappears that the problem in question causes TLS handshake failures,\nwe updated accordingly.  Please let us know if this is incorrect.\n\nOriginal:\n\n     To avoid this\n     problem causing TLS handshake failures, deployments of HTTP/2 that\n     use TLS 1.2 MUST support TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256\n     [TLS-ECDHE] with the P-256 elliptic curve [RFC8422].\n\nCurrently:\n\n     To avoid this\n     problem, which causes TLS handshake failures, deployments of HTTP/2\n     that use TLS 1.2 MUST support TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256\n     [TLS-ECDHE] with the P-256 elliptic curve [RFC8422]. ",
+      "createdAt": "2022-03-22T03:37:58Z",
+      "updatedAt": "2022-03-22T13:09:39Z",
+      "closedAt": "2022-03-22T13:09:39Z",
+      "comments": []
+    },
+    {
+      "number": 1060,
+      "id": "I_kwDOAHsHi85GG7wD",
+      "title": "Section 10.3 (comment 24)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1060",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Section 10.3](https://www.rfc-editor.org/authors/rfc9113.html#section-10.3):  Should \"Content-Length\" be enclosed in\r\n\"`<tt>`\" elements in the XML file?  We ask because we see three\r\ninstances of \"`<tt>content-length</tt>` header field\" in the XML for\r\n[Section 8.1.1](https://www.rfc-editor.org/authors/rfc9113.html#section-8.1.1)\r\n\r\nOriginal:\r\n\r\n> Additionally, intermediaries\r\n>  should take care when forwarding messages containing Content-Length\r\n> fields to ensure that the message is well-formed ([Section 8.1.1](https://www.rfc-editor.org/authors/rfc9113.html#section-8.1.1)). ",
+      "createdAt": "2022-03-22T03:37:59Z",
+      "updatedAt": "2022-03-22T13:14:53Z",
+      "closedAt": "2022-03-22T13:14:53Z",
+      "comments": [
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Probably, yes.",
+          "createdAt": "2022-03-22T08:48:28Z",
+          "updatedAt": "2022-03-22T08:48:28Z"
+        }
+      ]
+    },
+    {
+      "number": 1061,
+      "id": "I_kwDOAHsHi85GG7wM",
+      "title": "Section 10.5 (comment 25)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1061",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Section 10.5](https://www.rfc-editor.org/authors/rfc9113.html#section-10.5):  We had trouble parsing this sentence.\nDoes \"The use of field section compression and flow control depend\"\nmean \"The use of (1) field section compression and (2) flow control\ndepends\", or does it mean \"Flow control and the use of field section\ncompression depend\"?\n\nOriginal:\n\n     The use of field section\n     compression and flow control depend on a commitment of resources for\n     storing a greater amount of state.\n\nPossibly (\"Using ... depends\"):\n Using field section\n compression and flow control depends on a commitment of resources\n for storing a greater amount of state. ",
+      "createdAt": "2022-03-22T03:38:00Z",
+      "updatedAt": "2022-03-22T13:15:31Z",
+      "closedAt": "2022-03-22T13:15:31Z",
+      "comments": [
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "The former is the correct variant, I think.",
+          "createdAt": "2022-03-22T08:49:16Z",
+          "updatedAt": "2022-03-22T08:49:16Z"
+        },
+        {
+          "author": "martinthomson",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Suggesting instead:\r\n\r\n> Both field section compression and flow control depend on a commitment of a greater amount of state.",
+          "createdAt": "2022-03-22T12:31:56Z",
+          "updatedAt": "2022-03-22T12:31:56Z"
+        }
+      ]
+    },
+    {
+      "number": 1062,
+      "id": "I_kwDOAHsHi85GG7wU",
+      "title": "Section 10.5 (comment 26)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1062",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Section 10.5](https://www.rfc-editor.org/authors/rfc9113.html#section-10.5):  \"offers some opportunities to waste\"\nreads oddly.  Are some words missing?\n\nOriginal:\n\n     *  Field section compression also offers some opportunities to waste\n        processing resources; see Section 7 of [COMPRESSION] for more\n        details on potential abuses.\n\nPossibly:\n\n     *  Field section compression also provides opportunities for an\n        attacker to waste processing resources; see Section 7 of [COMPRESSION] for more details on potential abuses. ",
+      "createdAt": "2022-03-22T03:38:01Z",
+      "updatedAt": "2022-03-22T13:15:59Z",
+      "closedAt": "2022-03-22T13:15:59Z",
+      "comments": [
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "The suggestion is a good one, it communicates the intended meaning.",
+          "createdAt": "2022-03-22T08:49:39Z",
+          "updatedAt": "2022-03-22T08:49:39Z"
+        }
+      ]
+    },
+    {
+      "number": 1063,
+      "id": "I_kwDOAHsHi85GG7we",
+      "title": "Section 10.5 (comment 27)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1063",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Section 10.5](https://www.rfc-editor.org/authors/rfc9113.html#section-10.5):  Please confirm that \"i.e.,\" is\ncorrect here (in which case \"SETTINGS changes, small frames, field\nsection compression\" should be \"SETTINGS changes, small frames, and\nfield section compression\") instead of \"e.g.,\".\n\nOriginal:\n\n     Most of the features that might be exploited for denial of service -\n     i.e., SETTINGS changes, small frames, field section compression -\n     have legitimate uses. ",
+      "createdAt": "2022-03-22T03:38:02Z",
+      "updatedAt": "2022-03-22T13:17:24Z",
+      "closedAt": "2022-03-22T13:17:24Z",
+      "comments": [
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I think that this should probably e.g., not i.e.",
+          "createdAt": "2022-03-22T08:50:09Z",
+          "updatedAt": "2022-03-22T08:50:09Z"
+        }
+      ]
+    },
+    {
+      "number": 1064,
+      "id": "I_kwDOAHsHi85GG7wl",
+      "title": "Sections 10.8 and 10.9 (comment 28)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1064",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "[Sections 10.8](https://www.rfc-editor.org/authors/rfc9113.html#section-10.8) and 10.9:  Please confirm that these\ninstances of \"value\" should not be \"values\".\n\nOriginal:\n\n     These\n     include the value of settings, the manner in which flow-control\n     windows are managed, the way priorities are allocated to streams, the\n     timing of reactions to stimulus, and the handling of any features\n     that are controlled by settings.\n    ...\n     Ensuring that processing time is not dependent on the value of\n     secrets is the best defense against any form of timing attack.\n\nPossibly:\n\n     These\n     include the values of settings, the manner in which flow-control\n     windows are managed, the way priorities are allocated to streams, the\n     timing of reactions to stimulus, and the handling of any features\n     that are controlled by settings.\n    ...\n     Ensuring that processing time is not dependent on secret values is\n     the best defense against any form of timing attack. ",
+      "createdAt": "2022-03-22T03:38:04Z",
+      "updatedAt": "2022-03-22T13:19:56Z",
+      "closedAt": "2022-03-22T13:19:56Z",
+      "comments": [
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "These should both be \"values\".",
+          "createdAt": "2022-03-22T10:28:13Z",
+          "updatedAt": "2022-03-22T10:28:13Z"
+        },
+        {
+          "author": "martinthomson",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Values is correct in the first case, but the second should be \"a value\"\r\nby which it means \"any value\".",
+          "createdAt": "2022-03-22T12:39:31Z",
+          "updatedAt": "2022-03-22T12:39:31Z"
+        }
+      ]
+    },
+    {
+      "number": 1065,
+      "id": "I_kwDOAHsHi85GG7wu",
+      "title": "The Status of HTTP2-Settings at\n     https (comment 29)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1065",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "The Status of HTTP2-Settings at\n     https://www.iana.org/assignments/http-fields/http-fields.xhtml is\n     listed as \"obsoleted\".  However, it was listed as \"Standard\" in\n     [Section 11.1](https://www.rfc-editor.org/authors/rfc9113.html#section-11.1) of this document.  We have update this to match the\n     registry per this note from IANA:\n\n\"NOTE: the authors will update the status field in the document to\nmatch the status entry below.\"\n\nIANA:\nField Name: HTTP2-Settings\nStatus: obsoleted\nReference: RFC 7540, [Section 3.2.1](https://www.rfc-editor.org/authors/rfc9113.html#section-3.2.1)\nComments: Obsolete; see [Section 11.1](https://www.rfc-editor.org/authors/rfc9113.html#section-11.1) of [this document].\n\n\nThis doc originally had:\n   Field Name:  HTTP2-Settings\n   Status:  Standard\n   Reference:  [Section 3.2.1](https://rfc-editor.org/rfc/rfc7540.html#section-3.2.1) of [RFC7540](https://rfc-editor.org/rfc/rfc7540.html)\n   Comments:  Obsolete; see [Section 11.1](https://www.rfc-editor.org/authors/rfc9113.html#section-11.1) of this document.\n\n",
+      "createdAt": "2022-03-22T03:38:05Z",
+      "updatedAt": "2022-03-22T12:41:27Z",
+      "closedAt": "2022-03-22T12:41:26Z",
+      "comments": [
+        {
+          "author": "martinthomson",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Fixed by #1021 already.",
+          "createdAt": "2022-03-22T12:41:26Z",
+          "updatedAt": "2022-03-22T12:41:26Z"
+        }
+      ]
+    },
+    {
+      "number": 1066,
+      "id": "I_kwDOAHsHi85GG7w6",
+      "title": "RFC Editor comment 30",
+      "url": "https://github.com/httpwg/http2-spec/issues/1066",
+      "state": "OPEN",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "Please review if \"(OBSOLETE)\" should be added to this\n     document to match the IANA registry at\n     https://www.iana.org/assignments/http-upgrade-tokens/http-upgrade-tokens.xhtml.\n\nIANA:\nDescription: Hypertext Transfer Protocol version 2 (HTTP/2) (OBSOLETE) \t\n\nThis doc:\nDescription:  Hypertext Transfer Protocol version 2 (HTTP/2)\n\n\n",
+      "createdAt": "2022-03-22T03:38:06Z",
+      "updatedAt": "2022-03-22T14:08:46Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "martinthomson",
+          "authorAssociation": "COLLABORATOR",
+          "body": "In our copy as \"(OBSOLETE) Hypertext Transfer Protocol version 2 (HTTP/2)\", which I prefer as it doesn't accidentally mean \"HTTP/2 is obsolete\".",
+          "createdAt": "2022-03-22T12:43:35Z",
+          "updatedAt": "2022-03-22T12:43:35Z"
+        },
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Agree.",
+          "createdAt": "2022-03-22T14:08:46Z",
+          "updatedAt": "2022-03-22T14:08:46Z"
+        }
+      ]
+    },
+    {
+      "number": 1067,
+      "id": "I_kwDOAHsHi85GG7xD",
+      "title": "Informative References (comment 31)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1067",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "Informative References:  We have labeled the document\n\"Extensible Prioritization Scheme for HTTP\" as [HTTP-PRIORITY]\nfor now.  Please let us know if you prefer a different citation\nstring for this new RFC-to-be.\n\nNote:  If [HTTP-PRIORITY] is not ready for publication when this\ndocument is published, we will revert the listing to the\n\"draft-ietf-httpbis-priority\" format. ",
+      "createdAt": "2022-03-22T03:38:07Z",
+      "updatedAt": "2022-03-22T13:22:55Z",
+      "closedAt": "2022-03-22T13:22:55Z",
+      "comments": [
+        {
+          "author": "martinthomson",
+          "authorAssociation": "COLLABORATOR",
+          "body": "We'll need to sort this out; we're currently using `<xi:include>`, which I don't like.",
+          "createdAt": "2022-03-22T12:46:44Z",
+          "updatedAt": "2022-03-22T12:46:44Z"
+        }
+      ]
+    },
+    {
+      "number": 1068,
+      "id": "I_kwDOAHsHi85GG7xK",
+      "title": "Title of Appendix B (comment 32)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1068",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "Title of Appendix B:  The first bullet in this section\nmentions RFC 8740.  Should \"Changes from RFC 7540\" be \"Changes from\nRFC 7540 and RFC 8740\"?  Also, should the first bullet be moved to\nthe end of the bullet list?\n\nOriginal:\n\n     Appendix B.  Changes from RFC 7540 ",
+      "createdAt": "2022-03-22T03:38:08Z",
+      "updatedAt": "2022-03-22T13:23:48Z",
+      "closedAt": "2022-03-22T13:23:48Z",
+      "comments": [
+        {
+          "author": "martinthomson",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I would prefer not to change anything here.",
+          "createdAt": "2022-03-22T12:48:03Z",
+          "updatedAt": "2022-03-22T12:48:03Z"
+        },
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I agree.",
+          "createdAt": "2022-03-22T13:23:48Z",
+          "updatedAt": "2022-03-22T13:23:48Z"
+        }
+      ]
+    },
+    {
+      "number": 1069,
+      "id": "I_kwDOAHsHi85GG7xP",
+      "title": "Appendix B (comment 33)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1069",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "Appendix B:  Will \"successor signaling\" be clear to\nreaders?  We don't see \"successor signaling\" in\ndraft-ietf-httpbis-priority or any published RFC, and we don't see\nthe word \"successor\" in draft-ietf-httpbis-priority.\n\nOriginal:\n\n     Using\n     the simpler successor signaling [I-D.ietf-httpbis-priority] is\n     recommended. ",
+      "createdAt": "2022-03-22T03:38:09Z",
+      "updatedAt": "2022-03-22T13:24:27Z",
+      "closedAt": "2022-03-22T13:24:27Z",
+      "comments": []
+    },
+    {
+      "number": 1070,
+      "id": "I_kwDOAHsHi85GG7xU",
+      "title": "Please confirm that the following erratum reports have\nbeen addressed (comment 34)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1070",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "Please confirm that the following erratum reports have\nbeen addressed:\n\n<https://www.rfc-editor.org/errata/eid4535>\n  (updates to Figure 2)\n<https://www.rfc-editor.org/errata/eid6309>\n  (the \"Frames of unknown types are ignored.\" sentence)\n<https://www.rfc-editor.org/errata/eid4925>\n  (We could not determine whether or not the listed updates\n  were made.) ",
+      "createdAt": "2022-03-22T03:38:10Z",
+      "updatedAt": "2022-03-22T13:26:25Z",
+      "closedAt": "2022-03-22T13:26:25Z",
+      "comments": [
+        {
+          "author": "martinthomson",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Confirmed.  These are in the pre-history of the document.",
+          "createdAt": "2022-03-22T12:50:29Z",
+          "updatedAt": "2022-03-22T12:50:29Z"
+        },
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I've also double checked: these are all applied.",
+          "createdAt": "2022-03-22T13:26:25Z",
+          "updatedAt": "2022-03-22T13:26:25Z"
+        }
+      ]
+    },
+    {
+      "number": 1071,
+      "id": "I_kwDOAHsHi85GG7xc",
+      "title": "RFC Editor comment 35",
+      "url": "https://github.com/httpwg/http2-spec/issues/1071",
+      "state": "OPEN",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "Please review the \"Inclusive Language\" portion of the\nonline Style Guide at\n<https://www.rfc-editor.org/styleguide/part2/#inclusive_language>,\nand let us know if any changes are needed.  For example, could\n'an ASCII whitespace character' be changed to 'an ASCII\n\"empty space\" character' or 'an ASCII \"space\" character'? ",
+      "createdAt": "2022-03-22T03:38:11Z",
+      "updatedAt": "2022-03-22T14:11:19Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "martinthomson",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Use of \"whitespace\" is necessary to distinguish from \"space\" (which means 0x20).  I don't regard this as a problematic usage.\r\n\r\nPart of the reason for this revision is to address this; so care has been taken to avoid use of problematic language.\r\n\r\nAlso, it would be really helpful to have a list somewhere.  The IESG managed to destroy the useful parts of their guidance by referring to NIST.",
+          "createdAt": "2022-03-22T12:54:16Z",
+          "updatedAt": "2022-03-22T12:54:16Z"
+        },
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Agreed on all counts.\r\n\r\nSpecifically, the NIST document calls out the problematical use of \"white\" as being in the context of using the word \"white\" to mean something positive or less harmful. The phrase \"whitespace\" does not carry a positive or negative connotation, and there exists nothing else to which whitespace is being compared.",
+          "createdAt": "2022-03-22T14:11:19Z",
+          "updatedAt": "2022-03-22T14:11:19Z"
+        }
+      ]
+    },
+    {
+      "number": 1072,
+      "id": "I_kwDOAHsHi85GG7xn",
+      "title": "Please let us know if any changes are needed for the\nfollowing (comment 36)",
+      "url": "https://github.com/httpwg/http2-spec/issues/1072",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "Please let us know if any changes are needed for the\nfollowing:\n\na) The following terms were used inconsistently in this document.\nWe chose to use the latter forms.  Please let us know any objections.\n\n flow control credit / flow-control credit\n   (We also changed \"flow control signal\" to \"flow-control signal\".)\n\n flow control window (1 instance in [Section 5.2.3](https://www.rfc-editor.org/authors/rfc9113.html#section-5.2.3)) / \n   flow-control window (approx. 45 instances)\n\n HTTP 1.1 (1 instance) / HTTP/1.1 (22 instances)\n\n \"Promised Stream ID\" field / Promised Stream ID field\n   (There was only one quoted field name in this document.)\n\n stream identifier field (6 instances) /\n   Stream Identifier field (10 instances)\n\n Upgrade token / upgrade token (per RFC 7540 and companion\n   document RFC 9110)\n\nb) The following terms appear to be used inconsistently in this\ndocument.  Please let us know which form is preferred.\n\n closed stream (or closed streams) (5 instances) /\n   \"closed\" stream (1 instance)\n\n idle stream (5 instances) / \"idle\" streams (1 instance)\n\n reserved stream (or reserved streams) (4 instances) /\n   \"reserved\" streams (1 instance) ",
+      "createdAt": "2022-03-22T03:38:13Z",
+      "updatedAt": "2022-03-22T16:37:21Z",
+      "closedAt": "2022-03-22T16:37:21Z",
+      "comments": [
+        {
+          "author": "martinthomson",
+          "authorAssociation": "COLLABORATOR",
+          "body": "For stream states, I think we have a convention.  We talk about a stream in the \"idle\" state or we talk about an idle stream.  I think that's OK.\r\n\r\n@Lukasa, you will have to double check the pull request I have for this as there were a few inconsistencies about our use of \"reserved\".  These carry over from the previous version and were not very precise.",
+          "createdAt": "2022-03-22T13:04:14Z",
+          "updatedAt": "2022-03-22T13:04:14Z"
         }
       ]
     }
@@ -43657,7 +44602,7 @@
       "labels": [],
       "body": "Based on comments from IANA",
       "createdAt": "2022-02-03T23:14:50Z",
-      "updatedAt": "2022-02-04T20:37:33Z",
+      "updatedAt": "2022-03-22T12:42:16Z",
       "baseRepository": "httpwg/http2-spec",
       "baseRefName": "main",
       "baseRefOid": "46f416f5a4dafd77e6febabbe7b6b073ee8f01f4",
@@ -43865,6 +44810,1301 @@
           "createdAt": "2022-03-09T07:34:25Z",
           "updatedAt": "2022-03-09T07:34:25Z",
           "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1073,
+      "id": "PR_kwDOAHsHi840zjxV",
+      "title": "of HTTP",
+      "url": "https://github.com/httpwg/http2-spec/pull/1073",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [
+        "auth48"
+      ],
+      "body": "Not \"of the HTTP protocol\".\r\n\r\nCloses #1028.",
+      "createdAt": "2022-03-22T11:29:42Z",
+      "updatedAt": "2022-03-22T12:46:58Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0054de14595adb394574a77684a2cd3db23ecd27",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "http-protocol-protocol",
+      "headRefOid": "3128afb91958715f934a4940c32c1cc1aa429bb5",
+      "closedAt": "2022-03-22T12:46:57Z",
+      "mergedAt": "2022-03-22T12:46:57Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "15cd0ca940b0669ed5672d8850aa80095c3947da"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842qubS",
+          "commit": {
+            "abbreviatedOid": "3128afb"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-22T12:46:47Z",
+          "updatedAt": "2022-03-22T12:46:47Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1074,
+      "id": "PR_kwDOAHsHi840zlBa",
+      "title": "Fix list construction for frame size error",
+      "url": "https://github.com/httpwg/http2-spec/pull/1074",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #1030.",
+      "createdAt": "2022-03-22T11:34:58Z",
+      "updatedAt": "2022-03-22T12:50:06Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0054de14595adb394574a77684a2cd3db23ecd27",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "frame-size-error",
+      "headRefOid": "72c549884a28ac15e76272561a4e9a363959b98b",
+      "closedAt": "2022-03-22T12:50:06Z",
+      "mergedAt": "2022-03-22T12:50:05Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "6200a1388465fe1f5fbdf07601407f38598ed047"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842qvc1",
+          "commit": {
+            "abbreviatedOid": "72c5498"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "LGTM.",
+          "createdAt": "2022-03-22T12:50:00Z",
+          "updatedAt": "2022-03-22T12:50:00Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1075,
+      "id": "PR_kwDOAHsHi840zll_",
+      "title": "Accept rewording of sentence",
+      "url": "https://github.com/httpwg/http2-spec/pull/1075",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #1031.",
+      "createdAt": "2022-03-22T11:37:32Z",
+      "updatedAt": "2022-03-22T12:50:48Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0054de14595adb394574a77684a2cd3db23ecd27",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "rfced-5",
+      "headRefOid": "4bc9016fee6c7d4f37362f6850841d348ba3d7e8",
+      "closedAt": "2022-03-22T12:50:48Z",
+      "mergedAt": "2022-03-22T12:50:47Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "4cf6a139350e5c3990fd771fe07fb0f028fe71ca"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842qvqK",
+          "commit": {
+            "abbreviatedOid": "4bc9016"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-22T12:50:40Z",
+          "updatedAt": "2022-03-22T12:50:40Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1076,
+      "id": "PR_kwDOAHsHi840zmW8",
+      "title": "bandwidth * delay product",
+      "url": "https://github.com/httpwg/http2-spec/pull/1076",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "This looks terrible, but it's the form that the RFC we cite uses (also,\r\nRFC 1323).\r\n\r\nCloses #1032.",
+      "createdAt": "2022-03-22T11:41:06Z",
+      "updatedAt": "2022-03-22T12:53:12Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0054de14595adb394574a77684a2cd3db23ecd27",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "bandwidth-delay",
+      "headRefOid": "d61e3bbd59bf13e0e99682b026bfcbb3fdb857a9",
+      "closedAt": "2022-03-22T12:53:12Z",
+      "mergedAt": "2022-03-22T12:53:12Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "6281a676599c0f92a874b1a72cb15fcdbf6a6d61"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842qv5I",
+          "commit": {
+            "abbreviatedOid": "d61e3bb"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Thanks, I hate it.",
+          "createdAt": "2022-03-22T12:51:23Z",
+          "updatedAt": "2022-03-22T12:51:23Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1077,
+      "id": "PR_kwDOAHsHi840zmox",
+      "title": "Flow-Control Performance",
+      "url": "https://github.com/httpwg/http2-spec/pull/1077",
+      "state": "CLOSED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #1033.",
+      "createdAt": "2022-03-22T11:42:26Z",
+      "updatedAt": "2022-03-22T12:54:39Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0054de14595adb394574a77684a2cd3db23ecd27",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "fc-perf-title",
+      "headRefOid": "90372b779cbafe9e01882525938a43a7a9876f60",
+      "closedAt": "2022-03-22T12:54:39Z",
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Resolved by #1076.",
+          "createdAt": "2022-03-22T12:54:38Z",
+          "updatedAt": "2022-03-22T12:54:38Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842qwwD",
+          "commit": {
+            "abbreviatedOid": "90372b7"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-22T12:53:28Z",
+          "updatedAt": "2022-03-22T12:53:28Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1078,
+      "id": "PR_kwDOAHsHi840zm_Y",
+      "title": "\"as\" means \"because\"",
+      "url": "https://github.com/httpwg/http2-spec/pull/1078",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #1034.",
+      "createdAt": "2022-03-22T11:44:07Z",
+      "updatedAt": "2022-03-22T12:55:24Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0054de14595adb394574a77684a2cd3db23ecd27",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "trailers-as",
+      "headRefOid": "76ddbdd1351b2876561f7231e659e4186466a4c1",
+      "closedAt": "2022-03-22T12:55:24Z",
+      "mergedAt": "2022-03-22T12:55:23Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "d240ac718105ff6d4a1e4e1004e56de68abf65ea"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842qxYw",
+          "commit": {
+            "abbreviatedOid": "76ddbdd"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-22T12:55:19Z",
+          "updatedAt": "2022-03-22T12:55:19Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1079,
+      "id": "PR_kwDOAHsHi840znp7",
+      "title": "Reword SETTINGS_ENABLE_PUSH",
+      "url": "https://github.com/httpwg/http2-spec/pull/1079",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #1035.",
+      "createdAt": "2022-03-22T11:47:13Z",
+      "updatedAt": "2022-03-22T12:55:59Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0054de14595adb394574a77684a2cd3db23ecd27",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "settings-enable-push",
+      "headRefOid": "2cb00ec9cd712cfddd5c5d7b38e8d9b4637a57de",
+      "closedAt": "2022-03-22T12:55:58Z",
+      "mergedAt": "2022-03-22T12:55:58Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "46a76e8d4871970723545534a3db2b06d94b3004"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842qxme",
+          "commit": {
+            "abbreviatedOid": "2cb00ec"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-22T12:55:54Z",
+          "updatedAt": "2022-03-22T12:55:54Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1080,
+      "id": "PR_kwDOAHsHi840zoDR",
+      "title": "Remove redundant Reserved field description from PUSH_PROMISE",
+      "url": "https://github.com/httpwg/http2-spec/pull/1080",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #1036.",
+      "createdAt": "2022-03-22T11:49:06Z",
+      "updatedAt": "2022-03-22T12:56:14Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0054de14595adb394574a77684a2cd3db23ecd27",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "remove-redundant-reserved",
+      "headRefOid": "808a93d54117387449688f5e3ee0eaf59a990501",
+      "closedAt": "2022-03-22T12:56:14Z",
+      "mergedAt": "2022-03-22T12:56:13Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "4cafaafc4546b1014d5a20f7d2b7be2384ddf42f"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842qxrs",
+          "commit": {
+            "abbreviatedOid": "808a93d"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-22T12:56:09Z",
+          "updatedAt": "2022-03-22T12:56:09Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1081,
+      "id": "PR_kwDOAHsHi840zonE",
+      "title": "PUSH_PROMISE contains request control data and a header section",
+      "url": "https://github.com/httpwg/http2-spec/pull/1081",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #1037.",
+      "createdAt": "2022-03-22T11:51:48Z",
+      "updatedAt": "2022-03-22T13:06:33Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0054de14595adb394574a77684a2cd3db23ecd27",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "containing-control-data",
+      "headRefOid": "0dcec13e849232cbaa79b8888bb084a07219cbe3",
+      "closedAt": "2022-03-22T13:06:30Z",
+      "mergedAt": "2022-03-22T13:06:30Z",
+      "mergedBy": "martinthomson",
+      "mergeCommit": {
+        "oid": "506530b65be13afb0ef7a4296f41b5217bc0a9cb"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842qyOE",
+          "commit": {
+            "abbreviatedOid": "cf86317"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-22T12:57:25Z",
+          "updatedAt": "2022-03-22T12:57:28Z",
+          "comments": [
+            {
+              "originalPosition": 8,
+              "body": "```suggestion\r\n            data and a header section.\r\n```\r\n\r\nPer your proposal in #1037.",
+              "createdAt": "2022-03-22T12:57:25Z",
+              "updatedAt": "2022-03-22T12:57:28Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 1082,
+      "id": "PR_kwDOAHsHi840zpE0",
+      "title": "GOAWAY is what is sent here",
+      "url": "https://github.com/httpwg/http2-spec/pull/1082",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #1038.",
+      "createdAt": "2022-03-22T11:53:59Z",
+      "updatedAt": "2022-03-22T12:58:09Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0054de14595adb394574a77684a2cd3db23ecd27",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "goaway-sent",
+      "headRefOid": "743c4d6836b4c121667c80c9b3ece1b1f322bb56",
+      "closedAt": "2022-03-22T12:58:09Z",
+      "mergedAt": "2022-03-22T12:58:09Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "0a9e85fc670c4eb5453058a2707e36a5347cd026"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842qydH",
+          "commit": {
+            "abbreviatedOid": "743c4d6"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-22T12:58:05Z",
+          "updatedAt": "2022-03-22T12:58:05Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1083,
+      "id": "PR_kwDOAHsHi840zpeT",
+      "title": "cookies using ; prevents use of multiple field lines",
+      "url": "https://github.com/httpwg/http2-spec/pull/1083",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #1039.",
+      "createdAt": "2022-03-22T11:55:43Z",
+      "updatedAt": "2022-03-22T12:58:53Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0054de14595adb394574a77684a2cd3db23ecd27",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "cookie-comma",
+      "headRefOid": "19b15b77e3d78605af81c47276185f308948d9d5",
+      "closedAt": "2022-03-22T12:58:53Z",
+      "mergedAt": "2022-03-22T12:58:53Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "acb3a7d30b0310eb9dfd2fa1b74c5c6fd3d1ea13"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842qytg",
+          "commit": {
+            "abbreviatedOid": "19b15b7"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-22T12:58:49Z",
+          "updatedAt": "2022-03-22T12:58:49Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1084,
+      "id": "PR_kwDOAHsHi840zqYr",
+      "title": "Quote pseudo field names",
+      "url": "https://github.com/httpwg/http2-spec/pull/1084",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "I had to add `<tt>` to one use of :authority.\r\n\r\nCloses #1040.",
+      "createdAt": "2022-03-22T11:59:41Z",
+      "updatedAt": "2022-03-22T13:00:10Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0054de14595adb394574a77684a2cd3db23ecd27",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "quote-pseudo",
+      "headRefOid": "a1337a4549d28f9b1e3cc6f57856e6b2b5ef242b",
+      "closedAt": "2022-03-22T13:00:10Z",
+      "mergedAt": "2022-03-22T13:00:10Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "143388e7b76a0c2e08e43021d6878b648962db54"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842qzYH",
+          "commit": {
+            "abbreviatedOid": "a1337a4"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-22T13:00:05Z",
+          "updatedAt": "2022-03-22T13:00:05Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1085,
+      "id": "PR_kwDOAHsHi840zsRZ",
+      "title": "Use quotes for scheme names",
+      "url": "https://github.com/httpwg/http2-spec/pull/1085",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Also, use `<tt>`.\r\n\r\nCloses #1041.",
+      "createdAt": "2022-03-22T12:08:00Z",
+      "updatedAt": "2022-03-22T13:06:39Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0f3ba259e81bc8bb915d0da5ec27dda5abd08c4d",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "quote-scheme",
+      "headRefOid": "a51758eef5daa438f0477e7848862d30ee69b54b",
+      "closedAt": "2022-03-22T13:06:38Z",
+      "mergedAt": "2022-03-22T13:06:38Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "81898486468fa04ae4af7115147ddf0e8d7a5e6d"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842q01k",
+          "commit": {
+            "abbreviatedOid": "123727a"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-22T13:04:23Z",
+          "updatedAt": "2022-03-22T13:04:23Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1086,
+      "id": "PR_kwDOAHsHi840zsp4",
+      "title": "Let's cite both",
+      "url": "https://github.com/httpwg/http2-spec/pull/1086",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #1042.",
+      "createdAt": "2022-03-22T12:09:46Z",
+      "updatedAt": "2022-03-22T13:00:39Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0054de14595adb394574a77684a2cd3db23ecd27",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "authority-citation",
+      "headRefOid": "9d4a64bfb8a8bffbb1175881224ec0fd914d3710",
+      "closedAt": "2022-03-22T13:00:39Z",
+      "mergedAt": "2022-03-22T13:00:38Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "daabd112fe0e64927bbe0520a8bb3b05ada9af99"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842qzi3",
+          "commit": {
+            "abbreviatedOid": "9d4a64b"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-22T13:00:35Z",
+          "updatedAt": "2022-03-22T13:00:35Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1087,
+      "id": "PR_kwDOAHsHi840zt6n",
+      "title": "Rephrase Host/:authority difference requirement",
+      "url": "https://github.com/httpwg/http2-spec/pull/1087",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Just an attempt at a better/clearer wording\r\n\r\nCloses #1043.",
+      "createdAt": "2022-03-22T12:15:11Z",
+      "updatedAt": "2022-03-22T13:02:57Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "daabd112fe0e64927bbe0520a8bb3b05ada9af99",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "different-entity",
+      "headRefOid": "aa6062d3d618e7aef2fd364a6255f4ee634f8342",
+      "closedAt": "2022-03-22T13:02:57Z",
+      "mergedAt": "2022-03-22T13:02:57Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "143f7e4d8353b171501c4d671f94247211dcaf8d"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842qz4S",
+          "commit": {
+            "abbreviatedOid": "243788a"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-22T13:01:35Z",
+          "updatedAt": "2022-03-22T13:01:35Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1088,
+      "id": "PR_kwDOAHsHi840zufB",
+      "title": "Add a missing \"that\"",
+      "url": "https://github.com/httpwg/http2-spec/pull/1088",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "CLoses #1044.",
+      "createdAt": "2022-03-22T12:17:37Z",
+      "updatedAt": "2022-03-22T13:03:33Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0054de14595adb394574a77684a2cd3db23ecd27",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "as-that-defined",
+      "headRefOid": "817403a4b123c96b26db874ae610dddb6706316b",
+      "closedAt": "2022-03-22T13:03:32Z",
+      "mergedAt": "2022-03-22T13:03:32Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "0f3ba259e81bc8bb915d0da5ec27dda5abd08c4d"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842q0hp",
+          "commit": {
+            "abbreviatedOid": "817403a"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-22T13:03:28Z",
+          "updatedAt": "2022-03-22T13:03:28Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1089,
+      "id": "PR_kwDOAHsHi840zvLl",
+      "title": "\"as\" means \"because\" here too",
+      "url": "https://github.com/httpwg/http2-spec/pull/1089",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #1046.",
+      "createdAt": "2022-03-22T12:20:34Z",
+      "updatedAt": "2022-03-22T13:07:14Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0054de14595adb394574a77684a2cd3db23ecd27",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "as-because",
+      "headRefOid": "e76baaffed96f9d52200590d60805b4f899fc06a",
+      "closedAt": "2022-03-22T13:07:14Z",
+      "mergedAt": "2022-03-22T13:07:13Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "0577a017854b51686747899bf8e520a93419da0f"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842q12l",
+          "commit": {
+            "abbreviatedOid": "e76baaf"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-22T13:07:02Z",
+          "updatedAt": "2022-03-22T13:07:02Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1090,
+      "id": "PR_kwDOAHsHi840zv9T",
+      "title": "and-and-and to and-and-with",
+      "url": "https://github.com/httpwg/http2-spec/pull/1090",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "This is awkward, but this is better.\r\n\r\nCloses #1057.",
+      "createdAt": "2022-03-22T12:23:50Z",
+      "updatedAt": "2022-03-22T13:08:57Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0054de14595adb394574a77684a2cd3db23ecd27",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "with-message-content",
+      "headRefOid": "fc32aaeeaed853e45f95764dac3f67a416c68c38",
+      "closedAt": "2022-03-22T13:08:57Z",
+      "mergedAt": "2022-03-22T13:08:57Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "1d64fb5a8c41ad256594e7785c39fb6e5600e36c"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842q2f4",
+          "commit": {
+            "abbreviatedOid": "fc32aae"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-22T13:08:52Z",
+          "updatedAt": "2022-03-22T13:08:52Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1091,
+      "id": "PR_kwDOAHsHi840zwQU",
+      "title": "Remove SNI abbreviation",
+      "url": "https://github.com/httpwg/http2-spec/pull/1091",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #1058.",
+      "createdAt": "2022-03-22T12:25:06Z",
+      "updatedAt": "2022-03-22T13:08:26Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0054de14595adb394574a77684a2cd3db23ecd27",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "remove-sni-abbr",
+      "headRefOid": "585172e1827b460856e04a82b04c012d187554c4",
+      "closedAt": "2022-03-22T13:08:26Z",
+      "mergedAt": "2022-03-22T13:08:26Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "e6aba4c06e0f053801483f3f13bc54f600b452ed"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842q2L6",
+          "commit": {
+            "abbreviatedOid": "585172e"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-22T13:07:58Z",
+          "updatedAt": "2022-03-22T13:07:58Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1092,
+      "id": "PR_kwDOAHsHi840zwy1",
+      "title": "Reword the reasoning in TLS requirements.",
+      "url": "https://github.com/httpwg/http2-spec/pull/1092",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #1059.",
+      "createdAt": "2022-03-22T12:27:22Z",
+      "updatedAt": "2022-03-22T13:09:40Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0054de14595adb394574a77684a2cd3db23ecd27",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "tls-req-reword",
+      "headRefOid": "c91be8ad3a3e4f5ec8ef9d4e82575a9eea9b6a28",
+      "closedAt": "2022-03-22T13:09:39Z",
+      "mergedAt": "2022-03-22T13:09:39Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "168234379dccc9895814e909787a333ef201f3ee"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842q2vD",
+          "commit": {
+            "abbreviatedOid": "c91be8a"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-22T13:09:34Z",
+          "updatedAt": "2022-03-22T13:09:34Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1093,
+      "id": "PR_kwDOAHsHi840zxyB",
+      "title": "Use `<tt>` for content-length",
+      "url": "https://github.com/httpwg/http2-spec/pull/1093",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #1060.",
+      "createdAt": "2022-03-22T12:29:08Z",
+      "updatedAt": "2022-03-22T13:14:54Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0054de14595adb394574a77684a2cd3db23ecd27",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "content-length-tt",
+      "headRefOid": "8ac6ee26c232a13aa7f31d6b3721e9e8819712ef",
+      "closedAt": "2022-03-22T13:14:54Z",
+      "mergedAt": "2022-03-22T13:14:53Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "abd12460c1e143c6d06335b9138c005da9447cf4"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842q40A",
+          "commit": {
+            "abbreviatedOid": "8ac6ee2"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-22T13:14:49Z",
+          "updatedAt": "2022-03-22T13:14:49Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1094,
+      "id": "PR_kwDOAHsHi840zygP",
+      "title": "Simplify greater state commitment sentence",
+      "url": "https://github.com/httpwg/http2-spec/pull/1094",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #1061.",
+      "createdAt": "2022-03-22T12:32:05Z",
+      "updatedAt": "2022-03-22T13:15:32Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0054de14595adb394574a77684a2cd3db23ecd27",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "using-depends",
+      "headRefOid": "eb7992ccd92f91cd40022af917de9cd909119c0d",
+      "closedAt": "2022-03-22T13:15:31Z",
+      "mergedAt": "2022-03-22T13:15:31Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "d0ec89ac7820c4bdf0a6ebe3a8c077b1c4307a37"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842q5Cl",
+          "commit": {
+            "abbreviatedOid": "eb7992c"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-22T13:15:27Z",
+          "updatedAt": "2022-03-22T13:15:27Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1095,
+      "id": "PR_kwDOAHsHi840zzYO",
+      "title": "Reword waste statement",
+      "url": "https://github.com/httpwg/http2-spec/pull/1095",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #1062.",
+      "createdAt": "2022-03-22T12:35:46Z",
+      "updatedAt": "2022-03-22T13:16:00Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0054de14595adb394574a77684a2cd3db23ecd27",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "offers-waste",
+      "headRefOid": "cab3a90cc9b863b271735ef44ae6b195c3eddabc",
+      "closedAt": "2022-03-22T13:16:00Z",
+      "mergedAt": "2022-03-22T13:15:59Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "e389f837c8e68640acd33bc053c3018ef00913c2"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842q5P5",
+          "commit": {
+            "abbreviatedOid": "cab3a90"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-22T13:15:55Z",
+          "updatedAt": "2022-03-22T13:15:55Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1096,
+      "id": "PR_kwDOAHsHi840zz0V",
+      "title": "Avoid \"in exemplar\" and use words",
+      "url": "https://github.com/httpwg/http2-spec/pull/1096",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #1063.",
+      "createdAt": "2022-03-22T12:37:37Z",
+      "updatedAt": "2022-03-22T13:17:25Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0054de14595adb394574a77684a2cd3db23ecd27",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "eg-ie",
+      "headRefOid": "51ebfe1b31fb0f971bdaedbd1e7e2bc754a53c1b",
+      "closedAt": "2022-03-22T13:17:25Z",
+      "mergedAt": "2022-03-22T13:17:24Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "ad720939329f497069c18a39b675cf5b8b1e6b77"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842q55Y",
+          "commit": {
+            "abbreviatedOid": "51ebfe1"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-22T13:17:19Z",
+          "updatedAt": "2022-03-22T13:17:19Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1097,
+      "id": "PR_kwDOAHsHi840z0QX",
+      "title": "Values in the first; a value in the second",
+      "url": "https://github.com/httpwg/http2-spec/pull/1097",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Values is correct in the first case, but the second should be \"a value\"\r\nby which it means \"any value\".\r\n\r\nCloses #1064.",
+      "createdAt": "2022-03-22T12:39:27Z",
+      "updatedAt": "2022-03-22T13:19:56Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0054de14595adb394574a77684a2cd3db23ecd27",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "value-values",
+      "headRefOid": "d8379e7841125a0c4b9202e0c8c437d1eb810db5",
+      "closedAt": "2022-03-22T13:19:56Z",
+      "mergedAt": "2022-03-22T13:19:56Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "1adc8e42e2b844bf57fb07e7a8fc790dfdaa5220"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842q63N",
+          "commit": {
+            "abbreviatedOid": "d8379e7"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-22T13:19:52Z",
+          "updatedAt": "2022-03-22T13:19:52Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1098,
+      "id": "PR_kwDOAHsHi840z2F5",
+      "title": "Remap priority label",
+      "url": "https://github.com/httpwg/http2-spec/pull/1098",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #1067.",
+      "createdAt": "2022-03-22T12:46:52Z",
+      "updatedAt": "2022-03-22T13:22:55Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0054de14595adb394574a77684a2cd3db23ecd27",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "priority-label",
+      "headRefOid": "c2e7e350d791cc9aa58eee0629fcf5290167fe94",
+      "closedAt": "2022-03-22T13:22:55Z",
+      "mergedAt": "2022-03-22T13:22:55Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "b27a4d2efc7a7a35266fd998ba9dff0af71a969c"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842q8H0",
+          "commit": {
+            "abbreviatedOid": "c2e7e35"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-22T13:22:51Z",
+          "updatedAt": "2022-03-22T13:22:51Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1099,
+      "id": "PR_kwDOAHsHi840z2vy",
+      "title": "Simpler signaling",
+      "url": "https://github.com/httpwg/http2-spec/pull/1099",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #1069.",
+      "createdAt": "2022-03-22T12:49:36Z",
+      "updatedAt": "2022-03-22T13:24:27Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "15cd0ca940b0669ed5672d8850aa80095c3947da",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "successor",
+      "headRefOid": "a3639186976d5ffe2ffa4186bb6c03e13ce54807",
+      "closedAt": "2022-03-22T13:24:27Z",
+      "mergedAt": "2022-03-22T13:24:27Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "cf6382d36cbd6d113926d98e9f919aaf3f601d35"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842q8s4",
+          "commit": {
+            "abbreviatedOid": "a363918"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2022-03-22T13:24:20Z",
+          "updatedAt": "2022-03-22T13:24:20Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1100,
+      "id": "PR_kwDOAHsHi840z62v",
+      "title": "A tranche of consistency fixes",
+      "url": "https://github.com/httpwg/http2-spec/pull/1100",
+      "state": "MERGED",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #1072.",
+      "createdAt": "2022-03-22T13:04:40Z",
+      "updatedAt": "2022-03-22T16:37:21Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "0f3ba259e81bc8bb915d0da5ec27dda5abd08c4d",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "consistency",
+      "headRefOid": "a8e97411219ad6d39c52d971617fe830859dd8f3",
+      "closedAt": "2022-03-22T16:37:21Z",
+      "mergedAt": "2022-03-22T16:37:21Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "1084dcfb4c6f63ee2f410e33c4983260cc740ab2"
+      },
+      "comments": [
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On line 3370 we say: \r\n\r\n> because \"reserved\" streams do not count toward\r\n\r\nI think this quoting is inconsistent: we normally say either 'reserved streams' or 'streams in the \"reserved\" states'. ",
+          "createdAt": "2022-03-22T14:04:39Z",
+          "updatedAt": "2022-03-22T14:04:39Z"
+        },
+        {
+          "author": "martinthomson",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Good, fixed both.",
+          "createdAt": "2022-03-22T14:46:22Z",
+          "updatedAt": "2022-03-22T14:46:22Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842q-o0",
+          "commit": {
+            "abbreviatedOid": "9c853ee"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2022-03-22T13:28:42Z",
+          "updatedAt": "2022-03-22T14:05:14Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "Nit: we may want to clarify this sentence by adding the word \"Receiving\" to the start and tweaking the grammar, so that it reads \"Receiving `PUSH_PROMISE` frames also causes the promised stream to become \"reserved (remote)\"",
+              "createdAt": "2022-03-22T13:28:42Z",
+              "updatedAt": "2022-03-22T14:05:14Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOAHsHi842sJcI",
+          "commit": {
+            "abbreviatedOid": "a8e9741"
+          },
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Excellent",
+          "createdAt": "2022-03-22T16:37:14Z",
+          "updatedAt": "2022-03-22T16:37:14Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 1101,
+      "id": "PR_kwDOAHsHi8401EI4",
+      "title": "Apply textual changes from RFC Editors",
+      "url": "https://github.com/httpwg/http2-spec/pull/1101",
+      "state": "MERGED",
+      "author": "Lukasa",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "This PR contains textual changes made by the RFC editors, along with a\r\ncouple of XML changes where they were uncontroversial or necessary for\r\nthe text. I left out any change the RFC editors made that conflicted\r\nsubstatially with changes we made in response to their comments.",
+      "createdAt": "2022-03-22T17:38:34Z",
+      "updatedAt": "2022-03-23T06:34:39Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "1084dcfb4c6f63ee2f410e33c4983260cc740ab2",
+      "headRepository": "Lukasa/http2-spec",
+      "headRefName": "cb-auth48",
+      "headRefOid": "fe49105826fb53bf4779c51d1788ed662c4a69a1",
+      "closedAt": "2022-03-23T06:34:30Z",
+      "mergedAt": "2022-03-23T06:34:30Z",
+      "mergedBy": "Lukasa",
+      "mergeCommit": {
+        "oid": "946c878c7cf7705f88e8504c527b0e985df70efb"
+      },
+      "comments": [
+        {
+          "author": "Lukasa",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Suggestions applied",
+          "createdAt": "2022-03-23T06:33:42Z",
+          "updatedAt": "2022-03-23T06:33:42Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOAHsHi842uEDE",
+          "commit": {
+            "abbreviatedOid": "d114d60"
+          },
+          "author": "martinthomson",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Just three things (two to essentially revert).",
+          "createdAt": "2022-03-23T00:39:52Z",
+          "updatedAt": "2022-03-23T00:47:26Z",
+          "comments": [
+            {
+              "originalPosition": 757,
+              "body": "```suggestion\r\n          Use of TLS 1.3 was defined based on <xref target=\"RFC8740\"/>, which this document obsoletes.\r\n```",
+              "createdAt": "2022-03-23T00:44:25Z",
+              "updatedAt": "2022-03-23T00:47:26Z"
+            },
+            {
+              "originalPosition": 399,
+              "body": "I think that the original is more consistent with other text.  Though s/the/a/.\r\n\r\n```suggestion\r\n          This means that a receiver could receive a WINDOW_UPDATE frame on a stream in a \"half-closed (remote)\"\r\n          or \"closed\" state.  A receiver MUST NOT treat this as an error (see <xref target=\"StreamStates\"/>).\r\n```",
+              "createdAt": "2022-03-23T00:46:13Z",
+              "updatedAt": "2022-03-23T00:47:26Z"
+            },
+            {
+              "originalPosition": 408,
+              "body": "I think we should revert this too.  \"whose\" implies unnecessary anthropomorphism, which is worth avoiding.\r\n\r\n```suggestion\r\n          with a Stream Identifier field of 0x00, the recipient MUST respond with a <xref target=\"ConnectionErrorHandler\">connection error</xref> of type PROTOCOL_ERROR.\r\n```",
+              "createdAt": "2022-03-23T00:47:02Z",
+              "updatedAt": "2022-03-23T00:47:26Z"
+            }
+          ]
         }
       ]
     }
