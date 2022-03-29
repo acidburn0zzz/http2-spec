@@ -2,15 +2,14 @@
 
 
 
-HTTPbis                                                  M. Thomson, Ed.
-Internet-Draft                                                   Mozilla
-Obsoletes: 7540, 8740 (if approved)                     C. Benfield, Ed.
-Intended status: Standards Track                              Apple Inc.
-Expires: 24 September 2022                                 23 March 2022
+Internet Engineering Task Force (IETF)                   M. Thomson, Ed.
+Request for Comments: 9113                                       Mozilla
+Obsoletes: 7540, 8740                                   C. Benfield, Ed.
+Category: Standards Track                                     Apple Inc.
+ISSN: 2070-1721                                            29 March 2022
 
 
                                  HTTP/2
-                   draft-ietf-httpbis-http2bis-latest
 
 Abstract
 
@@ -24,20 +23,17 @@ Abstract
 
 Status of This Memo
 
-   This Internet-Draft is submitted in full conformance with the
-   provisions of BCP 78 and BCP 79.
+   This is an Internet Standards Track document.
 
-   Internet-Drafts are working documents of the Internet Engineering
-   Task Force (IETF).  Note that other groups may also distribute
-   working documents as Internet-Drafts.  The list of current Internet-
-   Drafts is at https://datatracker.ietf.org/drafts/current/.
+   This document is a product of the Internet Engineering Task Force
+   (IETF).  It represents the consensus of the IETF community.  It has
+   received public review and has been approved for publication by the
+   Internet Engineering Steering Group (IESG).  Further information on
+   Internet Standards is available in Section 2 of RFC 7841.
 
-   Internet-Drafts are draft documents valid for a maximum of six months
-   and may be updated, replaced, or obsoleted by other documents at any
-   time.  It is inappropriate to use Internet-Drafts as reference
-   material or to cite them other than as "work in progress."
-
-   This Internet-Draft will expire on 24 September 2022.
+   Information about the current status of this document, any errata,
+   and how to provide feedback on it may be obtained at
+   https://www.rfc-editor.org/info/rfc9113.
 
 Copyright Notice
 
@@ -45,13 +41,14 @@ Copyright Notice
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
-   Provisions Relating to IETF Documents (https://trustee.ietf.org/
-   license-info) in effect on the date of publication of this document.
-   Please review these documents carefully, as they describe your rights
-   and restrictions with respect to this document.  Code Components
-   extracted from this document must include Revised BSD License text as
-   described in Section 4.e of the Trust Legal Provisions and are
-   provided without warranty as described in the Revised BSD License.
+   Provisions Relating to IETF Documents
+   (https://trustee.ietf.org/license-info) in effect on the date of
+   publication of this document.  Please review these documents
+   carefully, as they describe your rights and restrictions with respect
+   to this document.  Code Components extracted from this document must
+   include Revised BSD License text as described in Section 4.e of the
+   Trust Legal Provisions and are provided without warranty as described
+   in the Revised BSD License.
 
 Table of Contents
 
@@ -2766,11 +2763,11 @@ Table of Contents
    being reset if the client does not recognize a newly defined method
    as being safe.
 
-   Pushed responses that are cacheable (see Section 3 of [HTTP-CACHING])
-   can be stored by the client, if it implements an HTTP cache.  Pushed
+   Pushed responses that are cacheable (see Section 3 of [CACHE]) can be
+   stored by the client, if it implements an HTTP cache.  Pushed
    responses are considered successfully validated on the origin server
    (e.g., if the "no-cache" cache response directive is present; see
-   Section 5.2.2.4 of [HTTP-CACHING]) while the stream identified by the
+   Section 5.2.2.4 of [CACHE]) while the stream identified by the
    promised stream identifier is still open.
 
    Pushed responses that are not cacheable MUST NOT be stored by any
@@ -3669,27 +3666,22 @@ Table of Contents
 
 12.1.  Normative References
 
+   [CACHE]    Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
+              Ed., "HTTP Caching", RFC 9111, DOI 10.17487/RFC9111, March
+              2022, <https://www.rfc-editor.org/info/rfc9111>.
+
    [COMPRESSION]
               Peon, R. and H. Ruellan, "HPACK: Header Compression for
               HTTP/2", RFC 7541, DOI 10.17487/RFC7541, May 2015,
-              <https://www.rfc-editor.org/rfc/rfc7541>.
+              <https://www.rfc-editor.org/info/rfc7541>.
 
    [COOKIE]   Barth, A., "HTTP State Management Mechanism", RFC 6265,
               DOI 10.17487/RFC6265, April 2011,
-              <https://www.rfc-editor.org/rfc/rfc6265>.
+              <https://www.rfc-editor.org/info/rfc6265>.
 
    [HTTP]     Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
-              Ed., "HTTP Semantics", Work in Progress, Internet-Draft,
-              draft-ietf-httpbis-semantics-18, 18 August 2021,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-
-              semantics-18>.
-
-   [HTTP-CACHING]
-              Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
-              Ed., "HTTP Caching", Work in Progress, Internet-Draft,
-              draft-ietf-httpbis-cache-18, 18 August 2021,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-
-              cache-18>.
+              Ed., "HTTP Semantics", RFC 9110, DOI 10.17487/RFC9110,
+              March 2022, <https://www.rfc-editor.org/info/rfc9110>.
 
    [QUIC]     Iyengar, J., Ed. and M. Thomson, Ed., "QUIC: A UDP-Based
               Multiplexed and Secure Transport", RFC 9000,
@@ -3699,16 +3691,16 @@ Table of Contents
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
-              <https://www.rfc-editor.org/rfc/rfc2119>.
+              <https://www.rfc-editor.org/info/rfc2119>.
 
    [RFC3986]  Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
               Resource Identifier (URI): Generic Syntax", STD 66,
               RFC 3986, DOI 10.17487/RFC3986, January 2005,
-              <https://www.rfc-editor.org/rfc/rfc3986>.
+              <https://www.rfc-editor.org/info/rfc3986>.
 
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
-              May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
+              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
    [RFC8422]  Nir, Y., Josefsson, S., and M. Pegourie-Gonnard, "Elliptic
               Curve Cryptography (ECC) Cipher Suites for Transport Layer
@@ -3718,48 +3710,48 @@ Table of Contents
 
    [RFC8470]  Thomson, M., Nottingham, M., and W. Tarreau, "Using Early
               Data in HTTP", RFC 8470, DOI 10.17487/RFC8470, September
-              2018, <https://www.rfc-editor.org/rfc/rfc8470>.
+              2018, <https://www.rfc-editor.org/info/rfc8470>.
 
    [TCP]      Postel, J., "Transmission Control Protocol", STD 7,
-              RFC 793, DOI 10.17487/RFC793, September 1981,
-              <https://www.rfc-editor.org/rfc/rfc793>.
+              RFC 793, DOI 10.17487/RFC0793, September 1981,
+              <https://www.rfc-editor.org/info/rfc793>.
 
    [TLS-ALPN] Friedl, S., Popov, A., Langley, A., and E. Stephan,
               "Transport Layer Security (TLS) Application-Layer Protocol
               Negotiation Extension", RFC 7301, DOI 10.17487/RFC7301,
-              July 2014, <https://www.rfc-editor.org/rfc/rfc7301>.
+              July 2014, <https://www.rfc-editor.org/info/rfc7301>.
 
    [TLS-ECDHE]
               Rescorla, E., "TLS Elliptic Curve Cipher Suites with SHA-
               256/384 and AES Galois Counter Mode (GCM)", RFC 5289,
               DOI 10.17487/RFC5289, August 2008,
-              <https://www.rfc-editor.org/rfc/rfc5289>.
+              <https://www.rfc-editor.org/info/rfc5289>.
 
    [TLS-EXT]  Eastlake 3rd, D., "Transport Layer Security (TLS)
               Extensions: Extension Definitions", RFC 6066,
               DOI 10.17487/RFC6066, January 2011,
-              <https://www.rfc-editor.org/rfc/rfc6066>.
+              <https://www.rfc-editor.org/info/rfc6066>.
 
    [TLS12]    Dierks, T. and E. Rescorla, "The Transport Layer Security
               (TLS) Protocol Version 1.2", RFC 5246,
               DOI 10.17487/RFC5246, August 2008,
-              <https://www.rfc-editor.org/rfc/rfc5246>.
+              <https://www.rfc-editor.org/info/rfc5246>.
 
    [TLS13]    Rescorla, E., "The Transport Layer Security (TLS) Protocol
               Version 1.3", RFC 8446, DOI 10.17487/RFC8446, August 2018,
-              <https://www.rfc-editor.org/rfc/rfc8446>.
+              <https://www.rfc-editor.org/info/rfc8446>.
 
    [TLSBCP]   Sheffer, Y., Holz, R., and P. Saint-Andre,
               "Recommendations for Secure Use of Transport Layer
               Security (TLS) and Datagram Transport Layer Security
               (DTLS)", BCP 195, RFC 7525, DOI 10.17487/RFC7525, May
-              2015, <https://www.rfc-editor.org/rfc/rfc7525>.
+              2015, <https://www.rfc-editor.org/info/rfc7525>.
 
 12.2.  Informative References
 
    [ALT-SVC]  Nottingham, M., McManus, P., and J. Reschke, "HTTP
               Alternative Services", RFC 7838, DOI 10.17487/RFC7838,
-              April 2016, <https://www.rfc-editor.org/rfc/rfc7838>.
+              April 2016, <https://www.rfc-editor.org/info/rfc7838>.
 
    [BREACH]   Gluck, Y., Harris, N., and A. Prado, "BREACH: Reviving the
               CRIME Attack", 12 July 2013,
@@ -3769,20 +3761,16 @@ Table of Contents
    [DNS-TERMS]
               Hoffman, P., Sullivan, A., and K. Fujiwara, "DNS
               Terminology", BCP 219, RFC 8499, DOI 10.17487/RFC8499,
-              January 2019, <https://www.rfc-editor.org/rfc/rfc8499>.
+              January 2019, <https://www.rfc-editor.org/info/rfc8499>.
 
    [HTTP-PRIORITY]
               Oku, K. and L. Pardue, "Extensible Prioritization Scheme
-              for HTTP", Work in Progress, Internet-Draft, draft-ietf-
-              httpbis-priority-12, 17 January 2022,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-
-              priority-12>.
+              for HTTP", RFC 9218, DOI 10.17487/RFC9218, March 2022,
+              <https://www.rfc-editor.org/info/rfc9218>.
 
-   [HTTP/1.1] Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
-              Ed., "HTTP/1.1", Work in Progress, Internet-Draft, draft-
-              ietf-httpbis-messaging-18, 18 August 2021,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-
-              messaging-18>.
+   [HTTP/1.1] Fielding, R. T., Ed., Nottingham, M., Ed., and J. Reschke,
+              Ed., "HTTP/1.1", RFC 9112, DOI 10.17487/RFC9112, March
+              2022, <https://www.rfc-editor.org/info/rfc9112>.
 
    [NFLX-2019-002]
               Netflix, "HTTP/2 Denial of Service Advisory", 13 August
@@ -3793,15 +3781,16 @@ Table of Contents
               Morris, J., Hansen, M., and R. Smith, "Privacy
               Considerations for Internet Protocols", RFC 6973,
               DOI 10.17487/RFC6973, July 2013,
-              <https://www.rfc-editor.org/rfc/rfc6973>.
+              <https://www.rfc-editor.org/info/rfc6973>.
 
    [RFC1122]  Braden, R., Ed., "Requirements for Internet Hosts -
-              Communication Layers", RFC 1122, DOI 10.17487/RFC1122,
-              October 1989, <https://www.rfc-editor.org/rfc/rfc1122>.
+              Communication Layers", STD 3, RFC 1122,
+              DOI 10.17487/RFC1122, October 1989,
+              <https://www.rfc-editor.org/info/rfc1122>.
 
    [RFC3749]  Hollenbeck, S., "Transport Layer Security Protocol
               Compression Methods", RFC 3749, DOI 10.17487/RFC3749, May
-              2004, <https://www.rfc-editor.org/rfc/rfc3749>.
+              2004, <https://www.rfc-editor.org/info/rfc3749>.
 
    [RFC6125]  Saint-Andre, P. and J. Hodges, "Representation and
               Verification of Domain-Based Application Service Identity
@@ -3812,25 +3801,25 @@ Table of Contents
 
    [RFC6585]  Nottingham, M. and R. Fielding, "Additional HTTP Status
               Codes", RFC 6585, DOI 10.17487/RFC6585, April 2012,
-              <https://www.rfc-editor.org/rfc/rfc6585>.
+              <https://www.rfc-editor.org/info/rfc6585>.
 
    [RFC7323]  Borman, D., Braden, B., Jacobson, V., and R.
               Scheffenegger, Ed., "TCP Extensions for High Performance",
               RFC 7323, DOI 10.17487/RFC7323, September 2014,
-              <https://www.rfc-editor.org/rfc/rfc7323>.
+              <https://www.rfc-editor.org/info/rfc7323>.
 
    [RFC7540]  Belshe, M., Peon, R., and M. Thomson, Ed., "Hypertext
               Transfer Protocol Version 2 (HTTP/2)", RFC 7540,
               DOI 10.17487/RFC7540, May 2015,
-              <https://www.rfc-editor.org/rfc/rfc7540>.
+              <https://www.rfc-editor.org/info/rfc7540>.
 
    [RFC8441]  McManus, P., "Bootstrapping WebSockets with HTTP/2",
               RFC 8441, DOI 10.17487/RFC8441, September 2018,
-              <https://www.rfc-editor.org/rfc/rfc8441>.
+              <https://www.rfc-editor.org/info/rfc8441>.
 
    [RFC8740]  Benjamin, D., "Using TLS 1.3 with HTTP/2", RFC 8740,
               DOI 10.17487/RFC8740, February 2020,
-              <https://www.rfc-editor.org/rfc/rfc8740>.
+              <https://www.rfc-editor.org/info/rfc8740>.
 
    [TALKING]  Huang, L., Chen, E., Barth, A., Rescorla, E., and C.
               Jackson, "Talking to Yourself for Fun and Profit", 2011,
