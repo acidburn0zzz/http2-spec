@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-03-24T01:23:03.688289+00:00",
+  "timestamp": "2022-03-29T01:27:44.954854+00:00",
   "repo": "httpwg/http2-spec",
   "labels": [
     {
@@ -21604,7 +21604,7 @@
       "id": "I_kwDOAHsHi85GG7xc",
       "title": "RFC Editor comment 35",
       "url": "https://github.com/httpwg/http2-spec/issues/1071",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "mnot",
       "authorAssociation": "MEMBER",
       "assignees": [],
@@ -21613,8 +21613,8 @@
       ],
       "body": "Please review the \"Inclusive Language\" portion of the\nonline Style Guide at\n<https://www.rfc-editor.org/styleguide/part2/#inclusive_language>,\nand let us know if any changes are needed.  For example, could\n'an ASCII whitespace character' be changed to 'an ASCII\n\"empty space\" character' or 'an ASCII \"space\" character'? ",
       "createdAt": "2022-03-22T03:38:11Z",
-      "updatedAt": "2022-03-22T14:11:19Z",
-      "closedAt": null,
+      "updatedAt": "2022-03-28T06:23:09Z",
+      "closedAt": "2022-03-28T06:23:09Z",
       "comments": [
         {
           "author": "martinthomson",
@@ -46107,6 +46107,58 @@
           ]
         }
       ]
+    },
+    {
+      "number": 1102,
+      "id": "PR_kwDOAHsHi841IQ1U",
+      "title": "Run the tool I used to clean RFC 9000 on this one",
+      "url": "https://github.com/httpwg/http2-spec/pull/1102",
+      "state": "OPEN",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "I had to remove the <bcp14> tags from the BCP 14 text, but the tool\r\nrestored them.\r\n\r\nOther than that, there is no difference in output in the text files that\r\nthis generates, so I'm going to say that this was successful.\r\n\r\nThe source has a ton of whitespace changes, but that seems to be all.",
+      "createdAt": "2022-03-28T05:41:16Z",
+      "updatedAt": "2022-03-28T05:43:44Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "946c878c7cf7705f88e8504c527b0e985df70efb",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "xml-clean",
+      "headRefOid": "1e61c51700c02600b41dc1c9f65155ac4d918c96",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 1103,
+      "id": "PR_kwDOAHsHi841IYj_",
+      "title": "XML changes",
+      "url": "https://github.com/httpwg/http2-spec/pull/1103",
+      "state": "OPEN",
+      "author": "martinthomson",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Mostly.\r\n\r\nI didn't remove the width and height attributes from the SVG.  Removing\r\nthese causes the diagram to be stretched to fit, which is not at all\r\ndesirable (especially in the default stylesheet).\r\n\r\nI restored Kazuho's name in the priority doc references and changed it\r\nto use the allocated number of RFC 9218 for that doc.\r\n\r\nI removed entities and used literals for the two &nbsp; instances in the\r\ndocument (these are now &#xa0;).\r\n\r\nI sorted the xi:include elements for references.\r\n\r\nThe file we got from the RFC editor included quoted values for URI\r\nschemes and pseudo-header field names in the form: `<tt>\":scheme\"</tt>`.\r\nThis was not consistently applied.  I've gone with what we had:\r\n`\"<tt>:scheme</tt>\"`.\r\n\r\nThis builds on top of the cleanup in #1102 as I have no interest in dealing with rebases over that change.",
+      "createdAt": "2022-03-28T06:22:44Z",
+      "updatedAt": "2022-03-28T06:22:44Z",
+      "baseRepository": "httpwg/http2-spec",
+      "baseRefName": "main",
+      "baseRefOid": "946c878c7cf7705f88e8504c527b0e985df70efb",
+      "headRepository": "martinthomson/http2v2",
+      "headRefName": "xmldiff",
+      "headRefOid": "1906b19e800f1e2daa32ef0eacaac35209db9cdf",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
